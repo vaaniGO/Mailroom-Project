@@ -8,7 +8,7 @@ Changes and improvements:
 3. Adjust MeiliSearch parameters after looking at all edge-cases
 4. Align all boxes to the same position on the page
 
-<h3>To set up on your laptop</h3><br>
+<h3>To set up on your laptop</h3>
 1. Install meilisearch and configure it with the key in the terminal using the command : ./meilisearch --env development --master-key your_master_key <br>
 2. Run App.js
 3. To upload a JSON file, change the file name in the code (there is only one place). Do not change the index name.<br>
