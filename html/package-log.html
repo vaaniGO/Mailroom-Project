@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashoka University Mailroom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="global-styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"><!-- In the head -->
+    
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container-fluid px-5 pt-3">
+        <!-- Top Section: Logo & Date -->
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- Left: Ashoka Logo -->
+            <img src="ashoka-logo.png" alt="Ashoka University Logo" height="80">
+
+            <!-- Right: Date & Time -->
+            <div class="text-end">
+                <span class="fs-5 fw-normal">1:58 PM</span> <br>
+                <span class="fs-5 fw-normal">01 / 02 / 2025</span> <br>
+                <span class="fs-5 fw-normal">SATURDAY</span>
+            </div>
+        </div>
+
+        <!-- Red Banner -->
+        <div class="header-bar text-white text-center py-3 mt-3">
+            <h1 class="fw-bold m-0">ASHOKA UNIVERSITY MAILROOM</h1>
+        </div>
+    </div>
+
+    <!-- Login Box -->
+    <div class="login-container">
+        <div class="login-box" id="loginBox">
+            <h3 class="mb-4">Search for student</h3>
+            <p>Name, Email ID or Ashoka ID</p>
+
+            <div class="input-group mb-3 dropdown">
+                <input type="text" id="userInput" class="form-control" placeholder="Enter details" style="border-radius: 7px;" autocomplete="off">
+                <!-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"></button> -->
+                <ul id="searchResults" class="dropdown-menu"></ul>
+            </div>
+            <div class="d-flex justify-content-between">
+            <button class="btn btn-danger next-btn" onclick="useTrackingID()">USE TRACKING ID</button>
+            <button class="btn btn-danger next-btn" onclick="enterPackageDetails()">NEXT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-container tracking-id-login" >
+        <div class="login-box" id="trackingIDLoginBox" style="display: none;">
+            <h3 class="mb-4">Enter tracking ID</h3>
+
+            <div class="input-group mb-3 dropdown">
+                <input type="text" id="trackingIDInput" class="form-control" placeholder="Example: 1209477312" style="border-radius: 7px;" autocomplete="off">
+            </div>
+            <div class="d-flex justify-content-between">
+            <button class="btn btn-danger next-btn" onclick="goBackToStudentDetails()">BACK</button>
+            <button class="btn btn-danger next-btn" onclick="enterPackageDetailsFromID(document.getElementById('trackingIDInput').value)">NEXT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="login-container">
+        <div class="login-box" id="studentDetailsPackageDetails">
+            <h3 class="mb-4">Student Found!</h3>
+            <div class="d-flex justify-content-between">
+            <button class="btn btn-danger fw-bold" onclick="goBackToStudentDetails()">BACK</button>
+            <button class="btn btn-danger fw-bold" onclick="enterPackageDetails()">CONFIRM</button>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="login-container">
+        <div class="login-box" id="enterPackageDetails" style="display: none;">
+            <div class="packageAssociatedDetails" id="packageAssociatedDetails">
+            </div>
+            <div class="container">
+                <label for="deliveryInput" class="form-label fw-bold">Select a Delivery Service</label>
+                <div class="dropdown">
+                    <div class="input-group">
+                        <input type="text" id="deliveryInput" class="form-control" placeholder="Choose a service" readonly>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="deliveryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        </button>
+                        <ul class="dropdown-menu w-100" id="serviceDropdown">
+                            <li><a class="dropdown-item" href="#" onclick="selectService('FedEx'); return false;">FedEx</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectService('DHL'); return false;">DHL</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectService('UPS'); return false;">UPS</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectService('USPS'); return false;">USPS</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="selectService('Amazon Delivery'); return false;">Amazon Delivery</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+                <button class="btn btn-danger next-btn" onclick="goBackToEnterPackage()">BACK</button>
+                <button class="btn btn-danger next-btn" onclick="showPackageLogged('123456', 'A1')">NEXT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-box" id="packageLogged" style="display: none;">
+            <img src="check.png" style="height: 60px">
+            <h3 class="mb-4">Package Logged!</h3>
+            <div id="packageDetails"></div>
+            <div id="packageAssociatedDetails-logged"></div>
+        </div>
+    </div>
+
+    <script>
+        function useTrackingID() {
+            document.getElementById('loginBox').style="display: none;"
+            document.getElementById('trackingIDLoginBox').style="display: block;"
+        }
+
+        function showStudentDetails() {
+            document.getElementById('DetailBox').style="display: block;"
+            // popluate with the actual student details
+        }
+
+        function enterPackageDetailsFromID(trackingID) {
+            document.getElementById('trackingIDLoginBox').style="display: none;"
+            document.getElementById('packageAssociatedDetails').innerHTML = `
+            <h3 class="mb-4">Tracking ID confirmed</h3>
+            <input type="text" class="form-control mb-3" placeholder="${trackingID}" readonly>
+            `;
+            document.getElementById('enterPackageDetails').style="display: block;"
+        }
+
+        function enterPackageDetails(studentName, studentEmail, studentID) {
+            document.getElementById('loginBox').style="display: none;"
+            document.getElementById('packageAssociatedDetails').innerHTML = `
+            <h3 class="mb-4">Student confirmed</h3>
+            <input type="text" class="form-control mb-3" placeholder="${studentName}" readonly>
+            <input type="text" class="form-control mb-3" placeholder="${studentEmail}" readonly>
+            <input type="text" class="form-control mb-3" placeholder="${studentID}" readonly>
+            </div>
+            `;
+            document.getElementById('enterPackageDetails').style="display: block;"
+        }
+
+        function goBackToEnterPackage() {
+            document.getElementById('loginBox').style="display: block;"
+            document.getElementById('enterPackageDetails').style="display: none;"
+        }
+
+        function selectService(service) {
+            document.getElementById("deliveryInput").value = service;
+            // Hide dropdown after selection
+            const dropdownMenu = document.getElementById('serviceDropdown');
+            const bsDropdown = bootstrap.Dropdown.getInstance(document.getElementById('deliveryDropdown'));
+            if (bsDropdown) {
+                bsDropdown.hide();
+            }
+        }
+
+        function showPackageLogged(packageNo, shelfNo) {
+            document.getElementById('enterPackageDetails').style.display = "none";
+            document.getElementById('packageLogged').style.display = "block";
+            
+            const now = new Date();
+            const timestamp = now.toLocaleString('en-US', { 
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+            document.getElementById('packageDetails').innerHTML = `
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <div class="text-box bg-success text-white me-3 p-2 rounded">Package No: ${packageNo}</div>
+                <div class="text-box bg-success text-white me-3 p-2 rounded">Shelf No: ${shelfNo}</div>
+                <div class="text-box bg-white text-dark p-2 rounded border">Timestamp: ${timestamp}</div>
+            </div>
+            `;
+            document.getElementById('packageAssociatedDetails-logged').innerHTML = document.getElementById('packageAssociatedDetails').innerHTML
+        }
+
+        function LoadNewStudent() {
+            document.getElementById('packageLogged').style="display: none;"
+            document.getElementById('loginBox').style="display: block;"
+            document.getElementById('userInput').value=''
+        
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("userInput");
+            const resultsDropdown = document.getElementById("searchResults");
+            let debounceTimer;
+            let cachedResults = []; // Cache to prevent unnecessary API calls
+    
+            function fetchResults(query) {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(async () => {
+                    try {
+                        const response = await fetch(`http://127.0.0.1:3000/search?q=${encodeURIComponent(query)}`);
+                        const data = await response.json();
+                        cachedResults = data; // Store results in cache
+                        displayResults(cachedResults);
+                    } catch (error) {
+                        console.error("Error fetching search results:", error);
+                    }
+                }, 500);
+            }
+    
+            function displayResults(results) {
+                if (results.length > 0) {
+                    resultsDropdown.innerHTML = results.map(result => `
+                        <li class="dropdown-item" onclick="selectStudent('${result.UserName}', '${result.AshokaEmailId}', '${result.AshokaId}')">
+                            <strong>${result.UserName}</strong> <br>
+                            <small>${result.AshokaEmailId} | ID: ${result.AshokaId}</small>
+                        </li>
+                    `).join("");
+    
+                    resultsDropdown.classList.add("show");
+                } else {
+                    resultsDropdown.innerHTML = `<li class="dropdown-item disabled">No results found</li>`;
+                    resultsDropdown.classList.add("show");
+                }
+            }
+    
+            searchInput.addEventListener("input", function () {
+                this.value = this.value.toUpperCase();
+                const query = searchInput.value.trim();
+    
+                if (query.length < 1) {
+                    resultsDropdown.innerHTML = "";
+                    resultsDropdown.classList.remove("show");
+                    cachedResults = [];
+                    return;
+                }
+    
+                fetchResults(query);
+            });
+    
+            searchInput.addEventListener("click", function () {
+                const query = searchInput.value.trim();
+                if (query.length > 0) {
+                    if (cachedResults.length > 0) {
+                        displayResults(cachedResults); // Use cached results if available
+                    } else {
+                        fetchResults(query); // Fetch if no cached data
+                    }
+                }
+            });
+    
+            document.addEventListener("click", function (event) {
+                if (!searchInput.contains(event.target) && !resultsDropdown.contains(event.target)) {
+                    resultsDropdown.classList.remove("show");
+                }
+            });
+        });
+    
+        // ✅ Move `selectStudent` Outside to Make It Globally Accessible
+        function selectStudent(name, email, id) {
+            document.getElementById("userInput").value = `${name} (${id})`;
+            document.getElementById("searchResults").classList.remove("show");
+        }
+    </script>
+<!-- Before closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
