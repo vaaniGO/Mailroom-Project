@@ -1,0 +1,11 @@
+# Ignore the data.ms folder
+data.ms/
+
+# Ignore the dumps folder
+dumps/
+
+# Ignore the node_modules folder (commonly used in Node.js projects)
+node_modules/
+
+# Ignore the previous folder
+previous/
