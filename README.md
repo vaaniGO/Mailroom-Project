@@ -10,7 +10,7 @@ Changes and improvements:
 
 <h3>To set up on your laptop</h3>
 1. Install meilisearch and configure it with the key in the terminal using the command : ./meilisearch --env development --master-key your_master_key <br>
-2. Run App.js
+2. Run App.js<br>
 3. To upload a JSON file, change the file name in the code (there is only one place). Do not change the index name.<br>
 4. Save and run for each file to upload to the same index. <br>
 5. When we upload, the task gets enqued and might take a few seconds to reflect.<br>
