@@ -11,12 +11,11 @@ const port = 3000;
 app.use(express.json());
 
 app.use(cors()); // Allow all origins (or configure properly)
-
-// Initialize Meilisearch client
 const meiliClient = new MeiliSearch({
-  host: "http://127.0.0.1:7700", // Default Meilisearch URL
-  apiKey: "7b5c0e77b50c92c388e25ef2ce4fd0d2bbb80053", // Replace with your actual API key
+  host: "http://127.0.0.1:7700"
 });
+
+
 
 // Health check route
 app.get("/health", async (req, res) => {
@@ -27,25 +26,33 @@ app.get("/health", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-// Function to upload JSON data
 async function uploadData() {
-    try {
-      // Read JSON file
-      const data = JSON.parse(fs.readFileSync("ug22-26.json", "utf-8"));
-       console.log(data)
-      // Select index (will be created if it doesn't exist)
-      const index = meiliClient.index("ug21-24");
-  
-      // Add documents to Meilisearch
-      const response = await index.addDocuments(data);
-      console.log("Upload Successful:", response);
-    } catch (error) {
-      console.error("Error uploading data:", error);
+  try {
+    // Read JSON file
+    let data = JSON.parse(fs.readFileSync("../sg-scripts/misc/student_directory/ug23-27.json", "utf-8"));
+
+    // Filter out documents with invalid or missing AshokaId
+    data = data.filter(doc => doc.AshokaId && /^[a-zA-Z0-9_-]+$/.test(doc.AshokaId));
+
+    if (data.length === 0) {
+        console.error("No valid documents to upload.");
+        return;
     }
+
+    console.log("Uploading", data.length, "valid records...");
+
+    const index = meiliClient.index("ug21-24");
+
+    await index.addDocuments(data, { primaryKey: "AshokaId" });
+
+    console.log("Upload Successful");
+  } catch (error) {
+    console.error("Error uploading data:", error);
   }
+}
+
   // Run the upload function
-// uploadData();
+uploadData();
 
 async function configureIndex() {
   const index = meiliClient.index("ug21-24");
