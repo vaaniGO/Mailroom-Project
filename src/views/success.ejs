@@ -14,12 +14,15 @@
     <%-include("partials/navbar.ejs")-%>
     <!-- Login Box -->
     <div class="login-container">
-        <div class="login-box" id="loginBox">
-            <h3 class="mb-4">Welcome to Systems.</h3>
-            <h5>Select Type of Log</h5>
-            <div class="d-flex justify-content-between">
-            <a class="btn btn-danger next-btn" href="/user">Parcels in Stock</a>
-            <a class="btn btn-danger next-btn" href="/guard">Enter Data</a>
+        <div class="login-box" id="packageLogged">
+            <img src="/assets/img/check.png" style="height: 60px">
+            <h3 class="mb-4">Package Logged!</h3>
+            <div id="packageDetails">
+                <div class="d-flex align-items-center justify-content-center mb-4">
+                    <div class="text-box bg-success text-white me-3 p-2 rounded">Package No: ${packageNo}</div>
+                    <div class="text-box bg-success text-white me-3 p-2 rounded">Shelf No: ${shelfNo}</div>
+                    <div class="text-box bg-white text-dark p-2 rounded border">Timestamp: ${timestamp}</div>
+                </div>
             </div>
         </div>
     </div>

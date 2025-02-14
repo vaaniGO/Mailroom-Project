@@ -22,26 +22,17 @@
               
                 <select id="deliverySelect" name="deliveryService" style="
                     width: 100%;
-                    font-size: 18px;
-                    padding: 4px;
+                    font-size: 17px;
+                    padding: 6px;
                     border-radius: 8px;
                     background-color: #f8f9fa;
                     cursor: pointer;
-                    text-align: center;
                 ">
                     <option value="" disabled selected>Select a service</option>
                     <option value="FedEx">FedEx</option>
                     <option value="DHL">DHL</option>
                     <option value="UPS">UPS</option>
                     <option value="USPS">USPS</option>
-                    <option value="Amazon Delivery">Amazon Delivery</option>
-                    <option value="Amazon Delivery">Amazon Delivery</option>
-                    <option value="Amazon Delivery">Amazon Delivery</option>
-                    <option value="Amazon Delivery">Amazon Delivery</option>
-                    <option value="Amazon Delivery">Amazon Delivery</option>
-                    <option value="Amazon Delivery">Amazon Delivery</option>
-                    <option value="Amazon Delivery">Amazon Delivery</option>
-                    <option value="Amazon Delivery">Amazon Delivery</option>
                     <option value="Amazon Delivery">Amazon Delivery</option>
                     <option value="Amazon Delivery">Other</option>
                 </select>
@@ -50,7 +41,7 @@
             <p>Name, Email ID or Ashoka ID</p>
             <div class="input-group mb-3 dropdown" style="position: relative;">
                 <input name="student" type="text" id="userInput" class="form-control" placeholder="Enter details" autocomplete="off">
-                <span onclick="clearStudent()" style="color:#C4122F;" class="input-group-text" id="basic-addon2">Clear</span>
+                <span onclick="clearStudent()" style="color:#C4122F; border-top-right-radius: 8px; border-bottom-right-radius: 8px;" class="input-group-text" id="basic-addon2">Clear</span>
                  
 
 
@@ -63,9 +54,12 @@
             </div>
             
             <div class="d-flex justify-content-between">
-            <button id="student-next" disabled class="btn btn-danger next-btn" onclick="enterPackageDetails()">NEXT</button>
             <button id="no-student" class="btn btn-danger next-btn" onclick="useTrackingID()">NO STUDENT FOUND</button>
-
+            <button id="student-next" disabled class="btn btn-danger next-btn" 
+            onclick="enterPackageDetails(document.getElementById('hiddenSelectedStudent').value.split(',')[0],document.getElementById('hiddenSelectedStudent').value.split(',')[1],document.getElementById('hiddenSelectedStudent').value.split(',')[2])">
+            NEXT
+        </button>
+        
             </div>
         </div>
     </div>
@@ -73,9 +67,8 @@
     <div class="login-container tracking-id-login" >
         <div class="login-box" id="trackingIDLoginBox" style="display: none;">
             <h3 class="mb-4">Enter Tracking ID</h3>
-
             <div class="input-group mb-3 dropdown">
-                <input type="text" id="trackingIDInput" class="form-control" placeholder="Example: 1209477312" style="border-radius: 7px;" autocomplete="off">
+                <input type="text" id="trackingIDInput" class="form-control" placeholder="Enter Tracking ID" style="border-radius: 7px;" autocomplete="off">
             </div>
             
             <div class="d-flex justify-content-between">
@@ -84,16 +77,6 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="login-container">
-        <div class="login-box" id="studentDetailsPackageDetails">
-            <h3 class="mb-4">Student Found!</h3>
-            <div class="d-flex justify-content-between">
-            <button class="btn btn-danger fw-bold" onclick="goBackToStudentDetails()">BACK</button>
-            <button class="btn btn-danger fw-bold" onclick="enterPackageDetails()">CONFIRM</button>
-            </div>
-        </div>
-    </div> -->
 
     <div class="login-container">
         <div class="login-box" id="enterPackageDetails" style="display: none;">
@@ -111,7 +94,7 @@
 
     <div class="login-container">
         <div class="login-box" id="packageLogged" style="display: none;">
-            <img src="check.png" style="height: 60px">
+            <img src="/assets/img/check.png" style="height: 60px">
             <h3 class="mb-4">Package Logged!</h3>
             <div id="packageDetails"></div>
             <div id="packageAssociatedDetails-logged"></div>
@@ -180,6 +163,13 @@ document.getElementById("day").innerText = days[currentDate.getDay()];
             document.getElementById('enterPackageDetails').style="display: none;"
         }
 
+        function goBackToStudentDetails() {
+            document.getElementById('loginBox').style="display: block;"
+            document.getElementById('enterPackageDetails').style="display: none;"
+        }
+
+
+    
         function selectService(service) {
             document.getElementById("deliveryInput").value = service;
             // Hide dropdown after selection
@@ -306,7 +296,7 @@ document.getElementById("day").innerText = days[currentDate.getDay()];
         // Move `selectStudent` Outside to Make It Globally Accessible
         function selectStudent(name, email, id) {
             document.getElementById("userInput").value = `${name} (${id})`;
-            document.getElementById("hiddenSelectedStudent").value = `('${name}','${email}','${id}',)`;
+            document.getElementById("hiddenSelectedStudent").value = `${name},${email},${id}`;
             document.getElementById("student-next").disabled=false;
             document.getElementById("no-student").disabled=true;
             document.getElementById("searchResults").classList.remove("show");

@@ -120,7 +120,8 @@ app.get("/search", async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  res.render("home");
+  res.render('student-login');
+  // res.render("home");
   // res.sendFile('home.html', { root: path.join(__dirname, 'views') });
 });
 
@@ -128,8 +129,8 @@ app.get("/guard", async (req, res) => {
   res.render('package-log');
 });
 
-app.get("/user", async (req, res) => {
-  res.render('student-login');
+app.get("/success", async (req, res) => {
+  res.render('success');
 });
 
 // app.get("/login", async (req, res) => {
