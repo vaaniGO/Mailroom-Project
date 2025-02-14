@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashoka University Mailroom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/global-styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <%-include("partials/navbar.ejs")-%>
+    <!-- Login Box -->
+    <div class="login-container">
+        <div class="login-box" id="loginBox">
+            <h3 class="mb-4">Welcome to Systems.</h3>
+            <h5>Select Type of Log</h5>
+            <div class="d-flex justify-content-between">
+            <a class="btn btn-danger next-btn" href="/user">Parcels in Stock</a>
+            <a class="btn btn-danger next-btn" href="/guard">Enter Data</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the current date in a readable format (DD-MM-YYYY)
+const currentDate = new Date();
+const formattedDate = currentDate.getDate().toString().padStart(2, '0') + "-" +
+                      (currentDate.getMonth() + 1).toString().padStart(2, '0') + "-" +
+                      currentDate.getFullYear();
+document.getElementById("date").innerText = formattedDate;
+
+// Get the current time in HH:MM:SS format
+// const formattedTime = currentDate.getHours().toString().padStart(2, '0') + ":" +
+//                       currentDate.getMinutes().toString().padStart(2, '0');
+// document.getElementById("time").innerText = formattedTime;
+
+// Get the current day of the week (e.g., "Monday")
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+document.getElementById("day").innerText = days[currentDate.getDay()];
+
+
+        function useTrackingID() {
+            document.getElementById('loginBox').style="display: none;"
+            document.getElementById('trackingIDLoginBox').style="display: block;"
+        }
+
+        function showStudentDetails() {
+            document.getElementById('DetailBox').style="display: block;"
+            // popluate with the actual student details
+        }
+
+        function enterPackageDetailsFromID(trackingID) {
+            document.getElementById('trackingIDLoginBox').style="display: none;"
+            document.getElementById('packageAssociatedDetails').innerHTML = `
+            <h3 class="mb-4">Tracking ID confirmed</h3>
+            <input type="text" class="form-control mb-3" placeholder="${trackingID}" readonly>
+            `;
+            document.getElementById('enterPackageDetails').style="display: block;"
+        }
+
+        function enterPackageDetails(studentName, studentEmail, studentID) {
+            document.getElementById('loginBox').style="display: none;"
+            document.getElementById('packageAssociatedDetails').innerHTML = `
+            <h3 class="mb-4">Student confirmed</h3>
+            <input type="text" class="form-control mb-3" placeholder="${studentName}" readonly>
+            <input type="text" class="form-control mb-3" placeholder="${studentEmail}" readonly>
+            <input type="text" class="form-control mb-3" placeholder="${studentID}" readonly>
+            </div>
+            `;
+            document.getElementById('enterPackageDetails').style="display: block;"
+        }
+
+        function goBackToEnterPackage() {
+            document.getElementById('loginBox').style="display: block;"
+            document.getElementById('enterPackageDetails').style="display: none;"
+        }
+
+        function selectService(service) {
+            document.getElementById("deliveryInput").value = service;
+            // Hide dropdown after selection
+            const dropdownMenu = document.getElementById('serviceDropdown');
+            const bsDropdown = bootstrap.Dropdown.getInstance(document.getElementById('deliveryDropdown'));
+            if (bsDropdown) {
+                bsDropdown.hide();
+            }
+        }
+
+        function showPackageLogged(packageNo, shelfNo) {
+            document.getElementById('enterPackageDetails').style.display = "none";
+            document.getElementById('packageLogged').style.display = "block";
+            
+            const now = new Date();
+            const timestamp = now.toLocaleString('en-US', { 
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+            document.getElementById('packageDetails').innerHTML = `
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <div class="text-box bg-success text-white me-3 p-2 rounded">Package No: ${packageNo}</div>
+                <div class="text-box bg-success text-white me-3 p-2 rounded">Shelf No: ${shelfNo}</div>
+                <div class="text-box bg-white text-dark p-2 rounded border">Timestamp: ${timestamp}</div>
+            </div>
+            `;
+            document.getElementById('packageAssociatedDetails-logged').innerHTML = document.getElementById('packageAssociatedDetails').innerHTML
+        }
+
+        function LoadNewStudent() {
+            document.getElementById('packageLogged').style="display: none;"
+            document.getElementById('loginBox').style="display: block;"
+            document.getElementById('userInput').value=''
+        
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("userInput");
+            const resultsDropdown = document.getElementById("searchResults");
+            let debounceTimer;
+            let cachedResults = []; // Cache to prevent unnecessary API calls
+    
+            function fetchResults(query) {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(async () => {
+                    try {
+                        const response = await fetch(`http://127.0.0.1:3000/search?q=${encodeURIComponent(query)}`);
+                        const data = await response.json();
+                        cachedResults = data; // Store results in cache
+                        displayResults(cachedResults);
+                    } catch (error) {
+                        console.error("Error fetching search results:", error);
+                    }
+                }, 500);
+            }
+    
+            function displayResults(results) {
+                if (results.length > 0) {
+                    resultsDropdown.innerHTML = results.map(result => `
+                        <li class="dropdown-item" onclick="selectStudent('${result.UserName.toUpperCase()}', '${result.AshokaEmailId}', '${result.AshokaId}')">
+                            <strong>${result.UserName.toUpperCase()}</strong><span style="float:right;">ID: ${result.AshokaId}</span> <br>
+                            <small>${result.AshokaEmailId}</small>
+                        </li>
+                    `).join("");
+    
+                    resultsDropdown.classList.add("show");
+                } else {
+                    resultsDropdown.innerHTML = `<li class="dropdown-item disabled">No results found</li>`;
+                    resultsDropdown.classList.add("show");
+                }
+            }
+    
+            searchInput.addEventListener("input", function () {
+                this.value = this.value.toUpperCase();
+                const query = searchInput.value.trim();
+    
+                if (query.length < 1) {
+                    resultsDropdown.innerHTML = "";
+                    resultsDropdown.classList.remove("show");
+                    cachedResults = [];
+                    return;
+                }
+    
+                fetchResults(query);
+            });
+    
+            searchInput.addEventListener("click", function () {
+                const query = searchInput.value.trim();
+                if (query.length > 0) {
+                    if (cachedResults.length > 0) {
+                        displayResults(cachedResults); // Use cached results if available
+                    } else {
+                        fetchResults(query); // Fetch if no cached data
+                    }
+                }
+            });
+    
+            document.addEventListener("click", function (event) {
+                if (!searchInput.contains(event.target) && !resultsDropdown.contains(event.target)) {
+                    resultsDropdown.classList.remove("show");
+                }
+            });
+        });
+    
+        // Move `selectStudent` Outside to Make It Globally Accessible
+        function selectStudent(name, email, id) {
+            document.getElementById("userInput").value = `${name} (${id})`;
+            document.getElementById("hiddenSelectedStudent").value = `('${name}','${email}','${id}',)`;
+            document.getElementById("searchResults").classList.remove("show");
+        }
+    </script>
+<!-- Before closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

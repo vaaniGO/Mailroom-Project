@@ -4,6 +4,12 @@ import fs from 'fs';
 import fetch from 'node-fetch';
 import cors from 'cors';
 global.fetch = fetch;
+import path from 'path'
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const port = 3000;
@@ -16,6 +22,7 @@ const meiliClient = new MeiliSearch({
 });
 
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Health check route
 app.get("/health", async (req, res) => {
@@ -26,6 +33,11 @@ app.get("/health", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.set('view engine', 'ejs');
+
+// Set the views directory (optional, defaults to 'views/')
+app.set('views', path.join(__dirname, 'views'));
 async function uploadData() {
   try {
     // Read JSON file
@@ -52,18 +64,12 @@ async function uploadData() {
 }
 
   // Run the upload function
-uploadData();
+// uploadData();
 
 async function configureIndex() {
   const index = meiliClient.index("ug21-24");
-
-  // ✅ Set `AshokaId` as a filterable attribute
   await index.updateFilterableAttributes(["AshokaId"]);
-
-  // ✅ Set custom searchable attributes
   await index.updateSearchableAttributes(["UserName", "AshokaEmailId", "AshokaId"]);
-
-  // ✅ Set ranking rules and custom weights
   await index.updateRankingRules([
       "typo",
       "words",
@@ -113,6 +119,23 @@ app.get("/search", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://127.0.0.1:${port}`);
+app.get("/", async (req, res) => {
+  res.render("home");
+  // res.sendFile('home.html', { root: path.join(__dirname, 'views') });
+});
+
+app.get("/guard", async (req, res) => {
+  res.render('package-log');
+});
+
+app.get("/user", async (req, res) => {
+  res.render('student-login');
+});
+
+// app.get("/login", async (req, res) => {
+//   res.sendFile('student-login.html', { root: path.join(__dirname, 'views') });
+// });
+
+app.listen(port || 3000, function(){
+  console.log("listening on port ",port || 3000)
 });
