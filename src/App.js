@@ -7,6 +7,7 @@ global.fetch = fetch;
 import path from 'path'
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import db from './connectSQL.js'; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -18,9 +19,9 @@ app.use(express.json());
 
 app.use(cors()); // Allow all origins (or configure properly)
 const meiliClient = new MeiliSearch({
-  host: "http://127.0.0.1:7700"
+  host: "http://127.0.0.1:7700",
+  apiKey: "7b5c0e77b50c92c388e25ef2ce4fd0d2bbb80053",
 });
-
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -41,7 +42,7 @@ app.set('views', path.join(__dirname, 'views'));
 async function uploadData() {
   try {
     // Read JSON file
-    let data = JSON.parse(fs.readFileSync("../sg-scripts/misc/student_directory/ug23-27.json", "utf-8"));
+    let data = JSON.parse(fs.readFileSync("data/students/ug22-26.json", "utf-8"));
 
     // Filter out documents with invalid or missing AshokaId
     data = data.filter(doc => doc.AshokaId && /^[a-zA-Z0-9_-]+$/.test(doc.AshokaId));
@@ -64,7 +65,7 @@ async function uploadData() {
 }
 
   // Run the upload function
-// uploadData();
+//uploadData();
 
 async function configureIndex() {
   const index = meiliClient.index("ug21-24");
@@ -102,22 +103,67 @@ async function searchData(query) {
 // searchData("Maan");
 // });
 
-app.get("/search", async (req, res) => {
-  const query = req.query.q; // Get user input from query params
-  console.log(req.query);
-
+app.get('/search', async (req, res) => {
   try {
-    const index = meiliClient.index("ug21-24");
-    const searchResults = await index.search(query, {
-      limit: 10, // Limit the number of results
-    });
-    console.log(searchResults.hits);
+    // Extract query parameters
+    const studentName = req.query.q;
+    const ashokaID = req.query.q;
+    const emailID = req.query.q;
 
-    res.json(searchResults.hits); // Return results to the frontend
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+    // Setting Variables
+    const variables = `
+      SET @student_name = '${studentName}';
+      SET @ashoka_id = '${ashokaID}';
+      SET @email_id = '${emailID}';
+      SET @NameSimilarityScoreThreshold = 30;
+      SET @IDSimilarityScoreThreshold = 30;
+      SET @EmailSimilarityScoreThreshold = 30;
+      SET @NameSimilarityScoreThresholdIndividual = 30;
+      SET @IDSimilarityScoreThresholdIndividual = 30;
+      SET @EmailSimilarityScoreThresholdIndividual = 30;
+    `;
+
+    // Main Search Query
+    const searchQuery = `
+      SELECT student_name, email_id, ashoka_id,
+        (100 - (100 * Levenshtein(student_name, @student_name) / CHAR_LENGTH(@student_name))) AS NameSimilarityScore,
+        (100 - (100 * Levenshtein(ashoka_id, @ashoka_id) / CHAR_LENGTH(@ashoka_id))) AS AshokaIDSimilarityScore,
+        (100 - (100 * Levenshtein(email_id, @email_id) / CHAR_LENGTH(@email_id))) AS EmailIDSimilarityScore
+      FROM students
+      WHERE (
+          (100 - (100 * Levenshtein(student_name, @student_name) / CHAR_LENGTH(@student_name))) >= @NameSimilarityScoreThreshold
+          AND (100 - (100 * Levenshtein(ashoka_id, @ashoka_id) / CHAR_LENGTH(@ashoka_id))) >= @IDSimilarityScoreThreshold
+          AND (100 - (100 * Levenshtein(email_id, @email_id) / CHAR_LENGTH(@email_id))) >= @EmailSimilarityScoreThreshold
+      )
+      OR (100 - (100 * Levenshtein(student_name, @student_name) / CHAR_LENGTH(@student_name))) >= @NameSimilarityScoreThresholdIndividual
+      OR (100 - (100 * Levenshtein(ashoka_id, @ashoka_id) / CHAR_LENGTH(@ashoka_id))) >= @IDSimilarityScoreThresholdIndividual
+      OR (100 - (100 * Levenshtein(email_id, @email_id) / CHAR_LENGTH(@email_id))) >= @EmailSimilarityScoreThresholdIndividual
+      ORDER BY NameSimilarityScore DESC, AshokaIDSimilarityScore DESC, EmailIDSimilarityScore DESC;
+    `;
+
+    console.log(variables)
+    // Set variables
+    await db.promise().query(variables);
+
+    // Execute search query
+    const [results] = await db.promise().query(searchQuery);
+    console.log(results);
+    console.log('Query Parameters:', studentName, ashokaID, emailID);
+    res.status(200).json({
+      success: true,
+      data: results
+    });
+  } catch (err) {
+    console.error('Search Error:', err);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Server Error', 
+      error: err.message, 
+      stack: err.stack
+    });
   }
 });
+
 
 app.get("/", async (req, res) => {
   res.render('student-login');
