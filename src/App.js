@@ -7,10 +7,13 @@ global.fetch = fetch;
 import path from 'path'
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import db from './connectSQL.js'; 
+// import db from './connectSQL.js';
+import Fuse from 'fuse.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const DIRECTORY = path.join(__dirname, "../data/students/");
+const students = [];
 
 const app = express();
 const port = 3000;
@@ -164,6 +167,63 @@ app.get('/search', async (req, res) => {
   }
 });
 
+fs.readdirSync(DIRECTORY).forEach(file => {
+  if (file.endsWith('.json')) {
+    try {
+      const data = JSON.parse(fs.readFileSync(path.join(DIRECTORY, file), 'utf-8'));
+      if (Array.isArray(data)) students.push(...data);
+      else students.push(data);
+    } catch (error) {
+      console.error(`Error reading ${file}:`, error.message);
+    }
+  }
+});
+
+const fuse = new Fuse(students, {
+  keys: ['UserName', 'AshokaId', 'AshokaEmailId'],
+  threshold: 0.3,
+  distance: 50,
+  // ignoreLocation: true,
+  includeScore: true
+});
+
+app.get('/search2', async (req, res) => {
+  try {
+    const query = req.query.q;
+    
+    if (!query) {
+      return res.status(400).json({
+        success: false,
+        message: 'Query parameter is required'
+      });
+    }
+
+    const searchResults = fuse.search(query)
+      .slice(0, 20) // Limit to top 20 results
+      .map(result => ({
+        UserName: result.item.UserName,
+        AshokaId: result.item.AshokaId,
+        AshokaEmailId: result.item.AshokaEmailId,
+        score: result.score
+      }));
+    
+      // console.log('Query:', query);
+      // console.log('Search Results:', searchResults);
+
+    res.status(200).json({
+      success: true,
+      data: searchResults
+    });
+
+  } catch (err) {
+    console.error('Search Error:', err);
+    res.status(500).json({
+      success: false,
+      message: 'Server Error',
+      error: err.message
+    });
+  }
+});
 
 app.get("/", async (req, res) => {
   res.render('student-login');
