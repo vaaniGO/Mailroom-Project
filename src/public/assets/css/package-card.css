@@ -1,0 +1,51 @@
+.package-card {
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    padding-right: 50px;
+  }
+  
+  .package-card .flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .package-card .flex div {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .package-card .package-checkbox {
+    border: 2px solid blue;
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    height: 40px;
+    width: 40px;
+    align-self: left;
+  }
+  
+  .package-card .package-checkbox:checked {
+    background-color: green;
+    border-color: green;
+  }
+  
+  .package-card .package-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .packages-wrapper #checkout-btn {
+    margin-top: 30px;
+  }

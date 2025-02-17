@@ -7,8 +7,11 @@ global.fetch = fetch;
 import path from 'path'
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-// import db from './connectSQL.js';
 import Fuse from 'fuse.js';
+import mysql from 'mysql2';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -42,6 +45,8 @@ app.set('view engine', 'ejs');
 
 // Set the views directory (optional, defaults to 'views/')
 app.set('views', path.join(__dirname, 'views'));
+
+// Function to upload data to MeiliSearch
 async function uploadData() {
   try {
     // Read JSON file
@@ -66,10 +71,10 @@ async function uploadData() {
     console.error("Error uploading data:", error);
   }
 }
-
   // Run the upload function
 //uploadData();
 
+// Function to configure Index in MeiliSearch
 async function configureIndex() {
   const index = meiliClient.index("ug21-24");
   await index.updateFilterableAttributes(["AshokaId"]);
@@ -106,6 +111,7 @@ async function searchData(query) {
 // searchData("Maan");
 // });
 
+// Levenschtein distance function : Previous
 app.get('/search', async (req, res) => {
   try {
     // Extract query parameters
@@ -167,6 +173,7 @@ app.get('/search', async (req, res) => {
   }
 });
 
+// Populating the students array with data from JSON files
 fs.readdirSync(DIRECTORY).forEach(file => {
   if (file.endsWith('.json')) {
     try {
@@ -179,6 +186,7 @@ fs.readdirSync(DIRECTORY).forEach(file => {
   }
 });
 
+// Initialising fuse
 const fuse = new Fuse(students, {
   keys: ['UserName', 'AshokaId', 'AshokaEmailId'],
   threshold: 0.3,
@@ -187,6 +195,7 @@ const fuse = new Fuse(students, {
   includeScore: true
 });
 
+// Performing fuse search using students array with the previously mentioned keys 
 app.get('/search2', async (req, res) => {
   try {
     const query = req.query.q;
@@ -243,6 +252,50 @@ app.get("/success", async (req, res) => {
 // app.get("/login", async (req, res) => {
 //   res.sendFile('student-login.html', { root: path.join(__dirname, 'views') });
 // });
+
+// Create a connection to the MySQL database using environment variables
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,         // From .env file
+  user: process.env.DB_USER,         // From .env file
+  password: process.env.DB_PASSWORD, // From .env file
+  database: process.env.DB_NAME      // From .env file
+});
+
+// Route to display packages
+app.get('/packages/:ashokaId', (req, res) => {
+  const ashokaId = req.params.ashokaId;
+  console.log(students[0]);
+  const studentData = students.find(student => student.AshokaID = ashokaId);
+  console.log(ashokaId);
+  db.query("SELECT packageNo, timestamp, deliveryPartner FROM Packages WHERE ashokaId = ?", [ashokaId], (err, results) => {
+    if (err) {
+      return res.status(500).send("Error fetching packages");
+    }
+    console.log(studentData);
+    res.render('view-packages.ejs', { student: studentData, packages: results });
+  });
+});
+
+// Route to handle checkout : INCOMPLETE
+app.post('/checkout', (req, res) => {
+  const selectedPackages = req.body.packages; // Array of objects {packageNumber, AshokaId, timestamp}
+  
+  if (Array.isArray(selectedPackages) && selectedPackages.length > 0) {
+    // Prepare the placeholders and values for SQL
+    const placeholders = selectedPackages.map(() => '(?, ?, ?)').join(',');
+    const values = selectedPackages.flatMap(pkg => [pkg.packageNumber, pkg.AshokaId, pkg.timestamp]);
+
+    // SQL query to delete where packageNumber, AshokaId, and timestamp match
+    db.run(`DELETE FROM Packages WHERE (packageNumber, AshokaId, timestamp) IN (${placeholders})`, values, (err) => {
+      if (err) {
+        return res.status(500).send("Error during checkout");
+      }
+      res.send("Success");
+    });
+  } else {
+    res.send("No packages selected");
+  }
+});
 
 app.listen(port || 3000, function(){
   console.log("listening on port ",port || 3000)
