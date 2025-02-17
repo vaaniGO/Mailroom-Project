@@ -246,7 +246,14 @@ app.get("/guard", async (req, res) => {
 });
 
 app.get("/success", async (req, res) => {
-  res.render('success');
+  const isPackageLog = req.query.isPackageLog; // Check if it's 'true'
+  const studentName = req.query.studentName; // Get the studentName from the URL
+  const packageDetails = req.query.packageDetails;
+  res.render('success', {
+    isPackageLog,
+    studentName,
+    packageDetails
+  });
 });
 
 // app.get("/login", async (req, res) => {
@@ -264,9 +271,7 @@ const db = mysql.createConnection({
 // Route to display packages
 app.get('/packages/:ashokaId', (req, res) => {
   const ashokaId = req.params.ashokaId;
-  console.log(students[0]);
-  const studentData = students.find(student => student.AshokaID = ashokaId);
-  console.log(ashokaId);
+  const studentData = students.find(student => student.AshokaId == ashokaId);
   db.query("SELECT packageNo, timestamp, deliveryPartner FROM Packages WHERE ashokaId = ?", [ashokaId], (err, results) => {
     if (err) {
       return res.status(500).send("Error fetching packages");
@@ -276,24 +281,25 @@ app.get('/packages/:ashokaId', (req, res) => {
   });
 });
 
-// Route to handle checkout : INCOMPLETE
 app.post('/checkout', (req, res) => {
   const selectedPackages = req.body.packages; // Array of objects {packageNumber, AshokaId, timestamp}
   
   if (Array.isArray(selectedPackages) && selectedPackages.length > 0) {
     // Prepare the placeholders and values for SQL
     const placeholders = selectedPackages.map(() => '(?, ?, ?)').join(',');
-    const values = selectedPackages.flatMap(pkg => [pkg.packageNumber, pkg.AshokaId, pkg.timestamp]);
-
-    // SQL query to delete where packageNumber, AshokaId, and timestamp match
-    db.run(`DELETE FROM Packages WHERE (packageNumber, AshokaId, timestamp) IN (${placeholders})`, values, (err) => {
+    const values = selectedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp]);
+    // SQL query to update status to 'received' for matching package details where the status is 'pending'
+    const query = `UPDATE Packages SET status = 'received' WHERE (packageNo, AshokaId, timestamp) IN (${placeholders}) AND status = 'pending'`;
+    console.log(query);
+    db.query(query, values, (err, result) => {
       if (err) {
+        console.error("Error during checkout:", err);
         return res.status(500).send("Error during checkout");
       }
-      res.send("Success");
+      res.json({ message: "Success" });
     });
   } else {
-    res.send("No packages selected");
+    res.json({ message: "No packages selected." });
   }
 });
 
@@ -308,7 +314,6 @@ app.post('/insertpackage', (req, res) => {
     VALUES (?, ?, ?, ?, ?, ?, ?)
   `;
 
-
   db.query(query, [ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status], (err, result) => {
     if (err) {
       console.error('Error inserting package:', err);
@@ -318,7 +323,6 @@ app.post('/insertpackage', (req, res) => {
     }
   });
 });
-
 
 app.listen(port || 3000, function(){
   console.log("listening on port ",port || 3000)

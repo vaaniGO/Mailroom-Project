@@ -18,17 +18,17 @@
             <div class="student-details">
                 <h1>Your Packages</h1>
                 <p><%= student.UserName %></p>
-                <p><%= student.AshokaID %></p>
+                <p><%= student.AshokaId %></p>
             </div>
             <button id="select-all">Select All</button>
       <% packages.forEach(package => { %>
         <%- include('partials/packageCard.ejs', { 
-          packageNumber: package.packageNo, 
+          packageNo: package.packageNo, 
           timestamp: package.timestamp, 
           deliveryPartner: package.deliveryPartner 
         }) %>
       <% }) %>
-      <button type="submit" id="checkout-btn">Checkout</button>
+      <button type="submit" id="checkout-btn" onclick="checkout(event);">Checkout</button>
     </div>
     </form>
   </div>
@@ -39,8 +39,50 @@
         checkbox.checked = true;
       });
     });
+  
 
+    function checkout(event) {
+  event.preventDefault();
 
+  const selectedPackages = [];
+  const checkboxes = document.querySelectorAll('.package-checkbox:checked');
+  
+  checkboxes.forEach(checkbox => {
+    const packageData = {
+      packageNo: checkbox.dataset.packageNo,
+      AshokaId: checkbox.dataset.ashokaId,
+      timestamp: checkbox.dataset.timestamp
+    };
+    selectedPackages.push(packageData);
+  });
+
+  if (selectedPackages.length === 0) {
+    alert('Please select at least one package.');
+    return;
+  }
+
+  fetch('/checkout', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ packages: selectedPackages }),
+  })
+  .then(response => {
+    // Ensure the response is JSON before parsing it
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    alert(data.message || 'Checkout successful!');
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred during checkout.');
+  });
+}
   </script>
 </body>
 </html>

@@ -10,22 +10,33 @@
 </head>
 <body>
 
-    <!-- Main Container -->
-    <%-include("partials/navbar.ejs")-%>
-    <!-- Login Box -->
-    <div class="login-container">
+    <%- include("partials/navbar.ejs") %>
+
+        <div class="login-container">
         <div class="login-box" id="packageLogged">
             <img src="/assets/img/check.png" style="height: 60px">
+            
+            <% if (isPackageLog) { %>
             <h3 class="mb-4">Package Logged!</h3>
             <div id="packageDetails">
                 <div class="d-flex align-items-center justify-content-center mb-4">
-                    <div class="text-box bg-success text-white me-3 p-2 rounded">Package No: ${packageNo}</div>
-                    <div class="text-box bg-success text-white me-3 p-2 rounded">Shelf No: ${shelfNo}</div>
-                    <div class="text-box bg-white text-dark p-2 rounded border">Timestamp: ${timestamp}</div>
+                <div class="text-box bg-success text-white me-3 p-2 rounded">Package No: <%= packageDetails.packageNo %></div>
+                <div class="text-box bg-success text-white me-3 p-2 rounded">Shelf No: <%= packageDetails.shelfNo %></div>
+                <div class="text-box bg-white text-dark p-2 rounded border">Timestamp: <%= packageDetails.timestamp %></div>
                 </div>
             </div>
+            <% } else { %>
+            <h3 class="mb-4">Package Given to <%= packageDetails.studentName %></h3>
+            <div id="packageDetails">
+                <div class="d-flex align-items-center justify-content-center mb-4">
+                <div class="text-box bg-success text-white me-3 p-2 rounded">Package No: <%= packageDetails.packageNo %></div>
+                <div class="text-box bg-success text-white me-3 p-2 rounded">Shelf No: <%= packageDetails.shelfNo %></div>
+                <div class="text-box bg-white text-dark p-2 rounded border">Timestamp: <%= packageDetails.timestamp %></div>
+                </div>
+            </div>
+            <% } %>
         </div>
-    </div>
+        </div>
 
     <script>
         // Get the current date in a readable format (DD-MM-YYYY)

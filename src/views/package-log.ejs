@@ -138,7 +138,7 @@
                 document.getElementById('packageAssociatedDetails').innerHTML = `
             <h3 class="mb-4">Package Details</h3>
             <div class="input-group">                
-                <select id="deliverySelect" name="deliveryService" style="
+                <select id="deliverySelectTrackingID" name="deliveryService" style="
                     width: 100%;
                     font-size: 17px;
                     padding: 6px;
@@ -162,7 +162,7 @@
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentEmail}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentID}">
             <button id="student-next" class="btn btn-danger next-btn" 
-                    onclick="insertPackageData(true, document.getElementById('hiddenSelectedStudent').value.split(',')[2], document.getElementById('deliverySelect').value)">
+                    onclick="insertPackageData(true, document.getElementById('hiddenSelectedStudent').value.split(',')[2], document.getElementById('deliverySelectTrackingID').value)">
                     SUBMIT
                 </button>
             </div>
@@ -222,12 +222,14 @@
                             timestamp,
                             deliveryPartner,
                             status
+                            
                         })
                     });
 
                     if (response.ok) {
                         // If the package is successfully inserted, increment the package number
                         alert("Package details inserted successfully!");
+                        window.location.href = `/success?isPackageLog=true&studentName=''&packageDetails=''`;
                         packageNo++;  // Increment the package number for the next package
                     } else {
                         alert("Failed to insert package details.");
