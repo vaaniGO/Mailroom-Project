@@ -9,3 +9,7 @@ node_modules/
 
 # Ignore the previous folder
 previous/
+
+# Ignore the .env file
+.env
+

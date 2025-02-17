@@ -297,6 +297,29 @@ app.post('/checkout', (req, res) => {
   }
 });
 
+// POST endpoint to insert a package
+app.post('/insertpackage', (req, res) => {
+  const { ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status } = req.body;
+    console.log(ashokaID);
+    console.log(trackingID);
+    // Insert package into the database
+    const query = `
+    INSERT INTO Packages (ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+  `;
+
+
+  db.query(query, [ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status], (err, result) => {
+    if (err) {
+      console.error('Error inserting package:', err);
+      res.status(500).json({ message: 'Failed to insert package' });
+    } else {
+      res.status(200).json({ message: 'Package inserted successfully' });
+    }
+  });
+});
+
+
 app.listen(port || 3000, function(){
   console.log("listening on port ",port || 3000)
 });

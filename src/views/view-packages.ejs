@@ -23,7 +23,7 @@
             <button id="select-all">Select All</button>
       <% packages.forEach(package => { %>
         <%- include('partials/packageCard.ejs', { 
-          packageNumber: package.packageNumber, 
+          packageNumber: package.packageNo, 
           timestamp: package.timestamp, 
           deliveryPartner: package.deliveryPartner 
         }) %>

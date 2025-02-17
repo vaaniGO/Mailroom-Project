@@ -47,7 +47,7 @@
                         onclick="enterPackageDetails(document.getElementById('hiddenSelectedStudent').value.split(',')[0],document.getElementById('hiddenSelectedStudent').value.split(',')[1],document.getElementById('hiddenSelectedStudent').value.split(',')[2])">
                         NEXT
                     </button>
-
+                    
                 </div>
             </div>
         </div>
@@ -81,9 +81,7 @@
                 <br />
 
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-danger next-btn"
-                        onclick="enterPackageDetailsFromID(document.getElementById('trackingIDInput').value)">SUBMIT
-                    </button>
+                    <button id="student-next" class="btn btn-danger next-btn" onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelect').value)">SUBMIT</button>
                 </div>
             </div>
         </div>
@@ -97,7 +95,6 @@
 
                 <div class="d-flex justify-content-between mt-3">
                     <button class="btn btn-danger next-btn" onclick="goBackToEnterPackage()">BACK</button>
-                    <button class="btn btn-danger next-btn">CONFIRM</button>
                 </div>
             </div>
         </div>
@@ -106,6 +103,7 @@
         <script>
             // Get the current date in a readable format (DD-MM-YYYY)
             const currentDate = new Date();
+            let packageNo = 1;
             const formattedDate = currentDate.getDate().toString().padStart(2, '0') + "-" +
                 (currentDate.getMonth() + 1).toString().padStart(2, '0') + "-" +
                 currentDate.getFullYear();
@@ -163,6 +161,10 @@
             <input style="background-color:rgb(220,220,220);font-weight:700" disabled type="text" class="form-control mb-3" placeholder="${studentName}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentEmail}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentID}">
+            <button id="student-next" class="btn btn-danger next-btn" 
+                    onclick="insertPackageData(true, document.getElementById('hiddenSelectedStudent').value.split(',')[2], document.getElementById('deliverySelect').value)">
+                    SUBMIT
+                </button>
             </div>
             `;
                 document.getElementById('enterPackageDetails').style = "display: block;"
@@ -191,6 +193,52 @@
                 document.getElementById("no-student").disabled = true;
                 document.getElementById("searchResults").classList.remove("show");
             }
+
+            async function insertPackageData(identified, ID, deliveryPartner) {
+                // Default values
+                const shelfNo = "abc"; // Shelf number is constant
+                const status = "pending"; // Default status
+                const timestamp = new Date().toISOString(); // Current timestamp in ISO format
+
+                // Determine ashokaID or trackingID based on the identified flag
+                const ashokaID = identified ? ID : null;
+                const trackingID = !identified ? ID : null;
+                console.log(ashokaID);
+                console.log(trackingID);
+                console.log(deliveryPartner);
+
+                try {
+                    // Step 2: Insert package data into the database
+                    const response = await fetch('/insertpackage', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            ashokaID,
+                            trackingID,
+                            packageNo, 
+                            shelfNo,
+                            timestamp,
+                            deliveryPartner,
+                            status
+                        })
+                    });
+
+                    if (response.ok) {
+                        // If the package is successfully inserted, increment the package number
+                        alert("Package details inserted successfully!");
+                        packageNo++;  // Increment the package number for the next package
+                    } else {
+                        alert("Failed to insert package details.");
+                    }
+                } catch (error) {
+                    console.error("Error inserting package data:", error);
+                    alert("An error occurred while inserting package data.");
+                }
+            }
+
+
 
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
