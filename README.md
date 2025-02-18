@@ -1,5 +1,5 @@
 # Mailroom-Project
-<h2> View #1: Guard side | while logging the package </h2>
+<h2>View #1: Guard side | while logging the package </h2>
 As shown below, the guard can type in a few letters of the name displayed on the package (or the student's ashokaID) and then select the student from the dropdown. <br>
 For students having same names, guards can verify the ashoka ID displayed on the right side in the dropdown. <br> <br>
 <img width="1708" alt="Screenshot 2025-02-19 at 12 22 14 AM" src="https://github.com/user-attachments/assets/e7c4b537-248a-4e8c-b56d-344e6f67e497" /> <br> <br>
@@ -12,9 +12,14 @@ This takes them to a page to enter the tracking ID of the package instead. <br> 
 <img width="1710" alt="Screenshot 2025-02-19 at 12 24 30 AM" src="https://github.com/user-attachments/assets/63734603-9d8b-458c-9c40-2da8164fb969" /> <br> <br>
 <br>
 In both the above cases, the guard selects the delivery partner per usual and logs the package. A success page is rendered with the following specifications: <br>
-1. Package No. : This is generated serially. For exampl, the 16th package of the day has PackageNo. = 16. (This is how their current system works as well) <br>
+1. Package No. : This is generated serially. For example, the 16th package of the day has PackageNo. = 16. (This is how their current system works as well) <br>
 2. Shelf No. : This is generated based on the first letter of the student's name. For example, for Ibrahim, it is I. (This is how their current system works as well) <br>
 3. Timestamp: Shows them the current date and time. They write the day and month on the package for logging purposes. <br>
 
+<h2>View #2: Guard side | while giving packages to the receiver </h2>
+As shown below, the guard will be able to see the receiver's outstanding packages on scanning their Ashoka QR code (or relevant logging mechanism). <br><br>
+<img width="1710" alt="Screenshot 2025-02-19 at 12 30 44 AM" src="https://github.com/user-attachments/assets/3a8bec5b-c573-4d3c-b856-004c84aec5ee" /> <br>  <br>
+On selecting the packages to be given, or selecing 'All', and clicking 'Checkout', the guard will successfully mark these packages as 'received'. (Previously, by default, the 'status' of these packages is marked as 'pending'). Consequently, a relevant success page is shown. <br><br>
 
-
+<h2>Working of the application in brief </h2>
+We use cached student data to perform search in the backend to display search results. On selecting the student and delivery partner, we generate a packageNo., shelfNo. and timestamp as outlined above. Then, we store the record in an SQL database. While showing packages, we query with either the ashoka ID or the tracking ID (every package must have either ashoka ID or tracking ID and never both), and display the results. Once checked out, we change the status of the packages from 'pending' to 'received' in the database. This is for maintaining logs and making reports as required.
