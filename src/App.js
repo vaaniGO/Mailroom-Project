@@ -245,16 +245,6 @@ app.get("/guard", async (req, res) => {
 
 });
 
-app.get("/success", async (req, res) => {
-  const isPackageLog = req.query.isPackageLog; // Check if it's 'true'
-  const studentName = req.query.studentName; // Get the studentName from the URL
-  const packageDetails = req.query.packageDetails;
-  res.render('success', {
-    isPackageLog,
-    studentName,
-    packageDetails
-  });
-});
 
 // app.get("/login", async (req, res) => {
 //   res.sendFile('student-login.html', { root: path.join(__dirname, 'views') });
@@ -321,6 +311,26 @@ app.post('/insertpackage', (req, res) => {
     } else {
       res.status(200).json({ message: 'Package inserted successfully' });
     }
+  });
+});
+
+app.get('/success-checkout', (req, res) => {
+  // Get the query parameters
+  const studentName = req.query.studentName || '';
+  
+  // Render the EJS page with the required variables
+  res.render('success-checkout', {
+    studentName
+  });
+});
+
+app.get('/success-log', (req, res) => {
+  // Get the query parameters
+  const packageDetails = req.query.packageDetails || '';
+  
+  // Render the EJS page with the required variables
+  res.render('success-log', {
+    packageDetails
   });
 });
 

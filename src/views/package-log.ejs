@@ -229,7 +229,13 @@
                     if (response.ok) {
                         // If the package is successfully inserted, increment the package number
                         alert("Package details inserted successfully!");
-                        window.location.href = `/success?isPackageLog=true&studentName=''&packageDetails=''`;
+                        const queryString = new URLSearchParams({
+                            packageNo: JSON.stringify(packageNo),
+                            shelfNo: JSON.stringify(shelfNo),
+                            timestamp: JSON.stringify(timestamp)
+                        }).toString();
+                        console.log('here');
+                        window.location.href = `/success-log?packageDetails=${queryString}`;
                         packageNo++;  // Increment the package number for the next package
                     } else {
                         alert("Failed to insert package details.");

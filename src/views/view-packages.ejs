@@ -67,16 +67,24 @@
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ packages: selectedPackages }),
+    redirect: 'follow' // This ensures the browser follows the server-side redirect
   })
   .then(response => {
-    // Ensure the response is JSON before parsing it
-    if (!response.ok) {
+    if (response.ok) {
+      const studentName = {
+      UserName: 'student.UserName'
+    };
+
+    // Construct the URL with query parameters
+    const queryString = new URLSearchParams({
+      studentName: JSON.stringify(studentName)
+    }).toString();
+
+    // Redirect to the success page with the query parameter
+    window.location.href = `/success-checkout?${queryString}`;
+    } else {
       throw new Error('Network response was not ok');
     }
-    return response.json();
-  })
-  .then(data => {
-    alert(data.message || 'Checkout successful!');
   })
   .catch(error => {
     console.error('Error:', error);
