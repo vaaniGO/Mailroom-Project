@@ -1,17 +1,20 @@
 # Mailroom-Project
-Changes and improvements: 
-1. Validating for 'Next' button after selecting<br>
-   a. Student<br>
-   b. Tracking ID<br>
-   c. Delivery partner<br>
-2. Storing the JSON response locally to populate all fields with the same information
-3. Adjust MeiliSearch parameters after looking at all edge-cases
-4. Align all boxes to the same position on the page
+<h2>View #1: Guard side | while logging the package<h2>
+As shown below, the guard can type in a few letters of the name displayed on the package (or the student's ashokaID) and then select the student from the dropdown. <br>
+For students having same names, guards can verify the ashoka ID displayed on the right side in the dropdown. <br>
+<img width="1708" alt="Screenshot 2025-02-19 at 12 22 14 AM" src="https://github.com/user-attachments/assets/e7c4b537-248a-4e8c-b56d-344e6f67e497" />
+After selecting the student, they select the delivery service as shown below. <br>
+<img width="739" alt="Screenshot 2025-02-19 at 12 25 12 AM" src="https://github.com/user-attachments/assets/cb7d5ee6-e3e1-4b43-9563-bfdd8d17a374" />
 
-<h3>To set up on your laptop</h3>
-1. Install meilisearch and configure it with the key in the terminal using the command : ./meilisearch --env development --master-key your_master_key <br>
-2. Run App.js<br>
-3. To upload a JSON file, change the file name in the code (there is only one place). Do not change the index name.<br>
-4. Save and run for each file to upload to the same index. <br>
-5. When we upload, the task gets enqued and might take a few seconds to reflect.<br>
-6. Run the frontend as needed. <br>
+In case the package does not have details (or enough details), the guard may click on 'No User Found'. <br>
+<img width="740" alt="Screenshot 2025-02-19 at 12 23 42 AM" src="https://github.com/user-attachments/assets/ee53f6e3-6f3b-4409-b13d-d1aec4e06389" />
+This takes them to a page to enter the tracking ID of the package instead. <br>
+<img width="1710" alt="Screenshot 2025-02-19 at 12 24 30 AM" src="https://github.com/user-attachments/assets/63734603-9d8b-458c-9c40-2da8164fb969" />
+<br>
+In both the above cases, the guard selects the delivery partner per usual and logs the package. A success page is rendered with the following specifications: <br>
+1. Package No. : This is generated serially. For exampl, the 16th package of the day has PackageNo. = 16. (This is how their current system works as well) <br>
+2. Shelf No. : This is generated based on the first letter of the student's name. For example, for Ibrahim, it is I. (This is how their current system works as well) <br>
+3. Timestamp: Shows them the current date and time. They write the day and month on the package for logging purposes. <br>
+
+
+
