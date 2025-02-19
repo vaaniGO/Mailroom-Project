@@ -36,15 +36,15 @@ MySQL: Database</h6>
 6. "tailwind": "^4.0.0" <br>
 
 <h5>Packages: Table structure</h5> <br>
-+-----------------+-------------+------+-----+---------+-------+ <br>
-| Field           | Type        | Null | Key | Default | Extra |<br>
-+-----------------+-------------+------+-----+---------+-------+<br>
-| ashokaID        | varchar(20) | YES  |     | NULL    |       |<br>
-| trackingID      | varchar(30) | YES  |     | NULL    |       |<br>
-| packageNo       | int         | NO   |     | NULL    |       |<br>
-| shelfNo         | varchar(20) | NO   |     | NULL    |       |<br>
-| timestamp       | text        | NO   |     | NULL    |       |<br>
-| deliveryPartner | text        | NO   |     | NULL    |       |<br>
-| status          | varchar(10) | NO   |     | pending |       |<br>
-+-----------------+-------------+------+-----+---------+-------+<br>
+CREATE TABLE `packages` ( <br>
+  `ashokaID` varchar(20) DEFAULT NULL,<br>
+  `trackingID` varchar(30) DEFAULT NULL,<br>
+  `packageNo` int NOT NULL,<br>
+  `shelfNo` varchar(20) NOT NULL,<br>
+  `timestamp` text NOT NULL,<br>
+  `deliveryPartner` text NOT NULL,<br>
+  `status` varchar(10) NOT NULL DEFAULT 'pending',<br>
+  CONSTRAINT `packages_chk_1` CHECK (((`ashokaID` is not null) or (`trackingID` is not null))),<br>
+  CONSTRAINT `packages_chk_2` CHECK ((`status` in (_utf8mb4'pending',_utf8mb4'received')))<br>
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |<br>
 <br>
