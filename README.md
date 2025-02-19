@@ -25,7 +25,7 @@ On selecting the packages to be given, or selecing 'All', and clicking 'Checkout
 We use cached student data to perform search in the backend to display search results. On selecting the student and delivery partner, we generate a packageNo., shelfNo. and timestamp as outlined above. Then, we store the record in an SQL database. While showing packages, we query with either the ashoka ID or the tracking ID (every package must have either ashoka ID or tracking ID and never both), and display the results. Once checked out, we change the status of the packages from 'pending' to 'received' in the database. This is for maintaining logs and making reports as required.
 
 <h6>Ejs (Express javascript): Frontend <br>
-Node.js: Backend
+Node.js: Backend <br>
 MySQL: Database</h6>
 <h5>Setup and dependencies: </h5><br>
 1. mysql  Ver 14.14 <br>
@@ -36,14 +36,15 @@ MySQL: Database</h6>
 6. "tailwind": "^4.0.0" <br>
 
 <h5>Packages: Table structure</h5> <br>
-+-----------------+-------------+------+-----+---------+-------+
-| Field           | Type        | Null | Key | Default | Extra |
-+-----------------+-------------+------+-----+---------+-------+
-| ashokaID        | varchar(20) | YES  |     | NULL    |       |
-| trackingID      | varchar(30) | YES  |     | NULL    |       |
-| packageNo       | int         | NO   |     | NULL    |       |
-| shelfNo         | varchar(20) | NO   |     | NULL    |       |
-| timestamp       | text        | NO   |     | NULL    |       |
-| deliveryPartner | text        | NO   |     | NULL    |       |
-| status          | varchar(10) | NO   |     | pending |       |
-+-----------------+-------------+------+-----+---------+-------+
++-----------------+-------------+------+-----+---------+-------+ <br>
+| Field           | Type        | Null | Key | Default | Extra |<br>
++-----------------+-------------+------+-----+---------+-------+<br>
+| ashokaID        | varchar(20) | YES  |     | NULL    |       |<br>
+| trackingID      | varchar(30) | YES  |     | NULL    |       |<br>
+| packageNo       | int         | NO   |     | NULL    |       |<br>
+| shelfNo         | varchar(20) | NO   |     | NULL    |       |<br>
+| timestamp       | text        | NO   |     | NULL    |       |<br>
+| deliveryPartner | text        | NO   |     | NULL    |       |<br>
+| status          | varchar(10) | NO   |     | pending |       |<br>
++-----------------+-------------+------+-----+---------+-------+<br>
+<br>
