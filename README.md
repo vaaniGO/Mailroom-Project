@@ -23,3 +23,27 @@ On selecting the packages to be given, or selecing 'All', and clicking 'Checkout
 
 <h2>Working of the application in brief </h2>
 We use cached student data to perform search in the backend to display search results. On selecting the student and delivery partner, we generate a packageNo., shelfNo. and timestamp as outlined above. Then, we store the record in an SQL database. While showing packages, we query with either the ashoka ID or the tracking ID (every package must have either ashoka ID or tracking ID and never both), and display the results. Once checked out, we change the status of the packages from 'pending' to 'received' in the database. This is for maintaining logs and making reports as required.
+
+<h6>Ejs (Express javascript): Frontend <br>
+Node.js: Backend
+MySQL: Database</h6>
+<h5>Setup and dependencies: </h5><br>
+1. mysql  Ver 14.14 <br>
+2. node v16.20.2 <br>
+3. "ejs": "^3.1.10" <br>
+4. "fuse": "^0.12.1" <br>
+5. "fuse.js": "^7.1.0" <br>
+6. "tailwind": "^4.0.0" <br>
+
+<h5>Packages: Table structure</h5> <br>
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| ashokaID        | varchar(20) | YES  |     | NULL    |       |
+| trackingID      | varchar(30) | YES  |     | NULL    |       |
+| packageNo       | int         | NO   |     | NULL    |       |
+| shelfNo         | varchar(20) | NO   |     | NULL    |       |
+| timestamp       | text        | NO   |     | NULL    |       |
+| deliveryPartner | text        | NO   |     | NULL    |       |
+| status          | varchar(10) | NO   |     | pending |       |
++-----------------+-------------+------+-----+---------+-------+
