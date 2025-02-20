@@ -18,7 +18,7 @@
         <div class="login-container">
             <div class="login-box">
                 <h3>Scan QR Code</h3>
-    
+                
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Enter identification details">
                     <span class="input-group-text">🔍</span>
@@ -26,11 +26,24 @@
     
                 <input type="password" class="form-control mb-3" placeholder="Password">
     
+                <div class="d-flex justify-content-between">
+
+                <button class="btn btn-danger search-by-id-btn next-btn">FIND BY TRACKING ID</button>
                 <button class="btn btn-danger next-btn">NEXT</button>
+                    
+                </div>
             </div>
         </div>
 
-    </div>
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.search-by-id-btn').addEventListener('click', () => {
+            window.location.href = '/tracking-id-search';
+        });
+    });
+
+</script>
 
 </body>
 </html>

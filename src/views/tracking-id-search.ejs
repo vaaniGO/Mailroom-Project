@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashoka University Mailroom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/global-styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <%- include("partials/navbar.ejs") %>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h3>Search by Tracking ID</h3>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="trackingID" placeholder="Enter tracking ID">
+                <span class="input-group-text">🔍</span>
+            </div>
+
+            <button class="btn btn-danger next-btn">Find Package</button>
+
+            <!-- 📦 Results Section -->
+            <div id="result-container" class="mt-4" style="display: none;">
+                <h4>Package Details</h4>
+                <div id="result-content" class="alert alert-light"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.next-btn').addEventListener('click', () => {
+                const trackingID = document.querySelector('#trackingID').value.trim();
+                const resultContainer = document.getElementById('result-container');
+                const resultContent = document.getElementById('result-content');
+
+                if (!trackingID) {
+                    resultContainer.style.display = "block";
+                    resultContent.innerHTML = "<div class='alert alert-danger'>Please enter a tracking ID.</div>";
+                    return;
+                }
+
+                fetch(`http://localhost:3000/track?trackingID=${encodeURIComponent(trackingID)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        resultContainer.style.display = "block"; // Show the results section
+                        
+                        if (data.error || data.message) {
+                            resultContent.innerHTML = `<div class='alert alert-danger'>${data.error || data.message}</div>`;
+                        } else {
+                            resultContent.innerHTML = `
+                                <p><strong>Tracking ID:</strong> ${data.trackingID}</p>
+                                <p><strong>Status:</strong> ${data.status}</p>
+                                <p><strong>Timestamp:</strong> ${data.timetsamp}</p>
+                                <p><strong>Delivery Partner:</strong> ${data.deliveryPartner}</p>
+                            `;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching package:', error);
+                        resultContainer.style.display = "block";
+                        resultContent.innerHTML = "<div class='alert alert-danger'>Error fetching package details.</div>";
+                    });
+            });
+        });
+    </script>
+
+</body>
+</html>
