@@ -78,6 +78,12 @@
                     </select>
                     
                 </div>
+                <input type="checkbox" id="postPackageInput" class="form-control" placeholder="Post"
+                        style="border-radius: 7px;" autocomplete="off">
+                <input type="checkbox" id="groundPackageInput" class="form-control" placeholder="Ground"
+                style="border-radius: 7px;" autocomplete="off">
+                <input type="checkbox" id="otpPendingInput" class="form-control" placeholder="OTP Pending"
+                        style="border-radius: 7px;" autocomplete="off">
                 <br />
 
                 <div class="d-flex justify-content-end">
@@ -156,15 +162,41 @@
                 </select>
                 
             </div>
+
+            <div class="remarksInput mt-3">
+            <div class="remarksInput-input">
+            <input type="checkbox" id="postPackageInput" class="form-check-input" placeholder="Post"
+                        style="border-radius: 7px;" autocomplete="off">
+            <label for="postPackageInput" class="form-check-label">Post</label>
+            </div>
+            <div class="remarksInput-input">
+            <input type="checkbox" id="groundPackageInput" class="form-check-input" placeholder="Ground"
+                style="border-radius: 7px;" autocomplete="off">
+                <label for="groundPackageInput" class="form-check-label">Ground</label>
+            </div>
+            <div class="remarksInput-input">
+            <input type="checkbox" id="otpPendingInput" class="form-check-input"" placeholder="OTP Pending"
+                        style="border-radius: 7px;" autocomplete="off">
+                        <label for="otpPendingInput" class="form-check-label">OTP Pending</label>
+            </div>
+            </div>
+
             <br />
             <hr size="50" style="height:20px;color:white" >
             <input style="background-color:rgb(220,220,220);font-weight:700" disabled type="text" class="form-control mb-3" placeholder="${studentName}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentEmail}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentID}">
             <button id="student-next" class="btn btn-danger next-btn" 
-                    onclick="insertPackageData(true, document.getElementById('hiddenSelectedStudent').value.split(',')[2], document.getElementById('deliverySelectTrackingID').value)">
-                    SUBMIT
-                </button>
+                onclick="insertPackageData(
+                    true, 
+                    document.getElementById('hiddenSelectedStudent').value.split(',')[2], 
+                    document.getElementById('deliverySelectTrackingID').value,
+                    document.getElementById('postPackageInput').checked,
+                    document.getElementById('groundPackageInput').checked,
+                    document.getElementById('otpPendingInput').checked
+                )">
+                SUBMIT
+            </button>
             </div>
             `;
                 document.getElementById('enterPackageDetails').style = "display: block;"
@@ -194,7 +226,7 @@
                 document.getElementById("searchResults").classList.remove("show");
             }
 
-            async function insertPackageData(identified, ID, deliveryPartner) {
+            async function insertPackageData(identified, ID, deliveryPartner, post, ground, otp_pending) {
                 // Default values
                 const shelfNo = "abc"; // Shelf number is constant
                 const status = "pending"; // Default status
@@ -221,8 +253,10 @@
                             shelfNo,
                             timestamp,
                             deliveryPartner,
-                            status
-                            
+                            status,
+                            post,
+                            ground, 
+                            otp_pending
                         })
                     });
 

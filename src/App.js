@@ -295,7 +295,7 @@ app.post('/checkout', (req, res) => {
 
 // POST endpoint to insert a package
 app.post('/insertpackage', (req, res) => {
-  const { ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status } = req.body;
+  const { ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status} = req.body;
     console.log(ashokaID);
     console.log(trackingID);
     // Insert package into the database
