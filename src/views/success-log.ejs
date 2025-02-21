@@ -22,6 +22,15 @@
                 <div class="text-box bg-success text-white me-3 p-2 rounded">Package No: <%= packageDetails.packageNo %></div>
                 <div class="text-box bg-success text-white me-3 p-2 rounded">Shelf No: <%= packageDetails.shelfNo %></div>
                 <div class="text-box bg-white text-dark p-2 rounded border">Timestamp: <%= packageDetails.timestamp %></div>
+                <div class="text-box bg-success text-white me-3 p-2 rounded">
+                    Remark: <%= packageDetails.post ? 'Post' : '' %>
+                </div>
+                <div class="text-box bg-success text-white me-3 p-2 rounded">
+                    Remark: <%= packageDetails.ground ? 'Ground' : '' %>
+                </div>
+                <div class="text-box bg-success text-white me-3 p-2 rounded">
+                    Remark: <%= packageDetails.otp_pending ? 'OTP Pending' : '' %>
+                </div>
                 </div>
             </div>
         </div>

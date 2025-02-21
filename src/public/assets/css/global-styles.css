@@ -94,3 +94,12 @@ body {
     max-height: 300px;
     overflow-y: auto;
 }
+
+.remarksInput {
+    width:  100%;
+    display: flex;
+    justify-content: space-between;
+}
+.remarksInput input {
+    width: 20px;
+}
