@@ -57,7 +57,7 @@
                 <h3 class="mb-4">Package Details</h3>
                 <div class="input-group mb-3 dropdown">
                     <input type="text" id="trackingIDInput" class="form-control" placeholder="Enter Tracking ID"
-                        style="border-radius: 7px;" autocomplete="off">
+                        style="border-radius: 7px;">
                 </div>
                 <div class="input-group">                
                     <select id="deliverySelect" name="deliveryService" style="
@@ -76,15 +76,37 @@
                         <option value="Amazon Delivery">Amazon Delivery</option>
                         <option value="Amazon Delivery">Other</option>
                     </select>
-                    
                 </div>
-                <input type="checkbox" id="postPackageInput" class="form-control" placeholder="Post"
-                        style="border-radius: 7px;" autocomplete="off">
-                <input type="checkbox" id="groundPackageInput" class="form-control" placeholder="Ground"
-                style="border-radius: 7px;" autocomplete="off">
-                <input type="checkbox" id="otpPendingInput" class="form-control" placeholder="OTP Pending"
-                        style="border-radius: 7px;" autocomplete="off">
                 <br />
+                <div class="input-group mb-3">                
+                    <input type="text" class="form-control" list="remarksOptions" placeholder="Remarks"
+                        style="border-radius: 7px;" autocomplete="off">
+                    <datalist id="remarksOptions">
+                        <option value="Post">
+                        <option value="Ground">
+                        <option value="OTP">
+                    </datalist>
+                </div>
+                
+                <!-- <div class="remarksInput mt-3">
+                    <div class="remarksInput-input">
+                    <input type="checkbox" id="postPackageInput" class="form-check-input" placeholder="Post"
+                                style="border-radius: 7px;" autocomplete="off">
+                    <label for="postPackageInput" class="form-check-label">Post</label>
+                    </div>
+                    <div class="remarksInput-input">
+                    <input type="checkbox" id="groundPackageInput" class="form-check-input" placeholder="Ground"
+                        style="border-radius: 7px;" autocomplete="off">
+                        <label for="groundPackageInput" class="form-check-label">Ground</label>
+                    </div>
+                    <div class="remarksInput-input">
+                    <input type="checkbox" id="otpPendingInput" class="form-check-input"" placeholder="OTP Pending"
+                                style="border-radius: 7px;" autocomplete="off">
+                                <label for="otpPendingInput" class="form-check-label">OTP Pending</label>
+                    </div>
+                </div> -->
+
+                <!-- <br /> -->
 
                 <div class="d-flex justify-content-end">
                     <button id="student-next" class="btn btn-danger next-btn" onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelect').value)">SUBMIT</button>
@@ -124,6 +146,7 @@
 
 
             function useTrackingID() {
+                document.getElementById('trackingIDInput').focus();
                 document.getElementById('loginBox').style = "display: none;"
                 document.getElementById('trackingIDLoginBox').style = "display: block;"
             }
@@ -162,30 +185,21 @@
                 </select>
                 
             </div>
-
-            <div class="remarksInput mt-3">
-            <div class="remarksInput-input">
-            <input type="checkbox" id="postPackageInput" class="form-check-input" placeholder="Post"
-                        style="border-radius: 7px;" autocomplete="off">
-            <label for="postPackageInput" class="form-check-label">Post</label>
-            </div>
-            <div class="remarksInput-input">
-            <input type="checkbox" id="groundPackageInput" class="form-check-input" placeholder="Ground"
-                style="border-radius: 7px;" autocomplete="off">
-                <label for="groundPackageInput" class="form-check-label">Ground</label>
-            </div>
-            <div class="remarksInput-input">
-            <input type="checkbox" id="otpPendingInput" class="form-check-input"" placeholder="OTP Pending"
-                        style="border-radius: 7px;" autocomplete="off">
-                        <label for="otpPendingInput" class="form-check-label">OTP Pending</label>
-            </div>
-            </div>
-
             <br />
             <hr size="50" style="height:20px;color:white" >
             <input style="background-color:rgb(220,220,220);font-weight:700" disabled type="text" class="form-control mb-3" placeholder="${studentName}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentEmail}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentID}">
+            <hr size="50" style="height:20px;color:white" >
+            <div class="input-group mb-3">                
+                    <input type="text" class="form-control" list="remarksOptions" placeholder="Remarks"
+                        style="border-radius: 7px;" autocomplete="off">
+                    <datalist id="remarksOptions">
+                        <option value="Post">
+                        <option value="Ground">
+                        <option value="OTP">
+                    </datalist>
+                </div>
             <button id="student-next" class="btn btn-danger next-btn" 
                 onclick="insertPackageData(
                     true, 

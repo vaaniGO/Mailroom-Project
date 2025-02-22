@@ -251,12 +251,14 @@ app.get("/guard", async (req, res) => {
 // });
 
 // Create a connection to the MySQL database using environment variables
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,         // From .env file
-  user: process.env.DB_USER,         // From .env file
-  password: process.env.DB_PASSWORD, // From .env file
-  database: process.env.DB_NAME      // From .env file
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST || '127.0.0.1',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'packages',
+  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306
 });
+
 
 // Route to display packages
 app.get('/packages/:ashokaId', (req, res) => {
