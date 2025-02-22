@@ -37,15 +37,18 @@ MySQL: Database</h6>
 6. "tailwind": "^4.0.0" <br>
 
 <h2>Packages: Table structure</h2> <br>
-CREATE TABLE `packages` ( <br>
-  `ashokaID` varchar(20) DEFAULT NULL,<br>
-  `trackingID` varchar(30) DEFAULT NULL,<br>
-  `packageNo` int NOT NULL,<br>
-  `shelfNo` varchar(20) NOT NULL,<br>
-  `timestamp` text NOT NULL,<br>
-  `deliveryPartner` text NOT NULL,<br>
-  `status` varchar(10) NOT NULL DEFAULT 'pending',<br>
-  CONSTRAINT `packages_chk_1` CHECK (((`ashokaID` is not null) or (`trackingID` is not null))),<br>
-  CONSTRAINT `packages_chk_2` CHECK ((`status` in (_utf8mb4'pending',_utf8mb4'received')))<br>
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |<br>
+CREATE TABLE ⁠ packages ⁠ (
+  ⁠ ashokaID ⁠ varchar(20) DEFAULT NULL,
+  ⁠ trackingID ⁠ varchar(30) DEFAULT NULL,
+  ⁠ packageNo ⁠ int NOT NULL,
+  ⁠ shelfNo ⁠ varchar(20) NOT NULL,
+  ⁠ timestamp ⁠ text NOT NULL,
+  ⁠ deliveryPartner ⁠ text NOT NULL,
+  ⁠ status ⁠ varchar(10) NOT NULL DEFAULT 'pending',
+  ⁠ Post ⁠ BOOLEAN NOT NULL DEFAULT FALSE,
+  ⁠ Ground ⁠ BOOLEAN NOT NULL DEFAULT FALSE,
+  ⁠ otpPending ⁠ BOOLEAN NOT NULL DEFAULT FALSE,
+  CONSTRAINT ⁠ packages_chk_1 ⁠ CHECK (((⁠ ashokaID ⁠ IS NOT NULL) OR (⁠ trackingID ⁠ IS NOT NULL))),
+  CONSTRAINT ⁠ packages_chk_2 ⁠ CHECK ((⁠ status ⁠ IN ('pending', 'received')))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 <br>
