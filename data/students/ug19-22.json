@@ -1,0 +1,4810 @@
+[
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191552",
+        "UserName": "Aadya Jaswal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902687.jpeg",
+        "AshokaEmailId": "aadya.jaswal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008983"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191315",
+        "UserName": "Aahan Dogra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900531.jpeg",
+        "AshokaEmailId": "aahan.dogra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008181"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191650",
+        "UserName": "Aakanksha Agrawal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910028.jpeg",
+        "AshokaEmailId": "aakanksha.agrawal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009458"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191061",
+        "UserName": "Aakriti Stuti Sinha",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900486.jpg",
+        "AshokaEmailId": "aakriti_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007067"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191453",
+        "UserName": "Aarav Varshney",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905028.jpeg",
+        "AshokaEmailId": "aarav.varshney_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008395"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191091",
+        "UserName": "Aarohi Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900987.jpeg",
+        "AshokaEmailId": "aarohi.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007112"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191336",
+        "UserName": "Aarushi Kataria",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901200.jpg",
+        "AshokaEmailId": "aarushi.kataria_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008215"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191094",
+        "UserName": "Aarya Jhaveri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901064.jpeg",
+        "AshokaEmailId": "aarya.jhaveri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007120"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191216",
+        "UserName": "Aaryan Pavvit Pavvit Chhabra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901866.png",
+        "AshokaEmailId": "aaryanpavvit.chhabra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007531"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191568",
+        "UserName": "Aarzoo",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904123.jpeg",
+        "AshokaEmailId": "aarzoo.aarzoo_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009242"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191212",
+        "UserName": "Aashka Kaushal Shah",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901758.jpeg",
+        "AshokaEmailId": "aashka.shah_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007526"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191368",
+        "UserName": "Aashna Sethi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902312.jpeg",
+        "AshokaEmailId": "aashna.sethi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008262"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191425",
+        "UserName": "Aastha Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904301.jpg",
+        "AshokaEmailId": "aastha.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008352"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191303",
+        "UserName": "Aayra Angrish",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900893.jpeg",
+        "AshokaEmailId": "aayra.angrish_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008103"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191647",
+        "UserName": "Aayushi Prasad",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909062.jpeg",
+        "AshokaEmailId": "aayushi.prasad_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009431"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191460",
+        "UserName": "Abdelsalam Gena",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905274.jpg",
+        "AshokaEmailId": "abdelsalam.gena_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008409"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191114",
+        "UserName": "Abhay Natarajan Hari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901421.jpeg",
+        "AshokaEmailId": "abhay.hari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007147"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191051",
+        "UserName": "Abhiir Bhalla",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900384.jpg",
+        "AshokaEmailId": "abhiir.bhalla_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007055"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191022",
+        "UserName": "Abhimanyu Sandip Timbadia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900122.jpeg",
+        "AshokaEmailId": "abhimanyu.timbadia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007014"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191559",
+        "UserName": "Abhinit Anand",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906016.jpeg",
+        "AshokaEmailId": "abhinit.anand_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009000"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191573",
+        "UserName": "Abhirup Chatterjee",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905369.jpeg",
+        "AshokaEmailId": "abhirup.chatterjee_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009355"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191500",
+        "UserName": "Abhishek Nayak",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906064.jpeg",
+        "AshokaEmailId": "abhishek.nayak_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008473"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191160",
+        "UserName": "Abhivyakti R Natarajan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900183.jpeg",
+        "AshokaEmailId": "abhivyakti.rnatarajan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007440"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191210",
+        "UserName": "Abhyuday Sen",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901665.jpeg",
+        "AshokaEmailId": "abhyuday.sen_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007522"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191598",
+        "UserName": "Abigail Ann Thomas",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909112.jpg",
+        "AshokaEmailId": "abigail.thomas_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009432"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191501",
+        "UserName": "Adheesh Ghosh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906070.jpeg",
+        "AshokaEmailId": "adheesh.ghosh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008475"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191321",
+        "UserName": "Adhiraj Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900623.jpeg",
+        "AshokaEmailId": "adhiraj.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008188"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191107",
+        "UserName": "Aditi Dindorkar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901267.jpeg",
+        "AshokaEmailId": "aditi.dindorkar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007134"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191590",
+        "UserName": "Aditi Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908438.jpg",
+        "AshokaEmailId": "aditi.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009410"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191485",
+        "UserName": "Aditi Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905741.jpeg",
+        "AshokaEmailId": "aditi.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008449"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191276",
+        "UserName": "Aditi Tibarewal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903312.jpeg",
+        "AshokaEmailId": "aditi.tibarewal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007629"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191413",
+        "UserName": "Aditya Deb",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903814.jpg",
+        "AshokaEmailId": "aditya.deb_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008335"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191132",
+        "UserName": "Aditya Satish",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901925.jpeg",
+        "AshokaEmailId": "aditya.satish_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007175"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191235",
+        "UserName": "Aditya Varun Sarkar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902424.jpeg",
+        "AshokaEmailId": "aditya.sarkar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007559"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191006",
+        "UserName": "Advait Sinha",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900017.jpeg",
+        "AshokaEmailId": "advait.sinha_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006990"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191441",
+        "UserName": "Advaita Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904766.jpeg",
+        "AshokaEmailId": "advaita.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008378"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191421",
+        "UserName": "Advaith Jayakumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904206.jpg",
+        "AshokaEmailId": "advaith.jayakumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008348"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191600",
+        "UserName": "Advika Pandey",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909636.jpeg",
+        "AshokaEmailId": "advika.pandey_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009448"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191641",
+        "UserName": "Adwaiya Srivastav",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907806.jpeg",
+        "AshokaEmailId": "adwaiya.srivastav_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009393"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191418",
+        "UserName": "Adya Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904058.jpeg",
+        "AshokaEmailId": "adya.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008343"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191545",
+        "UserName": "Afsana Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900281.jpeg",
+        "AshokaEmailId": "afsana.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008967"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191367",
+        "UserName": "Agastya Chawla",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902303.jpg",
+        "AshokaEmailId": "agastya.chawla_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008261"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191574",
+        "UserName": "Aggam Walia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905692.jpeg",
+        "AshokaEmailId": "aggam.walia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009357"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191492",
+        "UserName": "Ahmed Faisal Mohamoud",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905854.jpeg",
+        "AshokaEmailId": "ahmed.mohamoud_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008459"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191079",
+        "UserName": "Aishani Pradhan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900672.jpg",
+        "AshokaEmailId": "aishani.pradhan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007093"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191475",
+        "UserName": "Aishni Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905634.JPG",
+        "AshokaEmailId": "aishni.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008437"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191185",
+        "UserName": "Akalya Srikumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900982.jpeg",
+        "AshokaEmailId": "akalya.srikumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007483"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191205",
+        "UserName": "Akanksha Mishra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901508.jpeg",
+        "AshokaEmailId": "akanksha.mishra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007514"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191223",
+        "UserName": "Akanxa Swami",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902070.jpeg",
+        "AshokaEmailId": "akanxa.swami_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007543"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191053",
+        "UserName": "Akhil Bhardwaj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900405.jpg",
+        "AshokaEmailId": "akhil.bhardwaj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007058"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191651",
+        "UserName": "Akshar Niranjan Katariya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910199.jpeg",
+        "AshokaEmailId": "akshar.katariya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009468"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191007",
+        "UserName": "Akshat Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900047.jpeg",
+        "AshokaEmailId": "akshat.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006993"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191135",
+        "UserName": "Alatakshi Gosain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902086.jpeg",
+        "AshokaEmailId": "alatakshi.gosain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007180"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191578",
+        "UserName": "Alfred Daimari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906344.jpeg",
+        "AshokaEmailId": "alfred.daimari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009368"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191152",
+        "UserName": "Alida Umurungi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901311.jpg",
+        "AshokaEmailId": "alida.umurungi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007202"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191538",
+        "UserName": "Amaan Andicot",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907013.jpeg",
+        "AshokaEmailId": "amaan.andicot_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008545"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191027",
+        "UserName": "Amaan Madhu Patekar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900148.jpeg",
+        "AshokaEmailId": "amaan.patekar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007020"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191615",
+        "UserName": "Aman Antil",
+        "ImagePath": "https://ashokadocumentsstore.blob.core.windows.net/documents/O10-2019-05860/O10-2019-05860_21012023121437049.jpeg",
+        "AshokaEmailId": "aman.antil_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009362"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191191",
+        "UserName": "Aman Khullar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901152.jpg",
+        "AshokaEmailId": "aman.khullar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007493"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191622",
+        "UserName": "Amish Agrawal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909870.jpeg",
+        "AshokaEmailId": "amish.agrawal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009453"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191513",
+        "UserName": "Amisha Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906331.jpeg",
+        "AshokaEmailId": "amisha.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008499"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191446",
+        "UserName": "Amitabh Kakkar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904863.jpeg",
+        "AshokaEmailId": "amitabh.kakkar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008385"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191288",
+        "UserName": "Anant Krishnan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903487.jpeg",
+        "AshokaEmailId": "anant.krishnan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007644"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191359",
+        "UserName": "Ananya Chhibba",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902027.jpg",
+        "AshokaEmailId": "ananya.chhibba_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008247"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191443",
+        "UserName": "Ananya Desai",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904786.JPG",
+        "AshokaEmailId": "ananya.desai_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008382"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191355",
+        "UserName": "Ananya Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901986.jpeg",
+        "AshokaEmailId": "ananya.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008242"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191448",
+        "UserName": "Ananya Vhavle",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904902.jpeg",
+        "AshokaEmailId": "ananya.vhavle_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008387"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191497",
+        "UserName": "Anav Sawhney",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906004.jpeg",
+        "AshokaEmailId": "anav.sawhney_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008469"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191609",
+        "UserName": "Anika Pundir",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901121.jpg",
+        "AshokaEmailId": "anika.pundir_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009313"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191471",
+        "UserName": "Aniket Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905571.jpeg",
+        "AshokaEmailId": "aniket.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008429"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191340",
+        "UserName": "Aniruddh Lodha",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901313.jpg",
+        "AshokaEmailId": "aniruddh.lodha_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008220"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191163",
+        "UserName": "Aniruddh Vaddadi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900322.jpeg",
+        "AshokaEmailId": "aniruddh.vaddadi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007446"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191361",
+        "UserName": "Anirudh Cherukuri Cherukuri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902118.jpeg",
+        "AshokaEmailId": "anirudh.cherukuricherukuri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008252"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191097",
+        "UserName": "Anirudh Krishnan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901117.jpg",
+        "AshokaEmailId": "anirudh.krishnan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007123"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191269",
+        "UserName": "Anjali",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903157.jpg",
+        "AshokaEmailId": "anjali_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007618"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191257",
+        "UserName": "Anjali Dalmia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902961.jpg",
+        "AshokaEmailId": "anjali.dalmia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007596"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191420",
+        "UserName": "Anjali Sajith",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904204.jpg",
+        "AshokaEmailId": "anjali.sajith_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008347"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191300",
+        "UserName": "Anjana Ashok",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903845.jpg",
+        "AshokaEmailId": "anjana.ashok_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007672"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191274",
+        "UserName": "Anjana Ramesh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903229.jpg",
+        "AshokaEmailId": "anjana.ramesh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007625"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191366",
+        "UserName": "Ankit Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902290.jpeg",
+        "AshokaEmailId": "ankit.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008260"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191470",
+        "UserName": "Ankit Wenju Shrestha",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905534.jpeg",
+        "AshokaEmailId": "ankit.shrestha_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008425"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191013",
+        "UserName": "Anna Upreti",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900069.jpeg",
+        "AshokaEmailId": "anna.upreti_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007001"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191243",
+        "UserName": "Ansh Punjabi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902556.jpeg",
+        "AshokaEmailId": "ansh.punjabi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007569"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191140",
+        "UserName": "Anshika Jhamb",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900280.JPG",
+        "AshokaEmailId": "anshika.jhamb_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007187"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191603",
+        "UserName": "Anubhab Bhattacharjee",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910242.jpeg",
+        "AshokaEmailId": "anubhab.bhattacharjee_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009471"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191345",
+        "UserName": "Anudarsh S",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901437.jpeg",
+        "AshokaEmailId": "anudarsh.s_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008226"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191540",
+        "UserName": "Anuja Anish Shah",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900111.JPG",
+        "AshokaEmailId": "anuja.shah_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008554"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191660",
+        "UserName": "Anukampa",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910445.jpeg",
+        "AshokaEmailId": "anukampa_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009480"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191532",
+        "UserName": "Anukriti Chawla",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906901.jpeg",
+        "AshokaEmailId": "anukriti.chawla_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008535"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191246",
+        "UserName": "Anukruti Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902643.png",
+        "AshokaEmailId": "anukruti.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007575"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191112",
+        "UserName": "Anulya P",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901301.jpg",
+        "AshokaEmailId": "anulya.p_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007141"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191048",
+        "UserName": "Anusha Kaberwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900354.png",
+        "AshokaEmailId": "anusha.kaberwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007052"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191085",
+        "UserName": "Anusha Pant",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900890.jpeg",
+        "AshokaEmailId": "anusha.pant_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007105"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191388",
+        "UserName": "Anushka Bidani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902957.jpeg",
+        "AshokaEmailId": "anushka.bidani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008292"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191642",
+        "UserName": "Anushka Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907960.jpg",
+        "AshokaEmailId": "anushka.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009397"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191181",
+        "UserName": "Anushna Palit",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900906.jpeg",
+        "AshokaEmailId": "anushna.palit_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007478"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191043",
+        "UserName": "Anushri Tewari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900306.jpg",
+        "AshokaEmailId": "anushri.tewari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007046"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191120",
+        "UserName": "Anzila Samadh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901517.jpeg",
+        "AshokaEmailId": "anzila.samadh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007155"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191432",
+        "UserName": "Apurva Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904479.jpg",
+        "AshokaEmailId": "apurva.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008364"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191266",
+        "UserName": "Aradhya Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903101.jpeg",
+        "AshokaEmailId": "aradhya.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007611"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191604",
+        "UserName": "Aranya Singh Rathore",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910375.jpg",
+        "AshokaEmailId": "aranya.rathore_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009478"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191213",
+        "UserName": "Ardra K S",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901811.jpg",
+        "AshokaEmailId": "ardra.ks_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007527"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191506",
+        "UserName": "Argha Chakrabarty",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906115.jpeg",
+        "AshokaEmailId": "argha.chakrabarty_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008481"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191585",
+        "UserName": "Arnav Diwan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908106.jpeg",
+        "AshokaEmailId": "arnav.diwan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009400"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191526",
+        "UserName": "Arnav Gurnani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906600.jpeg",
+        "AshokaEmailId": "arnav.gurnani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008523"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191479",
+        "UserName": "Arundhati Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905689.jpeg",
+        "AshokaEmailId": "arundhati.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008442"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191074",
+        "UserName": "Arundhati Rajan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900586.jpeg",
+        "AshokaEmailId": "arundhati.rajan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007083"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191201",
+        "UserName": "Arvind Gururaj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901460.jpeg",
+        "AshokaEmailId": "arvind.gururaj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007509"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191531",
+        "UserName": "Arya Amritansu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906826.jpeg",
+        "AshokaEmailId": "arya.amritansu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008531"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191402",
+        "UserName": "Arya Nagar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903351.jpeg",
+        "AshokaEmailId": "arya.nagar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008316"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191123",
+        "UserName": "Aryaan Bhatia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901636.jpeg",
+        "AshokaEmailId": "aryaan.bhatia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007162"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191445",
+        "UserName": "Aryaman Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904829.jpeg",
+        "AshokaEmailId": "aryaman.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008384"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191653",
+        "UserName": "Aryan Mishra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910240.jpeg",
+        "AshokaEmailId": "aryan.mishra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009470"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191435",
+        "UserName": "Aryan Ramachandran",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904524.jpeg",
+        "AshokaEmailId": "aryan.ramachandran_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008367"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191174",
+        "UserName": "Aryan Srivastava",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900728.JPG",
+        "AshokaEmailId": "aryan.srivastava_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007470"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191333",
+        "UserName": "Ashana Mathur",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901014.jpeg",
+        "AshokaEmailId": "ashana.mathur_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008208"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191409",
+        "UserName": "Ashika Thomas",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903669.jpeg",
+        "AshokaEmailId": "ashika.thomas_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008328"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191438",
+        "UserName": "Ashish Manav",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904689.png",
+        "AshokaEmailId": "ashish.manav_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008372"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191504",
+        "UserName": "Ashu Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906100.png",
+        "AshokaEmailId": "ashu.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008479"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191509",
+        "UserName": "Ashutosh Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906176.jpeg",
+        "AshokaEmailId": "ashutosh.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008489"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191258",
+        "UserName": "Ashwin Menon",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902965.jpg",
+        "AshokaEmailId": "ashwin.menon_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007597"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191047",
+        "UserName": "Ashwini Mane",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900353.jpg",
+        "AshokaEmailId": "ashwini.mane_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007051"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191040",
+        "UserName": "Ashwini Sreekumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900289.jpg",
+        "AshokaEmailId": "ashwini.sreekumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007042"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191169",
+        "UserName": "Atharvi Bais",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900512.jpeg",
+        "AshokaEmailId": "atharvi.bais_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007457"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191620",
+        "UserName": "Atisha Mahajan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908742.jpeg",
+        "AshokaEmailId": "atisha.mahajan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009418"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191161",
+        "UserName": "Avani Maroo",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900185.jpeg",
+        "AshokaEmailId": "avani.maroo_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007441"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191080",
+        "UserName": "Avantika Pasari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900684.jpeg",
+        "AshokaEmailId": "avantika.pasari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007094"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191262",
+        "UserName": "Avinash Prasanth Nair",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903035.jpeg",
+        "AshokaEmailId": "avinash.nair_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007604"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191010",
+        "UserName": "Ayaan Sagar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900063.jpeg",
+        "AshokaEmailId": "ayaan.sagar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006997"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191004",
+        "UserName": "Ayana Kaur Bhandari",
+        "ImagePath": "https://ashokadocumentsstore.blob.core.windows.net/documents/O10-2019-00010/O10-2019-00010_14032023115306209.jpeg",
+        "AshokaEmailId": "ayana.bhandari1_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006988"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191329",
+        "UserName": "Ayesha Dash",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900858.jpg",
+        "AshokaEmailId": "ayesha.dash_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008202"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1120191001",
+        "UserName": "Ayla Dhawan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000034/O11202000006.jpeg",
+        "AshokaEmailId": "ayla.dhawan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00010112"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191586",
+        "UserName": "Ayush Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908175.jpg",
+        "AshokaEmailId": "ayush.agarwal1_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009403"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191411",
+        "UserName": "Ayush Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903769.jpeg",
+        "AshokaEmailId": "ayush.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008332"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191105",
+        "UserName": "Ayush Chandrakant Mistry",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901234.jpg",
+        "AshokaEmailId": "ayush.mistry_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007131"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191551",
+        "UserName": "Ayush Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902394.jpg",
+        "AshokaEmailId": "ayush.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008982"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191234",
+        "UserName": "Ayush Vats",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902415.jpeg",
+        "AshokaEmailId": "ayush.vats_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007558"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191628",
+        "UserName": "Bhaavya Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902099.jpeg",
+        "AshokaEmailId": "bhaavya.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009325"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191481",
+        "UserName": "Bharathi A",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905713.jpeg",
+        "AshokaEmailId": "bharathi.adhinarayanan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008444"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191563",
+        "UserName": "Bhargavi Gurudu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907090.jpeg",
+        "AshokaEmailId": "bhargavi.gurudu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009004"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191338",
+        "UserName": "Bhavi Ashok Kapadia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901237.png",
+        "AshokaEmailId": "bhavi.kapadia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008217"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191122",
+        "UserName": "Bhavika Reddy",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901624.jpeg",
+        "AshokaEmailId": "bhavika.reddy_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007161"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191494",
+        "UserName": "Biratal Raj Wagle",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905904.jpeg",
+        "AshokaEmailId": "biratal.wagle_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008463"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191606",
+        "UserName": "Bommineni Reddy",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908688.jpeg",
+        "AshokaEmailId": "bommineni.reddy_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009487"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191159",
+        "UserName": "Brinda Khanna",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900114.jpeg",
+        "AshokaEmailId": "brinda.khanna_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007439"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191579",
+        "UserName": "Brishti Bose",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906358.jpeg",
+        "AshokaEmailId": "brishti.bose_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009369"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191227",
+        "UserName": "Cefil Joseph Soans",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902215.jpg",
+        "AshokaEmailId": "cefil.josephsoans_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007547"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191557",
+        "UserName": "Chandra Shekhar Mishra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905469.jpeg",
+        "AshokaEmailId": "chandrashekhar.mishra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008997"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191390",
+        "UserName": "Charu Veluthoor",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903026.jpg",
+        "AshokaEmailId": "charu.veluthoor_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008295"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191208",
+        "UserName": "Charvi Koul",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901632.jpeg",
+        "AshokaEmailId": "charvi.koul_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007519"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191502",
+        "UserName": "Chhavi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906092.jpg",
+        "AshokaEmailId": "chhavi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008476"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191280",
+        "UserName": "Chirayu Banga",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903370.jpeg",
+        "AshokaEmailId": "chirayu.banga_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007634"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191304",
+        "UserName": "Cocoa Kaushal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903068.jpg",
+        "AshokaEmailId": "cocoa.kaushal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008104"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191018",
+        "UserName": "Daivik John Alva",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900095.jpeg",
+        "AshokaEmailId": "daivik.alva_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007007"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191302",
+        "UserName": "Dawa Tashi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904977.jpeg",
+        "AshokaEmailId": "dawa.tashi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007680"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191125",
+        "UserName": "Debendra Sanyal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901674.jpeg",
+        "AshokaEmailId": "debendra.sanyal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007164"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191527",
+        "UserName": "Deepak Chaurasiya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906625.jpg",
+        "AshokaEmailId": "deepak.chaurasiya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008524"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191374",
+        "UserName": "Deepanshu Singal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902432.jpeg",
+        "AshokaEmailId": "deepanshu.singal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008270"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191001",
+        "UserName": "Dev Ghosh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901552.png",
+        "AshokaEmailId": "dev.ghosh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006985"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191591",
+        "UserName": "Dev Mittal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908646.jpeg",
+        "AshokaEmailId": "dev.mittal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009413"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191436",
+        "UserName": "Deveshi Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904572.jpeg",
+        "AshokaEmailId": "deveshi.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008369"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191148",
+        "UserName": "Devika Goswami",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901973.jpg",
+        "AshokaEmailId": "devika.goswami_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007197"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191077",
+        "UserName": "Devyani Sarin",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900643.jpeg",
+        "AshokaEmailId": "devyani.sarin_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007090"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191569",
+        "UserName": "Devyani Tuli",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904888.jpeg",
+        "AshokaEmailId": "devyani.tuli_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009275"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191182",
+        "UserName": "Dewansh Singh Matharoo",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900952.jpeg",
+        "AshokaEmailId": "dewansh.matharoo_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007479"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191560",
+        "UserName": "Dipanita Malik",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906284.jpeg",
+        "AshokaEmailId": "dipanita.malik_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009001"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191162",
+        "UserName": "Diptangshu Bhowmik",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900194.jpeg",
+        "AshokaEmailId": "diptangshu.bhowmik_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007442"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191172",
+        "UserName": "Divya Sanskriti",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900626.jpg",
+        "AshokaEmailId": "divya.sanskriti_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007463"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191548",
+        "UserName": "Divya Wagle",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900856.jpeg",
+        "AshokaEmailId": "divya.wagle_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008971"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191044",
+        "UserName": "Diya Isha",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900313.jpeg",
+        "AshokaEmailId": "diya.isha_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007047"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191593",
+        "UserName": "Diya Sood",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908808.jpeg",
+        "AshokaEmailId": "diya.sood_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009422"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191472",
+        "UserName": "Dravisha Katoch",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905576.jpeg",
+        "AshokaEmailId": "dravisha.katoch_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008431"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191468",
+        "UserName": "Elizabeth Becky Wanjiku",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905448.jpg",
+        "AshokaEmailId": "elizabeth.wanjiku_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008421"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191328",
+        "UserName": "Esha Garg",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900819.jpeg",
+        "AshokaEmailId": "esha.garg_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008201"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191121",
+        "UserName": "Esha Sinha",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901536.jpeg",
+        "AshokaEmailId": "esha.sinha_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007156"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191295",
+        "UserName": "Eshaan Sandhir",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903653.JPG",
+        "AshokaEmailId": "eshaan.sandhir_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007657"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191444",
+        "UserName": "Fibion Mukwati",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904818.jpeg",
+        "AshokaEmailId": "fibion.mukwati_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008383"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191271",
+        "UserName": "Garvit Kharbanda",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903192.jpg",
+        "AshokaEmailId": "garvit.kharbanda_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007621"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191111",
+        "UserName": "Garvit Zalani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901286.jpg",
+        "AshokaEmailId": "garvit.zalani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007139"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191334",
+        "UserName": "Gaurang Modi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901072.jpeg",
+        "AshokaEmailId": "gaurang.modi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008210"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191233",
+        "UserName": "Gaurav S",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902401.jpeg",
+        "AshokaEmailId": "gaurav.s_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007557"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191358",
+        "UserName": "Gauri Bhawkar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902011.jpg",
+        "AshokaEmailId": "gauri.bhawkar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008246"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191164",
+        "UserName": "Gauri Dasgupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900347.jpeg",
+        "AshokaEmailId": "gauri.dasgupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007447"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191092",
+        "UserName": "Gautam Sud",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901005.jpeg",
+        "AshokaEmailId": "gautam.sud_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007113"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191244",
+        "UserName": "Gautham Sundar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902588.jpeg",
+        "AshokaEmailId": "gautham.sundar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007571"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191173",
+        "UserName": "Gayatri Unnikrishnan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900633.jpeg",
+        "AshokaEmailId": "gayatri.unnikrishnan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007464"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191447",
+        "UserName": "Gby Atee",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904884.jpeg",
+        "AshokaEmailId": "gby.atee_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008386"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191037",
+        "UserName": "George Stephen Poonnen",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900242.jpeg",
+        "AshokaEmailId": "george.poonnen_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007036"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191081",
+        "UserName": "Ghazal Pannu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900799.jpeg",
+        "AshokaEmailId": "ghazal.pannu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007099"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191357",
+        "UserName": "Gowri Kolal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902002.jpeg",
+        "AshokaEmailId": "gowri.kolal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008245"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191104",
+        "UserName": "Grisha G",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901223.jpg",
+        "AshokaEmailId": "grisha.g_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007130"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191284",
+        "UserName": "Guru Nathan S",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903428.jpg",
+        "AshokaEmailId": "gurunathan.s_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007640"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191483",
+        "UserName": "Guuleed Axmed Cali",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905738.JPG",
+        "AshokaEmailId": "guuleed.cali_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008447"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191278",
+        "UserName": "Haris Rashid",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903333.jpg",
+        "AshokaEmailId": "haris.rashid_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007631"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191072",
+        "UserName": "Harrsh Dewan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900574.jpeg",
+        "AshokaEmailId": "harrsh.dewan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007080"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191555",
+        "UserName": "Harsha Mini",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903628.jpeg",
+        "AshokaEmailId": "harsha.mini_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008990"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191498",
+        "UserName": "Harshit Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906019.jpeg",
+        "AshokaEmailId": "harshit.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008470"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191376",
+        "UserName": "Harshita Bedi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902434.jpg",
+        "AshokaEmailId": "harshita.bedi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008272"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191306",
+        "UserName": "Harsimran Kaur Kukreja",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900141.jpeg",
+        "AshokaEmailId": "harsimran.kukreja_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008166"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191515",
+        "UserName": "Hemang Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906355.jpeg",
+        "AshokaEmailId": "hemang.sharmasharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008501"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191068",
+        "UserName": "Hemanshi Agrawal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900519.jpeg",
+        "AshokaEmailId": "hemanshi.agrawal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007074"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191170",
+        "UserName": "Idhant Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900544.jpg",
+        "AshokaEmailId": "idhant.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007459"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191379",
+        "UserName": "Indira Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902620.jpg",
+        "AshokaEmailId": "indira.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008279"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191219",
+        "UserName": "Indrakshi Sarkar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901911.jpeg",
+        "AshokaEmailId": "indrakshi.sarkar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007536"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191537",
+        "UserName": "Ipsa Samaddar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907004.jpeg",
+        "AshokaEmailId": "ipsa.samaddar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008544"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191313",
+        "UserName": "Ira Choudhary",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900400.jpeg",
+        "AshokaEmailId": "ira.choudhary_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008177"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191612",
+        "UserName": "Irtiza Jan Bhat",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903410.jpg",
+        "AshokaEmailId": "irtiza.bhat_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009333"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191397",
+        "UserName": "Isha Dasari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903259.jpg",
+        "AshokaEmailId": "isha.dasari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008309"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191652",
+        "UserName": "Isha Pandey",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910211.jpg",
+        "AshokaEmailId": "isha.pandey_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009469"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191486",
+        "UserName": "Isha Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905754.png",
+        "AshokaEmailId": "isha.singh1_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008450"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191405",
+        "UserName": "Isha Singhal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903427.jpeg",
+        "AshokaEmailId": "isha.singhal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008319"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191294",
+        "UserName": "Ishaan Gvalani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903640.jpeg",
+        "AshokaEmailId": "ishaan.gvalani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007655"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191346",
+        "UserName": "Ishani Mukerjee",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901532.jpeg",
+        "AshokaEmailId": "ishani.mukerjee_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008229"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191264",
+        "UserName": "Ishant Meena",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903063.jpeg",
+        "AshokaEmailId": "ishant.meena_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007609"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191204",
+        "UserName": "Ishika Rohit Chabria",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901503.jpeg",
+        "AshokaEmailId": "ishika.chabria_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007513"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191138",
+        "UserName": "Ishita Zutshi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900167.jpeg",
+        "AshokaEmailId": "ishita.zutshi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007185"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191611",
+        "UserName": "Ivan Shanavas",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901182.jpeg",
+        "AshokaEmailId": "ivan.shanavas_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009316"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191307",
+        "UserName": "Jahnavi Rudra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900142.jpeg",
+        "AshokaEmailId": "jahnavi.rudra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008167"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191529",
+        "UserName": "Jai Desai",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906764.jpg",
+        "AshokaEmailId": "jai.desai_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008527"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191588",
+        "UserName": "Jaidev Pant",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908332.jpeg",
+        "AshokaEmailId": "jaidev.pant_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009406"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191023",
+        "UserName": "Jaivardhan Garg",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900127.jpeg",
+        "AshokaEmailId": "jaivardhan.garg_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007015"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191601",
+        "UserName": "Janani Mahadevan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910044.jpeg",
+        "AshokaEmailId": "janani.mahadevan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009461"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191110",
+        "UserName": "Jaskirat Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901282.jpeg",
+        "AshokaEmailId": "jaskirat.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007138"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191029",
+        "UserName": "Jasmine Pannu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900161.jpeg",
+        "AshokaEmailId": "jasmine.pannu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007023"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191659",
+        "UserName": "Jay Bhushan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910291.jpeg",
+        "AshokaEmailId": "jay.bhushan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009477"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191648",
+        "UserName": "Jayam Balani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909468.jpg",
+        "AshokaEmailId": "jayam.balani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009441"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191188",
+        "UserName": "Jenish Raj Bajracharya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901079.jpeg",
+        "AshokaEmailId": "jenishraj.bajracharya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007489"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191543",
+        "UserName": "Jenya Wadhwani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900153.JPG",
+        "AshokaEmailId": "jenya.wadhwani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008965"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191075",
+        "UserName": "Joevin Bijoe Chakkalakkal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900589.jpeg",
+        "AshokaEmailId": "joevin.chakkalakkal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007084"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191442",
+        "UserName": "Jonathan Sthavan Sujaya Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904773.jpeg",
+        "AshokaEmailId": "jonathan.sujayakumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008379"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191151",
+        "UserName": "Joyelle Fleurette Ndikumana",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901698.jpeg",
+        "AshokaEmailId": "joyelle.ndikumana_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007201"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191511",
+        "UserName": "Jubakshi Chakravorty",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906241.JPG",
+        "AshokaEmailId": "jubakshi.chakravorty_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008495"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191566",
+        "UserName": "Jyoti Antil",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902993.jpeg",
+        "AshokaEmailId": "jyoti.antil_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009008"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191314",
+        "UserName": "K Nitya Devayya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900431.jpg",
+        "AshokaEmailId": "k.devayya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008178"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191002",
+        "UserName": "Kabir Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900003.jpeg",
+        "AshokaEmailId": "kabir.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006986"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191437",
+        "UserName": "Kaisera Kanwar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904597.jpeg",
+        "AshokaEmailId": "kaisera.kanwar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008371"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191113",
+        "UserName": "Kalyani Samir Garud",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901370.jpg",
+        "AshokaEmailId": "kalyani.garud_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007144"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191525",
+        "UserName": "Kamal Nayan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906592.jpeg",
+        "AshokaEmailId": "kamal.nayan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008522"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191576",
+        "UserName": "Karan Dhall",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905769.jpeg",
+        "AshokaEmailId": "karan.dhall_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009360"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191283",
+        "UserName": "Karan Lobana",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903418.jpeg",
+        "AshokaEmailId": "karan.lobana_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007639"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191464",
+        "UserName": "Karishni Puri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905403.jpg",
+        "AshokaEmailId": "karishni.puri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008416"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191316",
+        "UserName": "Kartik Tiwari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900533.jpg",
+        "AshokaEmailId": "kartik.tiwari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008182"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191124",
+        "UserName": "Kashvi Jajodia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901671.jpeg",
+        "AshokaEmailId": "kashvi.jajodia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007163"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191619",
+        "UserName": "Kavita Pal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908377.jpg",
+        "AshokaEmailId": "kavita.pal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009409"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191060",
+        "UserName": "Kavya Satish",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900470.jpg",
+        "AshokaEmailId": "kavya.satish_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007066"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191260",
+        "UserName": "Kaya Rao Shetty",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902999.jpeg",
+        "AshokaEmailId": "kaya.raoshetty_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007601"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191222",
+        "UserName": "Kayan Dadyburjor",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902007.jpg",
+        "AshokaEmailId": "kayan.dadyburjor_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007541"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191232",
+        "UserName": "Keerthana S Nair",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902399.jpeg",
+        "AshokaEmailId": "keerthana.nair_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007556"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191489",
+        "UserName": "Keshav Maheshwari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905803.jpg",
+        "AshokaEmailId": "keshav.maheshwari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008454"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191042",
+        "UserName": "Khushi Bhatia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900298.jpeg",
+        "AshokaEmailId": "khushi.bhatia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007044"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020201655",
+        "UserName": "Khushi Boken",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O11202000103.jpg",
+        "AshokaEmailId": "khushi.boken_ug23@ashoka.edu.in",
+        "UserSysGenId": "USR00014274"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191171",
+        "UserName": "Khushi Dalal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900611.jpeg",
+        "AshokaEmailId": "khushi.dalal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007461"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191202",
+        "UserName": "Khushi Mehta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901462.jpeg",
+        "AshokaEmailId": "khushi.mehta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007510"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191178",
+        "UserName": "Khushi Navin Shetty",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900842.jpeg",
+        "AshokaEmailId": "khushi.shetty_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007474"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191378",
+        "UserName": "Khushi Nawal Kakkar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902592.jpg",
+        "AshokaEmailId": "khushi.kakkar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008277"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191301",
+        "UserName": "Kinzang Dema",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904564.jpeg",
+        "AshokaEmailId": "kinzang.dema_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007679"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191617",
+        "UserName": "Kiran Sahani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907793.jpg",
+        "AshokaEmailId": "kiran.sahani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009392"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191146",
+        "UserName": "Kiran Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901528.jpeg",
+        "AshokaEmailId": "kiran.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007194"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191373",
+        "UserName": "Kripi Dua",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902430.jpeg",
+        "AshokaEmailId": "kripi.dua_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008269"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191562",
+        "UserName": "Krish Alan Dsilva",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906881.jpeg",
+        "AshokaEmailId": "krish.dsilva_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009003"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191382",
+        "UserName": "Kritanya Puneet Mahajan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902800.jpg",
+        "AshokaEmailId": "kritanya.mahajan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008284"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191026",
+        "UserName": "Krithi Ganesh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900147.jpg",
+        "AshokaEmailId": "krithi.ganesh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007019"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191607",
+        "UserName": "Kriti Khanduri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902151.jpeg",
+        "AshokaEmailId": "kriti.khanduri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009489"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191086",
+        "UserName": "Kritika Maheshwari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900940.jpg",
+        "AshokaEmailId": "kritika.maheshwari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007107"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191456",
+        "UserName": "Kyle Hiramaneck",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905105.jpeg",
+        "AshokaEmailId": "kyle.hiramaneck_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008399"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191099",
+        "UserName": "Lasya Adiraj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901194.jpg",
+        "AshokaEmailId": "lasya.adiraj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007125"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191290",
+        "UserName": "Lekha R",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903569.jpeg",
+        "AshokaEmailId": "lekha.r_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007649"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191365",
+        "UserName": "Lokesh Arora",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902272.png",
+        "AshokaEmailId": "lokesh.arora_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008257"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191544",
+        "UserName": "M Shiva Govind Reddy",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900169.jpeg",
+        "AshokaEmailId": "shiva.reddy_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008966"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191256",
+        "UserName": "Maahi Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902958.jpeg",
+        "AshokaEmailId": "maahi.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007595"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191496",
+        "UserName": "Maahir M Narula",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905978.JPG",
+        "AshokaEmailId": "maahir.narula_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008466"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191058",
+        "UserName": "Maahira Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900447.jpeg",
+        "AshokaEmailId": "maahira.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007064"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191465",
+        "UserName": "Madhav Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905416.jpeg",
+        "AshokaEmailId": "madhav.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008418"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191199",
+        "UserName": "Mahi Narayanan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901398.jpeg",
+        "AshokaEmailId": "mahi.narayanan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007505"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191360",
+        "UserName": "Mahika Vikram Rajwade",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902043.jpeg",
+        "AshokaEmailId": "mahika.rajwade_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008249"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191255",
+        "UserName": "Malavika Anand",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902950.JPG",
+        "AshokaEmailId": "malavika.anand_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007594"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191407",
+        "UserName": "Manasa Sriram",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903610.jpeg",
+        "AshokaEmailId": "manasa.sriram_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008326"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191629",
+        "UserName": "Manish Rajani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903368.jpg",
+        "AshokaEmailId": "manish.rajani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009332"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191493",
+        "UserName": "Manish Yadav",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905896.jpg",
+        "AshokaEmailId": "manish.yadav_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008462"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191495",
+        "UserName": "Manjima Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905916.jpg",
+        "AshokaEmailId": "manjima.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008464"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191347",
+        "UserName": "Mannat Asla",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901547.jpg",
+        "AshokaEmailId": "mannat.asla_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008230"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191662",
+        "UserName": "Manvi Narwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910470.jpeg",
+        "AshokaEmailId": "manvi.narwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009482"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191180",
+        "UserName": "Manvika Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900891.jpeg",
+        "AshokaEmailId": "manvika.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007477"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191542",
+        "UserName": "Manvika Gulati",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900051.jpeg",
+        "AshokaEmailId": "manvika.gulati_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008963"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191657",
+        "UserName": "Manya Sachdev",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905494.jpeg",
+        "AshokaEmailId": "manya.sachdev_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009356"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191211",
+        "UserName": "Manya Shiel",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901710.jpeg",
+        "AshokaEmailId": "manya.shiel_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007524"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191325",
+        "UserName": "Manya Tuteja",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900692.jpeg",
+        "AshokaEmailId": "manya.tuteja_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008193"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191584",
+        "UserName": "Maryanne Rodrigues",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907894.jpg",
+        "AshokaEmailId": "maryanne.rodrigues_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009396"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191389",
+        "UserName": "Mathews Eldo",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902988.jpg",
+        "AshokaEmailId": "mathews.eldo_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008293"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191554",
+        "UserName": "Mayank Kumar Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903198.jpg",
+        "AshokaEmailId": "mayank.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008986"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191580",
+        "UserName": "Mayank Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906796.jpg",
+        "AshokaEmailId": "mayank.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009373"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191595",
+        "UserName": "Md. Zohaib Akhter",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908895.jpg",
+        "AshokaEmailId": "mdzohaib.akhter_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009426"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191654",
+        "UserName": "Medha Raje Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910272.jpg",
+        "AshokaEmailId": "medha.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009474"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191582",
+        "UserName": "Meera Anand",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907466.jpeg",
+        "AshokaEmailId": "meera.anand_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009388"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191263",
+        "UserName": "Meghna Manikanden",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903059.jpeg",
+        "AshokaEmailId": "meghna.manikanden_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007608"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191054",
+        "UserName": "Mehak Mehta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900407.jpeg",
+        "AshokaEmailId": "mehak.mehta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007059"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191305",
+        "UserName": "Mehak Puri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900035.jpg",
+        "AshokaEmailId": "mehak.puri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008165"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191463",
+        "UserName": "Mehak Sanghera",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905390.jpeg",
+        "AshokaEmailId": "mehak.sanghera_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008414"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191337",
+        "UserName": "Mehek Anil Kataria",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901208.jpeg",
+        "AshokaEmailId": "mehek.kataria_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008216"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191352",
+        "UserName": "Meher Manga",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901818.jpeg",
+        "AshokaEmailId": "meher.manga_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008236"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191168",
+        "UserName": "Mehr Basantani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900465.jpeg",
+        "AshokaEmailId": "mehr.basantani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007456"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191599",
+        "UserName": "Mehul Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909593.jpeg",
+        "AshokaEmailId": "mehul.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009444"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191549",
+        "UserName": "Mehul Singla",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901538.jpeg",
+        "AshokaEmailId": "mehul.singla_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008976"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191089",
+        "UserName": "Mekdes Addisu Degefa",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900966.jpeg",
+        "AshokaEmailId": "mekdesaddisu.degefa_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007110"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191090",
+        "UserName": "Mihret Biruk Tesfaye",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900967.jpeg",
+        "AshokaEmailId": "mihret.biruktesfaye_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007111"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191098",
+        "UserName": "Minaksi Mallick",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901151.jpg",
+        "AshokaEmailId": "minaksi.mallick_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007124"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191101",
+        "UserName": "Mohammed Amaan Asim",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901205.jpeg",
+        "AshokaEmailId": "mohammedamaan.asim_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007127"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191025",
+        "UserName": "Mohammed Zahir Ali",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900134.jpeg",
+        "AshokaEmailId": "mohammedzahir.ali_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007017"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191220",
+        "UserName": "Mohit Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901926.jpeg",
+        "AshokaEmailId": "mohit.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007537"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191046",
+        "UserName": "Mrigank Shekhar Sahi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900341.jpeg",
+        "AshokaEmailId": "mrigank.sahi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007049"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191224",
+        "UserName": "Muskaan Chaudhary",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902098.jpeg",
+        "AshokaEmailId": "muskaan.chaudhary_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007544"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191610",
+        "UserName": "Muskan Godiyal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901122.jpg",
+        "AshokaEmailId": "muskan.godiyal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009314"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191649",
+        "UserName": "Mutayib Mohammad Lone",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909538.jpeg",
+        "AshokaEmailId": "mutayib.lone_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009443"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191071",
+        "UserName": "Nandan Sankriti Kaushik",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900548.jpeg",
+        "AshokaEmailId": "nandan.kaushik_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007077"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191571",
+        "UserName": "Nandini Chand",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902642.jpeg",
+        "AshokaEmailId": "nandini.chand_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009328"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191613",
+        "UserName": "Nardos Aragaw Lemma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904455.jpeg",
+        "AshokaEmailId": "nardos.lemma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009345"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191596",
+        "UserName": "Nasheem Ashraf",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909031.jpg",
+        "AshokaEmailId": "nasheem.ashraf_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009429"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191031",
+        "UserName": "Natania Narang",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900178.jpeg",
+        "AshokaEmailId": "natania.narang_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007025"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191480",
+        "UserName": "Nathan Narde",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905712.jpeg",
+        "AshokaEmailId": "nathan.narde_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008443"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191514",
+        "UserName": "Navya Malhotra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906353.jpeg",
+        "AshokaEmailId": "navya.malhotra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008500"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191322",
+        "UserName": "Nayana Niji",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900648.jpg",
+        "AshokaEmailId": "nayana.niji_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008189"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191406",
+        "UserName": "Negash Asayehegn Zeray",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903530.jpg",
+        "AshokaEmailId": "negashasayehegn.zeray_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008325"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191176",
+        "UserName": "Neha Madhusudan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900825.jpeg",
+        "AshokaEmailId": "neha.madhusudan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007472"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191426",
+        "UserName": "Neil Chowdhary",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904317.jpg",
+        "AshokaEmailId": "neil.chowdhary_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008353"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191602",
+        "UserName": "Nidhi Munot",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910109.jpg",
+        "AshokaEmailId": "nidhi.munot_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009465"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191377",
+        "UserName": "Nidhish Birhade",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902526.jpeg",
+        "AshokaEmailId": "nidhish.birhade_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008275"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191259",
+        "UserName": "Nidup Dorji",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902979.jpg",
+        "AshokaEmailId": "nidup.dorji_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007598"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191228",
+        "UserName": "Niharika Mehrotra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902232.png",
+        "AshokaEmailId": "niharika.mehrotra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007548"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191399",
+        "UserName": "Niharika Narayanan V",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903315.jpeg",
+        "AshokaEmailId": "niharika.v_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008312"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191581",
+        "UserName": "Nikhil Manohar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907349.jpeg",
+        "AshokaEmailId": "nikhil.manohar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009381"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191157",
+        "UserName": "Nikhil Sunil Bhave",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900094.JPG",
+        "AshokaEmailId": "nikhil.bhave_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007436"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191665",
+        "UserName": "Nischal Bhardwaj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909624.jpeg",
+        "AshokaEmailId": "nischal.bhardwaj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009447"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191118",
+        "UserName": "Nishant Mahesh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901479.jpeg",
+        "AshokaEmailId": "nishant.mahesh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007153"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191282",
+        "UserName": "Nishka Mishra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903417.jpeg",
+        "AshokaEmailId": "nishka.mishra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007638"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191350",
+        "UserName": "Nishtha Dani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901719.jpg",
+        "AshokaEmailId": "nishtha.dani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008234"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191520",
+        "UserName": "Nishtha Sanjeev Gosewade",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906504.jpg",
+        "AshokaEmailId": "nishtha.gosewade_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008515"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191050",
+        "UserName": "Nitya Kishore Nair",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900383.jpg",
+        "AshokaEmailId": "nitya.nair_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007054"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191457",
+        "UserName": "Nitya Poddar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905172.jpeg",
+        "AshokaEmailId": "nitya.poddar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008402"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191137",
+        "UserName": "Noor Khatra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900042.jpg",
+        "AshokaEmailId": "noor.khatra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007184"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191064",
+        "UserName": "Oishiki Ganguly",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900507.jpeg",
+        "AshokaEmailId": "oishiki.ganguly_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007070"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191449",
+        "UserName": "Ojas Arora",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904956.jpeg",
+        "AshokaEmailId": "ojas.arora_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008388"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191403",
+        "UserName": "Ojas Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903375.jpeg",
+        "AshokaEmailId": "ojas.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008317"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191422",
+        "UserName": "Om Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904252.jpg",
+        "AshokaEmailId": "om.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008349"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191292",
+        "UserName": "Omkar Mishra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903608.png",
+        "AshokaEmailId": "omkar.mishra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007652"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191324",
+        "UserName": "Ose Kohli",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900664.jpeg",
+        "AshokaEmailId": "ose.kohli_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008192"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191535",
+        "UserName": "Ose Singh Bansal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906914.jpeg",
+        "AshokaEmailId": "ose.bansal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008538"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191608",
+        "UserName": "Palak Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908115.jpeg",
+        "AshokaEmailId": "palak.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009537"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191194",
+        "UserName": "Parul Joshi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901294.jpg",
+        "AshokaEmailId": "parul.joshi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007499"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191454",
+        "UserName": "Piya Tandon",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905047.jpg",
+        "AshokaEmailId": "piya.tandon_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008396"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191658",
+        "UserName": "Piyush Gambhir",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909132.jpg",
+        "AshokaEmailId": "piyush.gambhir_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009433"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191014",
+        "UserName": "Poorna Rathi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900071.jpg",
+        "AshokaEmailId": "poorna.rathi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007002"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191491",
+        "UserName": "Prabhanjana Acharya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905845.jpeg",
+        "AshokaEmailId": "prabhanjana.acharya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008458"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191594",
+        "UserName": "Prachi Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908894.jpeg",
+        "AshokaEmailId": "prachi.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009425"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191134",
+        "UserName": "Pradyumn Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902075.jpg",
+        "AshokaEmailId": "pradyumn.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007179"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191197",
+        "UserName": "Pragya Agrawal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901331.jpeg",
+        "AshokaEmailId": "pragya.agrawal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007502"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191459",
+        "UserName": "Praharsh Prasoon",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905203.jpg",
+        "AshokaEmailId": "praharsh.prasoon_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008406"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191217",
+        "UserName": "Pranathi Jammula",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901868.jpeg",
+        "AshokaEmailId": "pranathi.jammula_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007533"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191036",
+        "UserName": "Pranav Wali",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900226.jpeg",
+        "AshokaEmailId": "pranav.wali_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007033"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191430",
+        "UserName": "Pranesh Hp",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904404.jpeg",
+        "AshokaEmailId": "pranesh.hp_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008359"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191655",
+        "UserName": "Prashasti Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910281.jpg",
+        "AshokaEmailId": "prashasti.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009476"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191507",
+        "UserName": "Prashasti Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906144.jpg",
+        "AshokaEmailId": "prashasti.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008485"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191518",
+        "UserName": "Prateel Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906496.jpg",
+        "AshokaEmailId": "prateel.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008512"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191663",
+        "UserName": "Pratha Srivastava",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904286.jpeg",
+        "AshokaEmailId": "pratha.srivastava_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009343"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191429",
+        "UserName": "Pratham Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904394.jpg",
+        "AshokaEmailId": "pratham.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008358"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191570",
+        "UserName": "Pratul Chaturvedi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901595.jpg",
+        "AshokaEmailId": "pratul.chaturvedi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009319"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191478",
+        "UserName": "Preet",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905667.jpeg",
+        "AshokaEmailId": "preet.kudiya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008441"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191020",
+        "UserName": "Prerana Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900117.jpg",
+        "AshokaEmailId": "prerana.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007012"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191401",
+        "UserName": "Prerana Khandelwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903347.jpeg",
+        "AshokaEmailId": "prerana.khandelwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008315"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191200",
+        "UserName": "Priana Brar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901432.jpeg",
+        "AshokaEmailId": "priana.brar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007507"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191095",
+        "UserName": "Prisha Tiwari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901107.jpg",
+        "AshokaEmailId": "prisha.tiwari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007121"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191214",
+        "UserName": "Pritish Dugar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901815.jpeg",
+        "AshokaEmailId": "pritish.dugar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007528"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191473",
+        "UserName": "Priyadatha Sajan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905577.jpg",
+        "AshokaEmailId": "priyadatha.sajan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008432"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191143",
+        "UserName": "Priyanka Jha",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901172.jpeg",
+        "AshokaEmailId": "priyanka.jha_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007191"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191546",
+        "UserName": "Priyanka Murali",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900451.jpg",
+        "AshokaEmailId": "priyanka.murali_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008968"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191311",
+        "UserName": "Priyanshu Raj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900337.jpg",
+        "AshokaEmailId": "priyanshu.raj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008174"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191016",
+        "UserName": "Pulari M Baskar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900084.jpeg",
+        "AshokaEmailId": "pulari.baskar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007005"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191003",
+        "UserName": "Radha Lath Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900006.jpeg",
+        "AshokaEmailId": "radha.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006987"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191299",
+        "UserName": "Radhika Banerjee",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903798.jpeg",
+        "AshokaEmailId": "radhika.banerjee_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007668"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191136",
+        "UserName": "Raghav Joshi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902123.jpeg",
+        "AshokaEmailId": "raghav.joshi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007181"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191393",
+        "UserName": "Raghav Puri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903096.jpg",
+        "AshokaEmailId": "raghav.puri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008300"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191519",
+        "UserName": "Rahul Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906500.jpg",
+        "AshokaEmailId": "rahul.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008514"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191198",
+        "UserName": "Rahul Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901390.jpeg",
+        "AshokaEmailId": "rahul.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007504"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191209",
+        "UserName": "Raisaheli Bhattacharyya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901660.jpeg",
+        "AshokaEmailId": "raisaheli.bhattacharyya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007521"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191108",
+        "UserName": "Rajvardhan Ghorpade",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901270.jpeg",
+        "AshokaEmailId": "rajvardhan.ghorpade_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007136"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191439",
+        "UserName": "Ram S Bharadwaj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904691.jpeg",
+        "AshokaEmailId": "ram.bharadwaj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008373"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191009",
+        "UserName": "Ranjini Ghosh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900061.jpg",
+        "AshokaEmailId": "ranjini.ghosh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006996"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191621",
+        "UserName": "Rashmie Sriraghavan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909341.jpeg",
+        "AshokaEmailId": "rashmie.sriraghavan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009436"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191215",
+        "UserName": "Rayeena Ray",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901850.jpeg",
+        "AshokaEmailId": "rayeena.ray_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007530"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191147",
+        "UserName": "Reeya Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901576.jpeg",
+        "AshokaEmailId": "reeya.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007195"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191398",
+        "UserName": "Reya S Daya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903260.jpeg",
+        "AshokaEmailId": "reya.daya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008310"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191218",
+        "UserName": "Rhea Lakhiani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901907.jpeg",
+        "AshokaEmailId": "rhea.lakhiani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007535"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191088",
+        "UserName": "Rhea Maben Heri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900961.jpeg",
+        "AshokaEmailId": "rhea.mabenheri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007109"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191505",
+        "UserName": "Rhythm Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906111.jpeg",
+        "AshokaEmailId": "rhythm.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008480"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191312",
+        "UserName": "Ria R Totlani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900393.jpeg",
+        "AshokaEmailId": "ria.totlani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008175"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191195",
+        "UserName": "Riddhi Sahima Verma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901295.jpg",
+        "AshokaEmailId": "riddhi.verma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007500"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191093",
+        "UserName": "Ridhi Saksena",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901047.jpeg",
+        "AshokaEmailId": "ridhi.saksena_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007118"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191144",
+        "UserName": "Rishabh Goswami",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901363.jpeg",
+        "AshokaEmailId": "rishabh.goswami_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007192"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191310",
+        "UserName": "Rishabh Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900252.jpg",
+        "AshokaEmailId": "rishabh.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008171"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191265",
+        "UserName": "Rishabh Singh Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903073.jpg",
+        "AshokaEmailId": "rishabhsingh.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007610"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191362",
+        "UserName": "Rishi Krishnaswamy",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902127.jpeg",
+        "AshokaEmailId": "rishi.krishnaswamy_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008253"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191381",
+        "UserName": "Rishi Ragesh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902795.jpeg",
+        "AshokaEmailId": "rishi.ragesh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008283"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191226",
+        "UserName": "Ritu Hotchandani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902179.jpg",
+        "AshokaEmailId": "ritu.hotchandani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007546"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191636",
+        "UserName": "Ritul Satish",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906599.jpg",
+        "AshokaEmailId": "ritul.satish_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009372"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191414",
+        "UserName": "Ritwik Sen",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903850.jpeg",
+        "AshokaEmailId": "ritwik.sen_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008337"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191277",
+        "UserName": "Rohan Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903324.jpeg",
+        "AshokaEmailId": "rohan.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007630"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191189",
+        "UserName": "Rohan Manoj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901080.jpeg",
+        "AshokaEmailId": "rohan.manoj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007490"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191450",
+        "UserName": "Rohini Smita",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904979.jpeg",
+        "AshokaEmailId": "rohini.smita_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008390"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191129",
+        "UserName": "Rohit P Vasishta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901808.jpeg",
+        "AshokaEmailId": "rohit.vasishta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007171"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191530",
+        "UserName": "Ronith Urs",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906784.jpeg",
+        "AshokaEmailId": "ronith.urs_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008529"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191245",
+        "UserName": "Ruchika Gaikwad",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902618.jpg",
+        "AshokaEmailId": "ruchika.gaikwad_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007574"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191614",
+        "UserName": "Rukmini Chariar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904512.jpeg",
+        "AshokaEmailId": "rukmini.chariar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009346"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191510",
+        "UserName": "Saadia Peerzada",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906239.jpeg",
+        "AshokaEmailId": "saadia.peerzada_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008494"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191100",
+        "UserName": "Sadeev Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901203.jpg",
+        "AshokaEmailId": "sadeev.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007126"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191237",
+        "UserName": "Sadhvi Dash",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902453.jpeg",
+        "AshokaEmailId": "sadhvi.dash_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007561"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191575",
+        "UserName": "Sagara Ann Johny",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905758.jpg",
+        "AshokaEmailId": "sagara.johny_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009359"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191175",
+        "UserName": "Sahana Anand",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900772.jpeg",
+        "AshokaEmailId": "sahana.anand_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007471"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191049",
+        "UserName": "Sahana Shanavas",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900363.jpeg",
+        "AshokaEmailId": "sahana.shanavas_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007053"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191616",
+        "UserName": "Sahil Balmiki",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907780.jpeg",
+        "AshokaEmailId": "sahil.balmiki_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009390"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191126",
+        "UserName": "Sahil Verma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901737.jpg",
+        "AshokaEmailId": "sahil.verma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007167"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191115",
+        "UserName": "Sai Praneeth Vupputuri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901430.jpeg",
+        "AshokaEmailId": "saipraneeth.vupputuri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007148"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191462",
+        "UserName": "Sakshi Singhal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905311.jpg",
+        "AshokaEmailId": "sakshi.singhal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008413"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191661",
+        "UserName": "Saloni Bansal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904988.jpeg",
+        "AshokaEmailId": "saloni.bansal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009350"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191273",
+        "UserName": "Samarth Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903219.jpeg",
+        "AshokaEmailId": "samarth.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007624"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191404",
+        "UserName": "Sameer Rana",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903409.jpeg",
+        "AshokaEmailId": "sameer.rana_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008318"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191021",
+        "UserName": "Samica Vasisht",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900119.jpeg",
+        "AshokaEmailId": "samica.vasisht_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007013"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191536",
+        "UserName": "Sammy Nyakabau",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906988.jpg",
+        "AshokaEmailId": "sammy.nyakabau_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008543"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191490",
+        "UserName": "Sampriti Bhattacharjee",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905830.jpeg",
+        "AshokaEmailId": "sampriti.bhattacharjee_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008456"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191335",
+        "UserName": "Samragnee Chakraborty",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901146.jpg",
+        "AshokaEmailId": "samragnee.chakraborty_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008214"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191318",
+        "UserName": "Samriddhi Wasan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900552.jpg",
+        "AshokaEmailId": "samriddhi.wasan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008184"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191236",
+        "UserName": "San Win",
+        "ImagePath": "https://ashokadocumentsstore.blob.core.windows.net/documents/O10-2019-02441/O10-2019-02441_28072023104532060.jpeg",
+        "AshokaEmailId": "san.win_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007560"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191128",
+        "UserName": "Sanah Ahluwalia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901803.jpeg",
+        "AshokaEmailId": "sanah.ahluwalia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007170"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191643",
+        "UserName": "Sanchita Sahoo",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908366.jpg",
+        "AshokaEmailId": "sanchita.sahoo_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009407"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191065",
+        "UserName": "Sandhya Nair",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900511.jpeg",
+        "AshokaEmailId": "sandhya.nair_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007071"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191253",
+        "UserName": "Saniya Nasarjung",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902889.jpeg",
+        "AshokaEmailId": "saniya.nasarjung_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007590"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191035",
+        "UserName": "Sanjana Sheth",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900220.jpg",
+        "AshokaEmailId": "sanjana.sheth_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007032"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191038",
+        "UserName": "Sanjay Krishna R",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900262.png",
+        "AshokaEmailId": "sanjaykrishna.ravichandran_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007039"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191319",
+        "UserName": "Sanjay Sudarsan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900565.JPG",
+        "AshokaEmailId": "sanjay.sudarsan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008185"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191154",
+        "UserName": "Sanskruti Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900054.jpg",
+        "AshokaEmailId": "sanskruti.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007432"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191240",
+        "UserName": "Sara Bhasin",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902500.jpeg",
+        "AshokaEmailId": "sara.bhasin_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007564"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191153",
+        "UserName": "Sara Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900020.jpg",
+        "AshokaEmailId": "sara.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007430"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191417",
+        "UserName": "Saravana Chilamakuri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904015.png",
+        "AshokaEmailId": "saravana.chilamakuri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008342"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191331",
+        "UserName": "Sarod S S",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900950.jpeg",
+        "AshokaEmailId": "sarod.s_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008205"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191033",
+        "UserName": "Sarthak Duggal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900206.jpeg",
+        "AshokaEmailId": "sarthak.duggal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007029"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191229",
+        "UserName": "Sarvag Sahu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902311.jpeg",
+        "AshokaEmailId": "sarvag.sahu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007549"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191482",
+        "UserName": "Sasikumar P",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905717.jpeg",
+        "AshokaEmailId": "sasikumar.panchu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008445"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191396",
+        "UserName": "Satvik Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903242.jpeg",
+        "AshokaEmailId": "satvik.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008308"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191634",
+        "UserName": "Satyakin Kohli",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905850.jpeg",
+        "AshokaEmailId": "satyakin.kohli_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009361"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191131",
+        "UserName": "Saujanya Bharadwaj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901864.jpg",
+        "AshokaEmailId": "saujanya.bharadwaj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007173"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191646",
+        "UserName": "Saumin Vinayak Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908873.jpeg",
+        "AshokaEmailId": "saumin.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009424"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191512",
+        "UserName": "Saurabh Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906286.jpg",
+        "AshokaEmailId": "saurabh.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008497"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191408",
+        "UserName": "Sejal Goel",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903633.jpeg",
+        "AshokaEmailId": "sejal.goel_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008327"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191637",
+        "UserName": "Sejal Parmar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906970.jpeg",
+        "AshokaEmailId": "sejal.parmar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009376"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191364",
+        "UserName": "Sejal Yadav",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902220.jpeg",
+        "AshokaEmailId": "sejal.yadav_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008256"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191630",
+        "UserName": "Shagun Rungta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903710.jpg",
+        "AshokaEmailId": "shagun.rungta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009336"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191469",
+        "UserName": "Shahid Rashid",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905508.jpeg",
+        "AshokaEmailId": "shahid.rashid_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008424"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191577",
+        "UserName": "Shambhavi Kurup",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905876.jpeg",
+        "AshokaEmailId": "shambhavi.kurup_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009363"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191254",
+        "UserName": "Shanaia Kapoor",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902921.jpeg",
+        "AshokaEmailId": "shanaia.kapoor_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007593"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191248",
+        "UserName": "Sharan Kaur Hunjan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902710.jpeg",
+        "AshokaEmailId": "sharan.kaurhunjan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007578"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191384",
+        "UserName": "Sharanya Narayanan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902838.jpeg",
+        "AshokaEmailId": "sharanya.narayanan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008287"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191553",
+        "UserName": "Shashwat",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902701.jpeg",
+        "AshokaEmailId": "shashwat.shashwat_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008984"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191158",
+        "UserName": "Shashwat Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900107.jpeg",
+        "AshokaEmailId": "shashwat.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007438"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191087",
+        "UserName": "Sheeba Ashraf Allie",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900955.jpeg",
+        "AshokaEmailId": "sheeba.allie_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007108"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191503",
+        "UserName": "Shivani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906093.jpg",
+        "AshokaEmailId": "shivani.shivani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008477"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191572",
+        "UserName": "Shivani Salil Deshmukh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903735.jpeg",
+        "AshokaEmailId": "shivani.deshmukh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009337"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191327",
+        "UserName": "Shivani Sureshnath",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900776.jpeg",
+        "AshokaEmailId": "shivani.sureshnath_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008198"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191084",
+        "UserName": "Shivansh Wadhwa",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900886.jpeg",
+        "AshokaEmailId": "shivansh.wadhwa_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007104"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191203",
+        "UserName": "Shivranjani Kumari",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901474.jpeg",
+        "AshokaEmailId": "shivranjani.kumari_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007512"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191564",
+        "UserName": "Shraddha Gurram",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907206.jpg",
+        "AshokaEmailId": "shraddha.gurram_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009006"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191024",
+        "UserName": "Shreeja Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900132.jpeg",
+        "AshokaEmailId": "shreeja.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007016"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191375",
+        "UserName": "Shreeyanshi Atharv",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902433.png",
+        "AshokaEmailId": "shreeyanshi.atharv_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008271"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191293",
+        "UserName": "Shreshth Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903614.jpg",
+        "AshokaEmailId": "shreshth.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007653"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191416",
+        "UserName": "Shreya Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903981.jpeg",
+        "AshokaEmailId": "shreya.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008341"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191062",
+        "UserName": "Shreya Ramchandran",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900498.jpeg",
+        "AshokaEmailId": "shreya.ramchandran_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007068"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191119",
+        "UserName": "Shreya Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901483.PNG",
+        "AshokaEmailId": "shreya.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007154"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191391",
+        "UserName": "Shreya Shreya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903027.jpeg",
+        "AshokaEmailId": "shreya.shreya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008296"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191145",
+        "UserName": "Shreyas Srirama Madhav Vinnakota",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901385.jpg",
+        "AshokaEmailId": "shreyas.vinnakota_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007193"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191268",
+        "UserName": "Shreyash Naman",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903138.jpeg",
+        "AshokaEmailId": "shreyash.naman_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007616"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191370",
+        "UserName": "Shrivats Sudhir",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902332.JPG",
+        "AshokaEmailId": "shrivats.sudhir_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008264"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191286",
+        "UserName": "Shruti Soumya Nayak",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903434.jpeg",
+        "AshokaEmailId": "shrutisoumya.nayak_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007642"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191431",
+        "UserName": "Shubha Mukherji",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904413.jpeg",
+        "AshokaEmailId": "shubha.mukherji_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008361"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191380",
+        "UserName": "Shubham Khatri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902626.jpeg",
+        "AshokaEmailId": "shubham.khatri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008280"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191369",
+        "UserName": "Shubhashree Jha",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902322.jpeg",
+        "AshokaEmailId": "shubhashree.jha_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008263"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191196",
+        "UserName": "Shubhr Aakriti",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901307.jpeg",
+        "AshokaEmailId": "shubhr.aakriti_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007501"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191177",
+        "UserName": "Shukery Ahmed Ajmel",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900833.jpg",
+        "AshokaEmailId": "shukery.ahmed_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007473"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191424",
+        "UserName": "Shushant Santosh Rajak",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904287.jpg",
+        "AshokaEmailId": "shushant.rajak_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008351"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191247",
+        "UserName": "Shweta Siddhu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902704.jpg",
+        "AshokaEmailId": "shweta.siddhu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007577"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191166",
+        "UserName": "Siddarth Mohan Shekhar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900369.jpeg",
+        "AshokaEmailId": "siddarth.shekhar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007450"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191565",
+        "UserName": "Siddhant Bakshi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902924.jpeg",
+        "AshokaEmailId": "siddhant.bakshi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009007"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191395",
+        "UserName": "Siddharth G",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903174.jpeg",
+        "AshokaEmailId": "siddharth.g_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008307"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191015",
+        "UserName": "Siddharth Kutty",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900080.jpg",
+        "AshokaEmailId": "siddharth.kutty_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007003"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191116",
+        "UserName": "Siddhartha Prabakar Nadathur",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901450.jpg",
+        "AshokaEmailId": "siddharthaprabakar.nadathur_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007149"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191057",
+        "UserName": "Siddhartha Sreenivas",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900423.jpeg",
+        "AshokaEmailId": "siddhartha.sreenivas_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007063"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191279",
+        "UserName": "Simarjiv Chandhok",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903367.jpeg",
+        "AshokaEmailId": "simarjiv.chandhok_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007633"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191499",
+        "UserName": "Simran Dhiman",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906028.png",
+        "AshokaEmailId": "simran.dhiman_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008472"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191186",
+        "UserName": "Simran Jhaveri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901049.jpeg",
+        "AshokaEmailId": "simran.jhaveri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007487"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191281",
+        "UserName": "Smriti Sanjeev Nambudiri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903388.jpeg",
+        "AshokaEmailId": "smriti.nambudiri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007635"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191487",
+        "UserName": "Sneha Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905755.jpeg",
+        "AshokaEmailId": "sneha.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008451"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191330",
+        "UserName": "Sneha Jindal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900881.jpeg",
+        "AshokaEmailId": "sneha.jindal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008203"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191055",
+        "UserName": "Soham Bagchi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900412.jpeg",
+        "AshokaEmailId": "soham.bagchi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007060"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191167",
+        "UserName": "Soham De",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900375.png",
+        "AshokaEmailId": "soham.de_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007452"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191045",
+        "UserName": "Soham Sadashiv Kacker",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900340.jpeg",
+        "AshokaEmailId": "soham.kacker_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007048"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191076",
+        "UserName": "Somya Wadhwa",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900605.jpeg",
+        "AshokaEmailId": "somya.wadhwa_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007086"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191130",
+        "UserName": "Sona J",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901812.jpg",
+        "AshokaEmailId": "sona.j_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007172"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191440",
+        "UserName": "Soumya Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904755.jpeg",
+        "AshokaEmailId": "soumya.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008376"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191639",
+        "UserName": "Spatikkaa Veddmurthy",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907449.jpeg",
+        "AshokaEmailId": "spatikkaa.veddmurthy_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009386"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191339",
+        "UserName": "Sri Manasija Mandalika",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901250.jpeg",
+        "AshokaEmailId": "srimanasija.mandalika_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008218"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191656",
+        "UserName": "Srikar Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909971.jpeg",
+        "AshokaEmailId": "srikar.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009488"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191032",
+        "UserName": "Srishti Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900195.jpeg",
+        "AshokaEmailId": "srishti.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007027"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191066",
+        "UserName": "Srishti Menon",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900514.jpeg",
+        "AshokaEmailId": "srishti.menon_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007072"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191433",
+        "UserName": "Srishti Ojha Lohani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904499.png",
+        "AshokaEmailId": "srishti.ojhalohani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008365"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "10201976767",
+        "UserName": "Student 2",
+        "ImagePath": "",
+        "AshokaEmailId": "student.2_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00013434"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191308",
+        "UserName": "Stuti Khandelwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900155.jpeg",
+        "AshokaEmailId": "stuti.khandelwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008168"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191353",
+        "UserName": "Sumisha M",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901839.jpg",
+        "AshokaEmailId": "sumisha.m_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008237"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191631",
+        "UserName": "Supreet Kaur",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904274.jpeg",
+        "AshokaEmailId": "supreet.kaur_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009342"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191474",
+        "UserName": "Surabhi Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905617.jpeg",
+        "AshokaEmailId": "surabhi.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008434"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191534",
+        "UserName": "Suryansh Singh Dhatwalia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906911.jpeg",
+        "AshokaEmailId": "suryansh.dhatwalia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008537"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191466",
+        "UserName": "Sushmita Anant",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905429.jpeg",
+        "AshokaEmailId": "sushmita.anant_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008419"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191533",
+        "UserName": "Sushruta Nandy",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906903.jpeg",
+        "AshokaEmailId": "sushruta.nandy_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008536"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191583",
+        "UserName": "Suyash Goenka",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907831.jpeg",
+        "AshokaEmailId": "suyash.goenka_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009394"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191434",
+        "UserName": "Suyasha Shakya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904521.jpeg",
+        "AshokaEmailId": "suyasha.shakya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008366"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191640",
+        "UserName": "Swagata Das",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907784.png",
+        "AshokaEmailId": "swagata.das_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009391"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191558",
+        "UserName": "Swasti Sindhu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905934.jpeg",
+        "AshokaEmailId": "swasti.sindhu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008999"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191348",
+        "UserName": "Swati Aadtiya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901583.jpeg",
+        "AshokaEmailId": "swati.aadtiya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008231"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191261",
+        "UserName": "Swayam Saraogi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903014.jpeg",
+        "AshokaEmailId": "swayam.saraogi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007602"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191249",
+        "UserName": "Tanay Puri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902731.jpeg",
+        "AshokaEmailId": "tanay.puri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007580"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191028",
+        "UserName": "Tanish Bafna",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900150.jpeg",
+        "AshokaEmailId": "tanish.bafna_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007021"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191059",
+        "UserName": "Tanish Pritish Khivasara",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900466.jpeg",
+        "AshokaEmailId": "tanish.khivasara_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007065"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191139",
+        "UserName": "Tanisha Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900215.jpeg",
+        "AshokaEmailId": "tanisha.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007186"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191230",
+        "UserName": "Tanisha Rakesh Dhareshwar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902342.jpeg",
+        "AshokaEmailId": "tanisha.dhareshwar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007551"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191635",
+        "UserName": "Tanisha Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906257.jpg",
+        "AshokaEmailId": "tanisha.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009367"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191250",
+        "UserName": "Tanishi Kapila",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902764.jpeg",
+        "AshokaEmailId": "tanishi.kapila_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007582"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191184",
+        "UserName": "Taniya Noori",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900965.jpg",
+        "AshokaEmailId": "taniya.noori_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007481"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191626",
+        "UserName": "Tanmay Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901181.png",
+        "AshokaEmailId": "tanmay.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009315"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191351",
+        "UserName": "Tanvee Shehrawat",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901779.JPG",
+        "AshokaEmailId": "tanvee.shehrawat_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008235"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191550",
+        "UserName": "Tanvi Chandak",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901974.jpeg",
+        "AshokaEmailId": "tanvi.chandak_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008979"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191415",
+        "UserName": "Tanvi Koushik",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903873.jpeg",
+        "AshokaEmailId": "tanvi.koushik_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008338"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191127",
+        "UserName": "Tanvi Krishnakumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901748.jpg",
+        "AshokaEmailId": "tanvi.krishnakumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007168"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191547",
+        "UserName": "Tanvi Manish Savani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900547.JPG",
+        "AshokaEmailId": "tanvi.savani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008969"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191275",
+        "UserName": "Tanvi Roy",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903239.jpeg",
+        "AshokaEmailId": "tanvi.roy_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007626"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191142",
+        "UserName": "Tanvi Rupakula",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900635.jpg",
+        "AshokaEmailId": "tanvi.rupakula_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007189"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191633",
+        "UserName": "Tanya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905327.jpeg",
+        "AshokaEmailId": "tanya.tanya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009354"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191323",
+        "UserName": "Tanya Chandra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900654.jpeg",
+        "AshokaEmailId": "tanya.chandra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008190"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191241",
+        "UserName": "Taran Puri",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902512.jpg",
+        "AshokaEmailId": "taran.puri_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007565"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191073",
+        "UserName": "Tarini Srivastava",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900581.jpeg",
+        "AshokaEmailId": "tarini.srivastava_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007081"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191193",
+        "UserName": "Tavish Bhatia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901280.jpg",
+        "AshokaEmailId": "tavish.bhatia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007498"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191349",
+        "UserName": "Tejas Gulati",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901693.jpeg",
+        "AshokaEmailId": "tejas.gulati_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008232"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191451",
+        "UserName": "Tejaswini Vondivillu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905006.jpeg",
+        "AshokaEmailId": "tejaswini.vondivillu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008392"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191400",
+        "UserName": "Tenzin Yeka",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903329.jpeg",
+        "AshokaEmailId": "tenzin.yeka_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008313"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191225",
+        "UserName": "Trusha Ganesh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902145.jpeg",
+        "AshokaEmailId": "trusha.ganesh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007545"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191326",
+        "UserName": "Tushant Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900707.jpg",
+        "AshokaEmailId": "tushant.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008194"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191156",
+        "UserName": "Tushar Nain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900062.jpeg",
+        "AshokaEmailId": "tushar.nain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007434"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191484",
+        "UserName": "Udayan Mehra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905740.jpeg",
+        "AshokaEmailId": "udayan.mehra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008448"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191528",
+        "UserName": "Udupi Jyotsna Rau",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906756.jpeg",
+        "AshokaEmailId": "udupijyotsna.rau_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008526"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191354",
+        "UserName": "Upaasana Kartik",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901978.jpeg",
+        "AshokaEmailId": "upaasana.kartik_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008241"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191517",
+        "UserName": "Upasana C. Kumar",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906387.jpeg",
+        "AshokaEmailId": "upasana.kumar_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008506"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191343",
+        "UserName": "Upasana Dandona",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901416.jpg",
+        "AshokaEmailId": "upasana.dandona_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008224"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191476",
+        "UserName": "Uttamasha Dutta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905637.jpg",
+        "AshokaEmailId": "uttamasha.dutta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008438"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191392",
+        "UserName": "Uttara Jadeja",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903061.jpeg",
+        "AshokaEmailId": "uttara.jadeja_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008297"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191522",
+        "UserName": "Valli Peddada",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906550.jpg",
+        "AshokaEmailId": "valli.peddada_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008518"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191034",
+        "UserName": "Vanishree",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900211.jpg",
+        "AshokaEmailId": "vanishree_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007030"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191592",
+        "UserName": "Vanshika",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908704.jpeg",
+        "AshokaEmailId": "vanshika.malik_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009414"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191344",
+        "UserName": "Vanshika Drolia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901422.jpeg",
+        "AshokaEmailId": "vanshika.drolia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008225"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191231",
+        "UserName": "Vardesh Paliwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902373.jpg",
+        "AshokaEmailId": "vardesh.paliwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007554"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191589",
+        "UserName": "Vartika Jain",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908376.jpeg",
+        "AshokaEmailId": "vartika.jain_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009408"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191477",
+        "UserName": "Varun Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905638.jpg",
+        "AshokaEmailId": "varun.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008439"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191561",
+        "UserName": "Veda D",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906506.jpeg",
+        "AshokaEmailId": "veda.d_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009002"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191070",
+        "UserName": "Vedaansh Kaushik",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900545.jpg",
+        "AshokaEmailId": "vedaansh.kaushik_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007076"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191467",
+        "UserName": "Vedant",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905442.jpeg",
+        "AshokaEmailId": "vedant_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008420"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191452",
+        "UserName": "Vedant Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905018.jpeg",
+        "AshokaEmailId": "vedant.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008393"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191206",
+        "UserName": "Vedika Kalra",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901523.jpeg",
+        "AshokaEmailId": "vedika.kalra_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007515"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191567",
+        "UserName": "Vedika Rakesh Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902540.jpg",
+        "AshokaEmailId": "vedika.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009239"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191618",
+        "UserName": "Vibhu Agiwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908139.jpg",
+        "AshokaEmailId": "vibhu.agiwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009401"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191638",
+        "UserName": "Vibhu Jaggi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201907167.jpg",
+        "AshokaEmailId": "vibhu.jaggi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009379"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191017",
+        "UserName": "Vibodh Navin Nautiyal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900089.jpeg",
+        "AshokaEmailId": "vibodh.nautiyal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007006"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191008",
+        "UserName": "Vidipt Dhasmana",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900058.jpg",
+        "AshokaEmailId": "vidipt.dhasmana_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00006994"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191270",
+        "UserName": "Vidit Singh",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903187.jpeg",
+        "AshokaEmailId": "vidit.singh_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007620"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191332",
+        "UserName": "Vikram Devanathan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900976.jpg",
+        "AshokaEmailId": "vikram.devanathan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008206"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191644",
+        "UserName": "Vikram Mervyn",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908562.jpeg",
+        "AshokaEmailId": "vikram.mervyn_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009412"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191556",
+        "UserName": "Vikram Tambi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905176.jpg",
+        "AshokaEmailId": "vikram.tambi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008996"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191645",
+        "UserName": "Vinayak Khandelwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908717.jpeg",
+        "AshokaEmailId": "vinayak.khandelwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009416"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191625",
+        "UserName": "Vinayak Krishan Joshi",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901085.jpg",
+        "AshokaEmailId": "vinayak.joshi_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009312"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191597",
+        "UserName": "Vipasha Barot",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201909046.jpeg",
+        "AshokaEmailId": "vipasha.barot_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009430"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191427",
+        "UserName": "Vivaan Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904371.jpg",
+        "AshokaEmailId": "vivaan.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008356"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191039",
+        "UserName": "Vivan Sharma",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900275.jpeg",
+        "AshokaEmailId": "vivan.sharma_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007040"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191155",
+        "UserName": "Vivek Bhattacharjya",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900055.jpeg",
+        "AshokaEmailId": "vivek.bhattacharjya_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007433"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191624",
+        "UserName": "Vrinda Bhardwaj",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900236.jpeg",
+        "AshokaEmailId": "vrinda.bhardwaj_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009304"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191067",
+        "UserName": "Wako Liban Tache",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900515.jpeg",
+        "AshokaEmailId": "wakoliban.tache_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007073"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191109",
+        "UserName": "Wangchen Tsomu",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901274.jpeg",
+        "AshokaEmailId": "wangchen.tsomu_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007137"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191102",
+        "UserName": "Yash Agarwal",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901209.jpeg",
+        "AshokaEmailId": "yash.agarwal_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007128"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191394",
+        "UserName": "Yash Kulkarni",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903100.jpeg",
+        "AshokaEmailId": "yash.kulkarni_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008301"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191272",
+        "UserName": "Yash Panjwani",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903210.jpeg",
+        "AshokaEmailId": "yash.panjwani_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007623"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191012",
+        "UserName": "Yash Snehal Shroff",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201900068.jpeg",
+        "AshokaEmailId": "yash.shroff_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007000"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191587",
+        "UserName": "Yashraj Gupta",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201908250.jpeg",
+        "AshokaEmailId": "yashraj.gupta_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009404"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191521",
+        "UserName": "Yashvi Kedia",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201906549.jpeg",
+        "AshokaEmailId": "yashvi.kedia_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008517"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191461",
+        "UserName": "Yasmine Khan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201905306.jpeg",
+        "AshokaEmailId": "yasmine.khan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008412"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191371",
+        "UserName": "Yojasvadeep Chauhan",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201902349.jpeg",
+        "AshokaEmailId": "yojasvadeep.chauhan_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008266"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191423",
+        "UserName": "Yookta Ahuja",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904270.jpeg",
+        "AshokaEmailId": "yookta.ahuja_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008350"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191605",
+        "UserName": "Yugandhara Shinde",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201910668.jpg",
+        "AshokaEmailId": "yugandhara.shinde_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009486"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191419",
+        "UserName": "Yuvan Thakur",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201904163.jpg",
+        "AshokaEmailId": "yuvan.thakur_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00008346"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191627",
+        "UserName": "Zenya Siyad",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201901799.jpeg",
+        "AshokaEmailId": "zenya.siyad_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00009323"
+    },
+    {
+        "SessionName": "UG 2019-22",
+        "AshokaId": "1020191289",
+        "UserName": "Zorawar Singh Ghumman",
+        "ImagePath": "SIS/ProfileImage/PRG00000001/SES00000028/O10201903527.jpeg",
+        "AshokaEmailId": "zorawar.ghumman_ug22@ashoka.edu.in",
+        "UserSysGenId": "USR00007647"
+    }
+]

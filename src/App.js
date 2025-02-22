@@ -19,7 +19,7 @@ const DIRECTORY = path.join(__dirname, "../data/students/");
 const students = [];
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3005;
 
 app.use(express.json());
 
