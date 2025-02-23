@@ -19,7 +19,7 @@ const DIRECTORY = path.join(__dirname, "../data/students/");
 const students = [];
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -252,11 +252,13 @@ app.get("/guard", async (req, res) => {
 
 // Create a connection to the MySQL database using environment variables
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,         // From .env file
-  user: process.env.DB_USER,         // From .env file
-  password: process.env.DB_PASSWORD, // From .env file
-  database: process.env.DB_NAME      // From .env file
+  host: process.env.DB_HOST || '127.0.0.1',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'packages',
+  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306
 });
+
 
 // Route to display packages
 app.get('/packages/:ashokaId', (req, res) => {
@@ -272,47 +274,96 @@ app.get('/packages/:ashokaId', (req, res) => {
 });
 
 app.post('/checkout', (req, res) => {
-  const selectedPackages = req.body.packages; // Array of objects {packageNumber, AshokaId, timestamp}
-  
+  const selectedPackages = req.body.packages; // Array of objects {packageNo, AshokaId, trackingID, timestamp}
+
   if (Array.isArray(selectedPackages) && selectedPackages.length > 0) {
-    // Prepare the placeholders and values for SQL
-    const placeholders = selectedPackages.map(() => '(?, ?, ?)').join(',');
-    const values = selectedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp]);
-    // SQL query to update status to 'received' for matching package details where the status is 'pending'
-    const query = `UPDATE Packages SET status = 'received' WHERE (packageNo, AshokaId, timestamp) IN (${placeholders}) AND status = 'pending'`;
-    console.log(query);
+    // Construct SQL conditions to handle NULL trackingID cases
+    const conditions = selectedPackages.map(pkg => 
+      `((packageNo = ? AND AshokaId = ? AND timestamp = ?) 
+      OR (packageNo = ? AND (trackingID = ? OR (trackingID IS NULL AND ? IS NULL)) AND timestamp = ?))`
+    ).join(" OR ");
+
+    // Flatten values for placeholders
+    const values = selectedPackages.flatMap(pkg => [
+      pkg.packageNo, pkg.AshokaId, pkg.timestamp,  // First condition
+      pkg.packageNo, pkg.trackingID, pkg.trackingID, pkg.timestamp // Second condition (handling NULL case)
+    ]);
+
+    // SQL query to update status to 'received' where status is 'pending'
+    const query = `UPDATE Packages SET status = 'received' WHERE (${conditions}) AND status = 'pending'`;
+
+    console.log(query); // Debugging SQL statement
+
     db.query(query, values, (err, result) => {
       if (err) {
         console.error("Error during checkout:", err);
         return res.status(500).send("Error during checkout");
       }
-      res.json({ message: "Success" });
+      res.json({ message: "Success", affectedRows: result.affectedRows });
     });
   } else {
     res.json({ message: "No packages selected." });
   }
 });
 
+
 // POST endpoint to insert a package
 app.post('/insertpackage', (req, res) => {
-  const { ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status} = req.body;
-    console.log(ashokaID);
-    console.log(trackingID);
-    // Insert package into the database
-    const query = `
-    INSERT INTO Packages (ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+  const { ashokaID, trackingID, deliveryPartner, remarks} = req.body;
+  const status = 'pending';
+  // Extract first letter of ashokaID for shelfNo
+  const studentData = students.find(student => student.AshokaId == ashokaID);
+  const studentName = studentData.UserName;
+  let shelfNo = studentName ? studentName.charAt(0).toUpperCase() : "X"; // Default shelf
+
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split('T')[0];
+
+  // Query to get the most recent entry
+  const recentQuery = `
+      SELECT packageNo, timestamp FROM Packages ORDER BY timestamp DESC LIMIT 1
   `;
 
-  db.query(query, [ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status], (err, result) => {
-    if (err) {
-      console.error('Error inserting package:', err);
-      res.status(500).json({ message: 'Failed to insert package' });
-    } else {
-      res.status(200).json({ message: 'Package inserted successfully' });
-    }
+  db.query(recentQuery, (err, result) => {
+      if (err) {
+          console.error('Error fetching recent package:', err);
+          return res.status(500).json({ message: 'Database error' });
+      }
+
+      let packageNo = 1; // Default if no previous entry exists
+
+      if (result.length > 0) {
+          const recentDate = new Date(result[0].timestamp).toISOString().split('T')[0];
+
+          // If the most recent package was inserted today, increment its package number
+          if (recentDate === today) {
+              packageNo = result[0].packageNo + 1;
+          }
+      }
+
+      const timestamp = new Date().toISOString();
+
+      // Insert package into the database
+      const insertQuery = `
+          INSERT INTO Packages (ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      `;
+
+      db.query(insertQuery, [ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks], (err, result) => {
+          if (err) {
+              console.error('Error inserting package:', err);
+              return res.status(500).json({ message: 'Failed to insert package' });
+          }
+
+          res.status(200).json({ 
+              message: 'Package inserted successfully',
+              packageNo, shelfNo, timestamp
+          });
+      });
   });
 });
+
+
 
 app.get('/success-checkout', (req, res) => {
   // Get the query parameters
@@ -325,14 +376,16 @@ app.get('/success-checkout', (req, res) => {
 });
 
 app.get('/success-log', (req, res) => {
-  // Get the query parameters
-  const packageDetails = req.query.packageDetails || '';
-  
-  // Render the EJS page with the required variables
-  res.render('success-log', {
-    packageDetails
-  });
+  const packageDetails = {
+    packageNo: req.query.packageNo,
+    shelfNo: req.query.shelfNo,
+    timestamp: req.query.timestamp,
+    remarks: req.query.remarks
+  };
+  console.log(packageDetails);
+  res.render('success-log', { packageDetails });
 });
+
 
 // API endpoint to search for a tracking ID
 app.get('/track', (req, res) => {

@@ -22,16 +22,85 @@
             </div>
 
             <button class="btn btn-danger next-btn">Find Package</button>
-
+            <br /> <br />
             <!-- 📦 Results Section -->
             <div id="result-container" class="mt-4" style="display: none;">
                 <h4>Package Details</h4>
                 <div id="result-content" class="alert alert-light"></div>
             </div>
+            <button type="submit" id="checkout-btn" onclick="checkout(event);">Checkout</button>
         </div>
     </div>
 
     <script>
+        
+        function checkout(event) {
+    event.preventDefault();
+
+    const trackingID = document.querySelector("#trackingID").value.trim();
+    const resultContent = document.getElementById("result-content");
+
+    if (!trackingID) {
+        alert("Please enter a tracking ID first.");
+        return;
+    }
+
+    // Extract package details from the result section
+    const packageDetails = {};
+    const resultParagraphs = resultContent.querySelectorAll("p");
+
+    resultParagraphs.forEach((p) => {
+        const text = p.innerText;
+        if (text.includes("Tracking ID:")) {
+            packageDetails.trackingID = text.split(": ")[1];
+        } else if (text.includes("Timestamp:")) {
+            packageDetails.timestamp = text.split(": ")[1];
+        } else if (text.includes("Status:")) {
+            packageDetails.status = text.split(": ")[1];
+        } else if (text.includes("Package No:")) {
+            packageDetails.packageNo = text.split(": ")[1];
+        }
+    });
+
+    if (!packageDetails.trackingID || !packageDetails.timestamp) {
+        alert("Invalid package details. Please try again.");
+        return;
+    }
+
+    // Construct the package object to send
+    const selectedPackages = [{
+        packageNo: packageDetails.packageNo || null, // Optional
+        trackingID: packageDetails.trackingID,
+        timestamp: packageDetails.timestamp
+    }];
+
+    fetch("/checkout", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ packages: selectedPackages }),
+    })
+    .then(response => {
+        if (response.ok) {
+            const studentName = { UserName: "student.UserName" };
+            const queryString = new URLSearchParams({
+                studentName: JSON.stringify(studentName)
+            }).toString();
+
+            window.location.href = `/success-checkout?${queryString}`;
+        } else {
+            throw new Error("Network response was not ok");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred during checkout.");
+    });
+}
+
+            
+
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.next-btn').addEventListener('click', () => {
                 const trackingID = document.querySelector('#trackingID').value.trim();

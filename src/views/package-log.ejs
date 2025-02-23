@@ -36,7 +36,7 @@
 
 
                     <!-- Dropdown results -->
-                    <ul id="searchResults" class="dropdown-menu"></ul>
+                    <ul id="searchResults" class="dropdown-menu" ></ul>
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -44,9 +44,14 @@
                         NO USER FOUND
                     </button>
                     <button id="student-next" disabled class="btn btn-danger next-btn"
-                        onclick="enterPackageDetails(document.getElementById('hiddenSelectedStudent').value.split(',')[0],document.getElementById('hiddenSelectedStudent').value.split(',')[1],document.getElementById('hiddenSelectedStudent').value.split(',')[2])">
+                        onclick="enterPackageDetails(
+                            document.getElementById('hiddenSelectedStudent').value.split(',')[0], 
+                            document.getElementById('hiddenSelectedStudent').value.split(',')[1], 
+                            document.getElementById('hiddenSelectedStudent').value.split(',')[2]
+                        )">
                         NEXT
                     </button>
+
                     
                 </div>
             </div>
@@ -57,7 +62,7 @@
                 <h3 class="mb-4">Package Details</h3>
                 <div class="input-group mb-3 dropdown">
                     <input type="text" id="trackingIDInput" class="form-control" placeholder="Enter Tracking ID"
-                        style="border-radius: 7px;" autocomplete="off">
+                        style="border-radius: 7px;">
                 </div>
                 <div class="input-group">                
                     <select id="deliverySelect" name="deliveryService" style="
@@ -76,7 +81,6 @@
                         <option value="Amazon Delivery">Amazon Delivery</option>
                         <option value="Amazon Delivery">Other</option>
                     </select>
-                    
                 </div>
                 <input type="checkbox" id="postPackageInput" class="form-control" placeholder="Post"
                         style="border-radius: 7px;" autocomplete="off">
@@ -85,9 +89,38 @@
                 <input type="checkbox" id="otpPendingInput" class="form-control" placeholder="OTP Pending"
                         style="border-radius: 7px;" autocomplete="off">
                 <br />
+                <div class="input-group mb-3">                
+                    <input type="text" class="form-control" list="remarksOptions" placeholder="Remarks"
+                        style="border-radius: 7px;" autocomplete="off">
+                    <datalist id="remarksOptions">
+                        <option value="Post">
+                        <option value="Ground">
+                        <option value="OTP">
+                    </datalist>
+                </div>
+                
+                <!-- <div class="remarksInput mt-3">
+                    <div class="remarksInput-input">
+                    <input type="checkbox" id="postPackageInput" class="form-check-input" placeholder="Post"
+                                style="border-radius: 7px;" autocomplete="off">
+                    <label for="postPackageInput" class="form-check-label">Post</label>
+                    </div>
+                    <div class="remarksInput-input">
+                    <input type="checkbox" id="groundPackageInput" class="form-check-input" placeholder="Ground"
+                        style="border-radius: 7px;" autocomplete="off">
+                        <label for="groundPackageInput" class="form-check-label">Ground</label>
+                    </div>
+                    <div class="remarksInput-input">
+                    <input type="checkbox" id="otpPendingInput" class="form-check-input"" placeholder="OTP Pending"
+                                style="border-radius: 7px;" autocomplete="off">
+                                <label for="otpPendingInput" class="form-check-label">OTP Pending</label>
+                    </div>
+                </div> -->
+
+                <!-- <br /> -->
 
                 <div class="d-flex justify-content-end">
-                    <button id="student-next" class="btn btn-danger next-btn" onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelect').value)">SUBMIT</button>
+                    <button id="student-next" class="btn btn-danger next-btn" onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelect').value, document.getElementById('remarksInput').value)">SUBMIT</button>
                 </div>
             </div>
         </div>
@@ -122,8 +155,35 @@
             const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
             document.getElementById("day").innerText = days[currentDate.getDay()];
 
+            // Use the enter button to trigger select dropdown option and submit it and do next
+            document.addEventListener("DOMContentLoaded", function () {
+                const inputField = document.getElementById("userInput"); // Input field where user types
+                const dropdown = document.getElementById("searchResults"); // The dropdown menu
+                const nextButton = document.getElementById("student-next"); // The next button
+                let enterPressCount = 0;
+                console.log("here");
+                inputField.addEventListener("keydown", function (event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault(); // Prevent default form submission behavior
+                        const items = dropdown.querySelectorAll("li"); // Get list items
+                        console.log(items);
+                        if (items.length > 0) {
+                            if (enterPressCount === 0) {
+                                // Select the first result in the dropdown
+                                items[0].classList.add("active"); // Highlight first item (you may need CSS for this)
+                                enterPressCount++;
+                            } else {
+                                // Simulate clicking "Next" after selection
+                                nextButton.click();
+                                enterPressCount = 0; // Reset count
+                            }
+                        }
+                    }
+                });
+            });
 
             function useTrackingID() {
+                document.getElementById('trackingIDInput').focus();
                 document.getElementById('loginBox').style = "display: none;"
                 document.getElementById('trackingIDLoginBox').style = "display: block;"
             }
@@ -163,37 +223,27 @@
                 
             </div>
 
-            <div class="remarksInput mt-3">
-            <div class="remarksInput-input">
-            <input type="checkbox" id="postPackageInput" class="form-check-input" placeholder="Post"
-                        style="border-radius: 7px;" autocomplete="off">
-            <label for="postPackageInput" class="form-check-label">Post</label>
-            </div>
-            <div class="remarksInput-input">
-            <input type="checkbox" id="groundPackageInput" class="form-check-input" placeholder="Ground"
-                style="border-radius: 7px;" autocomplete="off">
-                <label for="groundPackageInput" class="form-check-label">Ground</label>
-            </div>
-            <div class="remarksInput-input">
-            <input type="checkbox" id="otpPendingInput" class="form-check-input"" placeholder="OTP Pending"
-                        style="border-radius: 7px;" autocomplete="off">
-                        <label for="otpPendingInput" class="form-check-label">OTP Pending</label>
-            </div>
-            </div>
-
             <br />
             <hr size="50" style="height:20px;color:white" >
             <input style="background-color:rgb(220,220,220);font-weight:700" disabled type="text" class="form-control mb-3" placeholder="${studentName}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentEmail}">
             <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentID}">
+            <hr size="50" style="height:20px;color:white" >
+            <div class="input-group mb-3">                
+                    <input type="text" class="form-control" list="remarksOptions" placeholder="Remarks"
+                        style="border-radius: 7px;" autocomplete="off" id="remarksInput">
+                    <datalist id="remarksOptions">
+                        <option value="Post">
+                        <option value="Ground">
+                        <option value="OTP">
+                    </datalist>
+                </div>
             <button id="student-next" class="btn btn-danger next-btn" 
                 onclick="insertPackageData(
                     true, 
                     document.getElementById('hiddenSelectedStudent').value.split(',')[2], 
                     document.getElementById('deliverySelectTrackingID').value,
-                    document.getElementById('postPackageInput').checked,
-                    document.getElementById('groundPackageInput').checked,
-                    document.getElementById('otpPendingInput').checked
+                    document.getElementById('remarksInput').value
                 )">
                 SUBMIT
             </button>
@@ -226,51 +276,28 @@
                 document.getElementById("searchResults").classList.remove("show");
             }
 
-            async function insertPackageData(identified, ID, deliveryPartner, post, ground, otp_pending) {
-                // Default values
-                const shelfNo = "abc"; // Shelf number is constant
+            async function insertPackageData(identified, ID, deliveryPartner, remarks) {
                 const status = "pending"; // Default status
-                const timestamp = new Date().toISOString(); // Current timestamp in ISO format
-
-                // Determine ashokaID or trackingID based on the identified flag
+                console.log(status);
+                // Determine ashokaID or trackingID
                 const ashokaID = identified ? ID : null;
                 const trackingID = !identified ? ID : null;
-                console.log(ashokaID);
-                console.log(trackingID);
-                console.log(deliveryPartner);
 
                 try {
                     // Step 2: Insert package data into the database
                     const response = await fetch('/insertpackage', {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            ashokaID,
-                            trackingID,
-                            packageNo, 
-                            shelfNo,
-                            timestamp,
-                            deliveryPartner,
-                            status,
-                            post,
-                            ground, 
-                            otp_pending
-                        })
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ ashokaID, trackingID, deliveryPartner, remarks})
                     });
 
                     if (response.ok) {
-                        // If the package is successfully inserted, increment the package number
-                        alert("Package details inserted successfully!");
-                        const queryString = new URLSearchParams({
-                            packageNo: JSON.stringify(packageNo),
-                            shelfNo: JSON.stringify(shelfNo),
-                            timestamp: JSON.stringify(timestamp)
-                        }).toString();
-                        console.log('here');
-                        window.location.href = `/success-log?packageDetails=${queryString}`;
-                        packageNo++;  // Increment the package number for the next package
+                        const data = await response.json(); // Get the assigned packageNo and shelfNo
+                        const { packageNo, shelfNo, timestamp } = data;
+
+                        // Redirect to success page with correct values
+                        const queryString = new URLSearchParams({ packageNo, shelfNo, timestamp, remarks }).toString();
+                        window.location.href = `/success-log?${queryString}`;
                     } else {
                         alert("Failed to insert package details.");
                     }
@@ -279,8 +306,6 @@
                     alert("An error occurred while inserting package data.");
                 }
             }
-
-
 
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
