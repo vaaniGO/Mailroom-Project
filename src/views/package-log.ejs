@@ -244,6 +244,7 @@
             const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
             document.getElementById("day").innerText = days[currentDate.getDay()];
 
+            
             // Use the enter button to trigger select dropdown option and submit it and do next
             document.addEventListener("DOMContentLoaded", function () {
                 const inputField = document.getElementById("userInput"); // Input field where user types
@@ -275,6 +276,10 @@
                 document.getElementById('trackingIDInput').focus();
                 document.getElementById('loginBox').style = "display: none;"
                 document.getElementById('trackingIDLoginBox').style = "display: block;"
+
+                const trackingBox = document.getElementById("trackingIDLoginBox");
+                const trackingInput = document.getElementById("trackingIDInput");
+                trackingInput.focus()
             }
 
             function clearStudent() {
