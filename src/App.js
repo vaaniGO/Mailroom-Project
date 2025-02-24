@@ -282,18 +282,22 @@ app.post('/checkout', (req, res) => {
     // Prepare the placeholders and values for SQL
     const placeholders = selectedPackages.map(() => '(?, ?, ?)').join(',');
     const values = selectedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp]);
+
     // SQL query to update status to 'received' for matching package details where the status is 'pending'
     const query = `UPDATE Packages SET status = 'received' WHERE (packageNo, AshokaId, timestamp) IN (${placeholders}) AND status = 'pending'`;
-    console.log(query);
+
     db.query(query, values, (err, result) => {
       if (err) {
         console.error("Error during checkout:", err);
         return res.status(500).send("Error during checkout");
       }
-      res.json({ message: "Success", affectedRows: result.affectedRows });
+
+      // Render the success-checkout page with the first package's Ashoka ID
+      const packageDetails = { ID: selectedPackages[0].AshokaId }; // Use the first package's Ashoka ID
+      res.render('success-checkout', { packageDetails });
     });
   } else {
-    res.json({ message: "No packages selected." });
+    res.status(400).json({ message: "No packages selected." });
   }
 });
 
@@ -301,14 +305,19 @@ app.post('/checkout', (req, res) => {
 //Checkout for tracking ID packages - error handling required for when tracking ID is null - however that should never be the case because this is only called when a tracking ID match is found
 app.post('/checkout-trackingID', (req, res) => {
   const { packages } = req.body; // Destructure the `packages` array from the request body
+
   if (!packages || packages.length === 0) {
     return res.status(400).send("No packages provided");
   }
+
   const packageDetails = packages[0]; // Access the first package in the array
   const trackingID = String(packageDetails.trackingID); // Get the trackingID
+
   if (!trackingID) {
     return res.status(400).send("TrackingID is missing");
   }
+
+  // SQL query to update the status to 'received' where the trackingID matches
   const query = `UPDATE Packages SET status = 'received' WHERE trackingID = ?;`;
 
   db.query(query, [trackingID], (err, result) => {
@@ -316,9 +325,17 @@ app.post('/checkout-trackingID', (req, res) => {
       console.error("Error during checkout:", err);
       return res.status(500).send("Error during checkout");
     } else {
-      console.log('Query executed successfully');
-      console.log('Result:', result);
-      res.json({ message: "Success", affectedRows: result.affectedRows });
+
+      // Check if any rows were affected
+      if (result.affectedRows > 0) {
+        // Render the success page directly
+        const packageDetails = { ID: trackingID }; // Pass as an object
+        res.render('success-checkout', {
+          packageDetails
+        });
+      } else {
+        res.status(404).json({ message: "No matching package found" });
+      }
     }
   });
 });
@@ -329,13 +346,13 @@ app.post('/insertpackage', (req, res) => {
   const { ashokaID, trackingID, deliveryPartner, remarks } = req.body;
   const status = 'pending';
   let studentData, studentName, shelfNo;
+
   // Extract first letter of ashokaID for shelfNo
   if (trackingID == null) {
-  studentData = students.find(student => student.AshokaId == ashokaID);
-  studentName = studentData.UserName;
-  shelfNo = studentName ? studentName.charAt(0).toUpperCase() : "X"; // Default shelf
-  }
-  else {
+    studentData = students.find(student => student.AshokaId == ashokaID);
+    studentName = studentData.UserName;
+    shelfNo = studentName ? studentName.charAt(0).toUpperCase() : "X"; // Default shelf
+  } else {
     studentName = '';
     shelfNo = 'Unidentified';
   }
@@ -349,42 +366,47 @@ app.post('/insertpackage', (req, res) => {
   `;
 
   db.query(recentQuery, (err, result) => {
+    if (err) {
+      console.error('Error fetching recent package:', err);
+      return res.status(500).json({ message: 'Database error' });
+    }
+
+    let packageNo = 1; // Default if no previous entry exists
+
+    if (result.length > 0) {
+      const recentDate = new Date(result[0].timestamp).toISOString().split('T')[0];
+
+      // If the most recent package was inserted today, increment its package number
+      if (recentDate === today) {
+        packageNo = result[0].packageNo + 1;
+      }
+    }
+
+    const timestamp = new Date().toISOString();
+
+    // Insert package into the database
+    const insertQuery = `
+        INSERT INTO Packages (ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+
+    db.query(insertQuery, [ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks], (err, result) => {
       if (err) {
-          console.error('Error fetching recent package:', err);
-          return res.status(500).json({ message: 'Database error' });
+        console.error('Error inserting package:', err);
+        return res.status(500).json({ message: 'Failed to insert package' });
+      } else {
+        // Prepare the packageDetails object to pass to the view
+        const packageDetails = {
+          packageNo: packageNo,
+          timestamp: timestamp,
+          shelfNo: shelfNo,
+          remarks: remarks
+        };
+
+        // Render the success-log view with the packageDetails object
+        res.render('success-log', { packageDetails: packageDetails });
       }
-
-      let packageNo = 1; // Default if no previous entry exists
-
-      if (result.length > 0) {
-          const recentDate = new Date(result[0].timestamp).toISOString().split('T')[0];
-
-          // If the most recent package was inserted today, increment its package number
-          if (recentDate === today) {
-              packageNo = result[0].packageNo + 1;
-          }
-      }
-
-      const timestamp = new Date().toISOString();
-
-      // Insert package into the database
-      const insertQuery = `
-          INSERT INTO Packages (ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-      `;
-      console.log(remarks);
-
-      db.query(insertQuery, [ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks], (err, result) => {
-          if (err) {
-              console.error('Error inserting package:', err);
-              return res.status(500).json({ message: 'Failed to insert package' });
-          }
-
-          res.status(200).json({ 
-              message: 'Package inserted successfully',
-              packageNo, shelfNo, timestamp
-          });
-      });
+    });
   });
 });
 

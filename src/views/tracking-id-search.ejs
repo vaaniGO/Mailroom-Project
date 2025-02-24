@@ -85,28 +85,26 @@
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ packages: selectedPackages }),
-            })
-            .then(response => {
+                })
+                .then(response => {
                 if (response.ok) {
-                    
-                    const studentName = { UserName: "student.UserName" };
-                    const queryString = new URLSearchParams({
-                        studentName: JSON.stringify(studentName)
-                    }).toString();
-
-                    window.location.href = `/success-checkout?${queryString}`;
+                    // If the response is HTML, render it in the browser
+                    return response.text(); // Get the HTML content
                 } else {
                     throw new Error("Network response was not ok");
                 }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("An error occurred during checkout.");
-            });
+                })
+                .then(html => {
+                // Replace the current document with the new HTML
+                document.open();
+                document.write(html);
+                document.close();
+                })
+                .catch(error => {
+                console.error("Error during checkout:", error);
+                });
         }
-
-            
-
+        
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.next-btn').addEventListener('click', () => {
                 const trackingID = document.querySelector('#trackingID').value.trim();

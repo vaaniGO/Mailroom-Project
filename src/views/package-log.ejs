@@ -57,6 +57,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Login for entering tracking ID details : includes package details entering-->
         <div class="login-container tracking-id-login">
             <div class="login-box" id="trackingIDLoginBox" style="display: none;">
@@ -143,6 +144,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Login for entering package details after entering identified student -->
         <div class="login-container">
             <div class="login-box" id="enterPackageDetails" style="display: none;">
@@ -224,7 +226,7 @@
                 </div>
                 
 
-            </div>
+        </div>
         </div>
         <br />
 
@@ -332,31 +334,31 @@
                 // Determine ashokaID or trackingID
                 const ashokaID = identified ? ID : null;
                 const trackingID = !identified ? ID : null;
-                console.log(document.getElementById('remarksInput').value);
-                console.log(remarks);
-                try {
-                    // Step 2: Insert package data into the database
-                    const response = await fetch('/insertpackage', {
+                console.log('Remarks:', remarks);
+
+                fetch('/insertpackage', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ ashokaID, trackingID, deliveryPartner, remarks})
-                    });
-
-                    if (response.ok) {
-                        const data = await response.json(); // Get the assigned packageNo and shelfNo
-                        const { packageNo, shelfNo, timestamp } = data;
-
-                        // Redirect to success page with correct values
-                        const queryString = new URLSearchParams({ packageNo, shelfNo, timestamp, remarks }).toString();
-                        window.location.href = `/success-log?${queryString}`;
-                        console.log(document.getElementById('remarksInput').value);
-                    } else {
-                        alert("Failed to insert package details.");
-                    }
-                } catch (error) {
-                    console.error("Error inserting package data:", error);
-                    alert("An error occurred while inserting package data.");
+                })
+                .then(response => {
+                if (response.ok) {
+                    // If the response is HTML, render it in the browser
+                    return response.text(); // Get the HTML content
+                } else {
+                    throw new Error("Network response was not ok");
                 }
+                })
+                .then(html => {
+                // Replace the current document with the new HTML
+                document.open();
+                document.write(html);
+                document.close();
+                })
+                .catch(error => {
+                console.error("Error during checkout:", error);
+                });
+                
             }
 
         </script>
