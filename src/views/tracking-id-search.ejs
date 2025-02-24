@@ -34,7 +34,11 @@
     </div>
 
     <script>
-        
+
+        document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("trackingID").focus();
+            });
+            
         function checkout(event) {
             event.preventDefault();
 
@@ -49,7 +53,7 @@
             // Extract package details from the result section
             const packageDetails = {};
             const resultParagraphs = resultContent.querySelectorAll("p");
-
+            console.log(resultParagraphs);
             resultParagraphs.forEach((p) => {
                 const text = p.innerText;
                 if (text.includes("Tracking ID:")) {
@@ -61,7 +65,7 @@
                     packageDetails.packageNo = text.split(": ")[1];
                 }
             });
-
+            console.log(packageDetails);
 
             if (!packageDetails.trackingID || !packageDetails.timestamp) {
                 alert("Invalid package details. Please try again.");

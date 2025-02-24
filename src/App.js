@@ -302,10 +302,10 @@ app.post('/checkout', (req, res) => {
 app.post('/checkout-trackingID', (req, res) => {
   const packageDetails = req.body; // Object containing {trackingID, timestamp, packageNo}
 
-  if (packageDetails && packageDetails.trackingID && packageDetails.timestamp) {
+  if (packageDetails && packageDetails.trackingID) {
     // SQL query to update status to 'received' where the trackingID, timestamp, and packageNo match and status is 'pending'
-    const query = `UPDATE Packages SET status = 'received' WHERE trackingID = ? AND timestamp = ? AND packageNo = ? AND status = 'pending'`;
-    const values = [packageDetails.trackingID, packageDetails.timestamp, packageDetails.packageNo];
+    const query = `UPDATE Packages SET status = 'received' WHERE trackingID = ? AND status = 'pending'`;
+    const values = [packageDetails.trackingID];
     
     console.log(query);
     db.query(query, values, (err, result) => {
