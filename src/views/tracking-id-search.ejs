@@ -74,10 +74,10 @@
 
             // Construct the package object to send
             const selectedPackages = [{
-                packageNo: packageDetails.packageNo || null, // Optional
                 trackingID: packageDetails.trackingID,
                 timestamp: packageDetails.timestamp
             }];
+            console.log(selectedPackages);
 
             fetch("/checkout-trackingID", {
                 method: "POST",
@@ -88,6 +88,7 @@
             })
             .then(response => {
                 if (response.ok) {
+                    
                     const studentName = { UserName: "student.UserName" };
                     const queryString = new URLSearchParams({
                         studentName: JSON.stringify(studentName)

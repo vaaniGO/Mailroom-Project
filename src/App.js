@@ -298,26 +298,29 @@ app.post('/checkout', (req, res) => {
 });
 
 
-//Checkout for tracking ID packages
+//Checkout for tracking ID packages - error handling required for when tracking ID is null - however that should never be the case because this is only called when a tracking ID match is found
 app.post('/checkout-trackingID', (req, res) => {
-  const packageDetails = req.body; // Object containing {trackingID, timestamp, packageNo}
-
-  if (packageDetails && packageDetails.trackingID) {
-    // SQL query to update status to 'received' where the trackingID, timestamp, and packageNo match and status is 'pending'
-    const query = `UPDATE Packages SET status = 'received' WHERE trackingID = ? AND status = 'pending'`;
-    const values = [packageDetails.trackingID];
-    
-    console.log(query);
-    db.query(query, values, (err, result) => {
-      if (err) {
-        console.error("Error during checkout:", err);
-        return res.status(500).send("Error during checkout");
-      }
-      res.json({ message: "Success", affectedRows: result.affectedRows });
-    });
-  } else {
-    res.json({ message: "Invalid package details." });
+  const { packages } = req.body; // Destructure the `packages` array from the request body
+  if (!packages || packages.length === 0) {
+    return res.status(400).send("No packages provided");
   }
+  const packageDetails = packages[0]; // Access the first package in the array
+  const trackingID = String(packageDetails.trackingID); // Get the trackingID
+  if (!trackingID) {
+    return res.status(400).send("TrackingID is missing");
+  }
+  const query = `UPDATE Packages SET status = 'received' WHERE trackingID = ?;`;
+
+  db.query(query, [trackingID], (err, result) => {
+    if (err) {
+      console.error("Error during checkout:", err);
+      return res.status(500).send("Error during checkout");
+    } else {
+      console.log('Query executed successfully');
+      console.log('Result:', result);
+      res.json({ message: "Success", affectedRows: result.affectedRows });
+    }
+  });
 });
 
 
