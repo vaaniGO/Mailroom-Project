@@ -274,26 +274,15 @@ app.get('/packages/:ashokaId', (req, res) => {
 });
 
 app.post('/checkout', (req, res) => {
-  const selectedPackages = req.body.packages; // Array of objects {packageNo, AshokaId, trackingID, timestamp}
+  const selectedPackages = req.body.packages; // Array of objects {packageNumber, AshokaId, timestamp}
 
   if (Array.isArray(selectedPackages) && selectedPackages.length > 0) {
-    // Construct SQL conditions to handle NULL trackingID cases
-    const conditions = selectedPackages.map(pkg => 
-      `((packageNo = ? AND AshokaId = ? AND timestamp = ?) 
-      OR (packageNo = ? AND (trackingID = ? OR (trackingID IS NULL AND ? IS NULL)) AND timestamp = ?))`
-    ).join(" OR ");
-
-    // Flatten values for placeholders
-    const values = selectedPackages.flatMap(pkg => [
-      pkg.packageNo, pkg.AshokaId, pkg.timestamp,  // First condition
-      pkg.packageNo, pkg.trackingID, pkg.trackingID, pkg.timestamp // Second condition (handling NULL case)
-    ]);
-
-    // SQL query to update status to 'received' where status is 'pending'
-    const query = `UPDATE Packages SET status = 'received' WHERE (${conditions}) AND status = 'pending'`;
-
-    console.log(query); // Debugging SQL statement
-
+    // Prepare the placeholders and values for SQL
+    const placeholders = selectedPackages.map(() => '(?, ?, ?)').join(',');
+    const values = selectedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp]);
+    // SQL query to update status to 'received' for matching package details where the status is 'pending'
+    const query = `UPDATE Packages SET status = 'received' WHERE (packageNo, AshokaId, timestamp) IN (${placeholders}) AND status = 'pending'`;
+    console.log(query);
     db.query(query, values, (err, result) => {
       if (err) {
         console.error("Error during checkout:", err);
@@ -305,7 +294,6 @@ app.post('/checkout', (req, res) => {
     res.json({ message: "No packages selected." });
   }
 });
-
 
 // POST endpoint to insert a package
 app.post('/insertpackage', (req, res) => {
@@ -348,6 +336,7 @@ app.post('/insertpackage', (req, res) => {
           INSERT INTO Packages (ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?)
       `;
+      console.log(remarks);
 
       db.query(insertQuery, [ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks], (err, result) => {
           if (err) {
@@ -362,8 +351,6 @@ app.post('/insertpackage', (req, res) => {
       });
   });
 });
-
-
 
 app.get('/success-checkout', (req, res) => {
   // Get the query parameters
@@ -385,7 +372,6 @@ app.get('/success-log', (req, res) => {
   console.log(packageDetails);
   res.render('success-log', { packageDetails });
 });
-
 
 // API endpoint to search for a tracking ID
 app.get('/track', (req, res) => {

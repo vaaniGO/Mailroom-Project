@@ -13,9 +13,10 @@
 <body>
 
     <%-include("partials/navbar.ejs")-%>
+        <!-- Input takes place in 2 forms: first we identify a student then enter the associated package details. This happens in two steps (the login-container) divs
+        for both are below. However, in case of tracking ID (no user found) these 2 things happen together and there is only 1 div-->
 
-
-        <!-- Login Box -->
+        <!-- Login for entering student details-->
         <div class="login-container">
             <div class="login-box" id="loginBox">
                 <h3 class="mb-4">Find User</h3>
@@ -56,7 +57,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Login for entering tracking ID details : includes package details entering-->
         <div class="login-container tracking-id-login">
             <div class="login-box" id="trackingIDLoginBox" style="display: none;">
                 <h3 class="mb-4">Package Details</h3>
@@ -142,17 +143,87 @@
                 </div>
             </div>
         </div>
-
+        <!-- Login for entering package details after entering identified student -->
         <div class="login-container">
             <div class="login-box" id="enterPackageDetails" style="display: none;">
-                <div class="packageAssociatedDetails" id="packageAssociatedDetails">
-                </div>
-                <div class="container">
-                </div>
+                <div class="packageAssociatedDetails" id="packageAssociatedDetails" style="display: none;">
+                    <h3 class="mb-4">Package Details</h3>
+            <div class="input-group">                
+                <select id="deliverySelectTrackingID" name="deliveryService" style="
+                    width: 100%;
+                    font-size: 17px;
+                    padding: 6px;
+                    border-radius: 8px;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                ">
+                    <option value="" disabled selected>Select Delivery service</option>
+                    <option value="Amazon">Amazon</option>
+                        <option value="Flipkart">Flipkart</option>
+                        <option value="Myntra">Myntra</option>
+                        <option value="DTDC">DTDC</option>
+                        <option value="Trackon">Trackon</option>
+                        <option value="Professional">Professional</option>
+                        <option value="Delhivery">Delhivery</option>
+                        <option value="Meesho">Meesho</option>
+                        <option value="Shadowfax">Shadowfax</option>
+                        <option value="Blue Dart">Blue Dart</option>
+                        <option value="Speed Post">Speed Post</option>
+                        <option value="Ecom Xpress">Ecom Xpress</option>
+                        <option value="XpressBees">XpressBees</option>
+                        <option value="Tirupati">Tirupati</option>
+                        <option value="By Hand">By Hand</option>
+                        <option value="Sharmaruti">Sharmaruti</option>
+                        <option value="Sky King">Sky King</option>
+                        <option value="DHL">DHL</option>
+                        <option value="UPS">UPS</option>
+                        <option value="Gati">Gati</option>
+                        <option value="Max">Max</option>
+                        <option value="Mark">Mark</option>
+                        <option value="Ekart">Ekart</option>
+                        <option value="FedEx">FedEx</option>
+                        <option value="Anjani">Anjani</option>
+                        <option value="Safexpress">Safexpress</option>
+                        <option value="Teena">Teena</option>
+                        <option value="AR Logistics">AR Logistics</option>
+                        <option value="Solex Logistics">Solex Logistics</option>
+                        <option value="Other">Other</option>
+                </select>
+                
+            </div>
 
-                <div class="d-flex justify-content-between mt-3">
-                    <button class="btn btn-danger next-btn" onclick="goBackToEnterPackage()">BACK</button>
+            <br />
+            <hr size="50" style="height:20px;color:white" >
+            <input id="studentNameDisplay" style="background-color:rgb(220,220,220);font-weight:700" disabled type="text" class="form-control mb-3">
+            <input id="studentEmailDisplay" style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3">
+            <input id="studentIDDisplay" style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3">
+
+            <hr size="50" style="height:20px;color:white" >
+            <div class="input-group mb-3">                
+                    <input type="text" class="form-control" list="remarksOptions" placeholder="Remarks"
+                        style="border-radius: 7px;" autocomplete="off" id="remarksInput">
+                    <datalist id="remarksOptions">
+                        <option value="Post">
+                        <option value="Ground">
+                        <option value="OTP">
+                    </datalist>
                 </div>
+            <button id="student-next" class="btn btn-danger next-btn" 
+                onclick="insertPackageData(
+                    true, 
+                    document.getElementById('hiddenSelectedStudent').value.split(',')[2], 
+                    document.getElementById('deliverySelectTrackingID').value,
+                    document.getElementById('remarksInput').value
+                )">
+                SUBMIT
+            </button>
+            <div class="d-flex justify-content-between mt-3">
+                <button class="btn btn-danger next-btn" onclick="goBackToEnterPackage()">BACK</button>
+            </div>
+            </div>
+                </div>
+                
+
             </div>
         </div>
         <br />
@@ -218,82 +289,16 @@
             }
 
             function enterPackageDetails(studentName, studentEmail, studentID) {
+                document.getElementById('studentNameDisplay').value = studentName;
+                document.getElementById('studentEmailDisplay').value = studentEmail;
+                document.getElementById('studentIDDisplay').value = studentID;
+                document.getElementById('packageAssociatedDetails').style.display = "block";
                 document.getElementById('loginBox').style = "display: none;"
-                document.getElementById('packageAssociatedDetails').innerHTML = `
-            <h3 class="mb-4">Package Details</h3>
-            <div class="input-group">                
-                <select id="deliverySelectTrackingID" name="deliveryService" style="
-                    width: 100%;
-                    font-size: 17px;
-                    padding: 6px;
-                    border-radius: 8px;
-                    background-color: #f8f9fa;
-                    cursor: pointer;
-                ">
-                    <option value="" disabled selected>Select Delivery service</option>
-                    <option value="Amazon">Amazon</option>
-                        <option value="Flipkart">Flipkart</option>
-                        <option value="Myntra">Myntra</option>
-                        <option value="DTDC">DTDC</option>
-                        <option value="Trackon">Trackon</option>
-                        <option value="Professional">Professional</option>
-                        <option value="Delhivery">Delhivery</option>
-                        <option value="Meesho">Meesho</option>
-                        <option value="Shadowfax">Shadowfax</option>
-                        <option value="Blue Dart">Blue Dart</option>
-                        <option value="Speed Post">Speed Post</option>
-                        <option value="Ecom Xpress">Ecom Xpress</option>
-                        <option value="XpressBees">XpressBees</option>
-                        <option value="Tirupati">Tirupati</option>
-                        <option value="By Hand">By Hand</option>
-                        <option value="Sharmaruti">Sharmaruti</option>
-                        <option value="Sky King">Sky King</option>
-                        <option value="DHL">DHL</option>
-                        <option value="UPS">UPS</option>
-                        <option value="Gati">Gati</option>
-                        <option value="Max">Max</option>
-                        <option value="Mark">Mark</option>
-                        <option value="Ekart">Ekart</option>
-                        <option value="FedEx">FedEx</option>
-                        <option value="Anjani">Anjani</option>
-                        <option value="Safexpress">Safexpress</option>
-                        <option value="Teena">Teena</option>
-                        <option value="AR Logistics">AR Logistics</option>
-                        <option value="Solex Logistics">Solex Logistics</option>
-                        <option value="Other">Other</option>
-                </select>
-                
-            </div>
-
-            <br />
-            <hr size="50" style="height:20px;color:white" >
-            <input style="background-color:rgb(220,220,220);font-weight:700" disabled type="text" class="form-control mb-3" placeholder="${studentName}">
-            <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentEmail}">
-            <input style="background-color:rgb(220,220,220);font-weight:700;" disabled type="text" class="form-control mb-3" placeholder="${studentID}">
-            <hr size="50" style="height:20px;color:white" >
-            <div class="input-group mb-3">                
-                    <input type="text" class="form-control" list="remarksOptions" placeholder="Remarks"
-                        style="border-radius: 7px;" autocomplete="off" id="remarksInput">
-                    <datalist id="remarksOptions">
-                        <option value="Post">
-                        <option value="Ground">
-                        <option value="OTP">
-                    </datalist>
-                </div>
-            <button id="student-next" class="btn btn-danger next-btn" 
-                onclick="insertPackageData(
-                    true, 
-                    document.getElementById('hiddenSelectedStudent').value.split(',')[2], 
-                    document.getElementById('deliverySelectTrackingID').value,
-                    document.getElementById('remarksInput').value
-                )">
-                SUBMIT
-            </button>
-            </div>
-            `;
+                document.getElementById('packageAssociatedDetails').style = "display: block;"
                 document.getElementById('enterPackageDetails').style = "display: block;"
+                
             }
-
+           
             function goBackToEnterPackage() {
                 document.getElementById('loginBox').style = "display: block;"
                 document.getElementById('enterPackageDetails').style = "display: none;"
@@ -319,12 +324,11 @@
             }
 
             async function insertPackageData(identified, ID, deliveryPartner, remarks) {
-                const status = "pending"; // Default status
-                console.log(status);
                 // Determine ashokaID or trackingID
                 const ashokaID = identified ? ID : null;
                 const trackingID = !identified ? ID : null;
-
+                console.log(document.getElementById('remarksInput').value);
+                console.log(remarks);
                 try {
                     // Step 2: Insert package data into the database
                     const response = await fetch('/insertpackage', {
@@ -340,6 +344,7 @@
                         // Redirect to success page with correct values
                         const queryString = new URLSearchParams({ packageNo, shelfNo, timestamp, remarks }).toString();
                         window.location.href = `/success-log?${queryString}`;
+                        console.log(document.getElementById('remarksInput').value);
                     } else {
                         alert("Failed to insert package details.");
                     }
