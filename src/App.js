@@ -273,6 +273,8 @@ app.get('/packages/:ashokaId', (req, res) => {
   });
 });
 
+
+// Checkout for packages with student details, NOT for tracking ID packages 
 app.post('/checkout', (req, res) => {
   const selectedPackages = req.body.packages; // Array of objects {packageNumber, AshokaId, timestamp}
 
@@ -295,14 +297,45 @@ app.post('/checkout', (req, res) => {
   }
 });
 
+
+//Checkout for tracking ID packages
+app.post('/checkout-trackingID', (req, res) => {
+  const packageDetails = req.body; // Object containing {trackingID, timestamp, packageNo}
+
+  if (packageDetails && packageDetails.trackingID && packageDetails.timestamp) {
+    // SQL query to update status to 'received' where the trackingID, timestamp, and packageNo match and status is 'pending'
+    const query = `UPDATE Packages SET status = 'received' WHERE trackingID = ? AND timestamp = ? AND packageNo = ? AND status = 'pending'`;
+    const values = [packageDetails.trackingID, packageDetails.timestamp, packageDetails.packageNo];
+    
+    console.log(query);
+    db.query(query, values, (err, result) => {
+      if (err) {
+        console.error("Error during checkout:", err);
+        return res.status(500).send("Error during checkout");
+      }
+      res.json({ message: "Success", affectedRows: result.affectedRows });
+    });
+  } else {
+    res.json({ message: "Invalid package details." });
+  }
+});
+
+
 // POST endpoint to insert a package
 app.post('/insertpackage', (req, res) => {
-  const { ashokaID, trackingID, deliveryPartner, remarks} = req.body;
+  const { ashokaID, trackingID, deliveryPartner, remarks } = req.body;
   const status = 'pending';
+  let studentData, studentName, shelfNo;
   // Extract first letter of ashokaID for shelfNo
-  const studentData = students.find(student => student.AshokaId == ashokaID);
-  const studentName = studentData.UserName;
-  let shelfNo = studentName ? studentName.charAt(0).toUpperCase() : "X"; // Default shelf
+  if (trackingID == null) {
+  studentData = students.find(student => student.AshokaId == ashokaID);
+  studentName = studentData.UserName;
+  shelfNo = studentName ? studentName.charAt(0).toUpperCase() : "X"; // Default shelf
+  }
+  else {
+    studentName = '';
+    shelfNo = 'Unidentified';
+  }
 
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split('T')[0];
@@ -352,6 +385,7 @@ app.post('/insertpackage', (req, res) => {
   });
 });
 
+
 app.get('/success-checkout', (req, res) => {
   // Get the query parameters
   const studentName = req.query.studentName || '';
@@ -361,6 +395,7 @@ app.get('/success-checkout', (req, res) => {
     studentName
   });
 });
+
 
 app.get('/success-log', (req, res) => {
   const packageDetails = {
@@ -372,6 +407,7 @@ app.get('/success-log', (req, res) => {
   console.log(packageDetails);
   res.render('success-log', { packageDetails });
 });
+
 
 // API endpoint to search for a tracking ID
 app.get('/track', (req, res) => {
@@ -394,9 +430,11 @@ app.get('/track', (req, res) => {
   });
 });
 
+
 app.get('/tracking-id-search', (req, res) => {
   res.render('tracking-id-search');
 })
+
 
 app.listen(port || 3000, function(){
   console.log("listening on port ",port || 3000)

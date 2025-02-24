@@ -10,7 +10,7 @@
     padding: 50px 70px 70px 70px;
 }
 
-#checkout-form button {
+#checkout-form button , #checkout-btn {
     width: 120px;
     height: 40px;
     color: white;
