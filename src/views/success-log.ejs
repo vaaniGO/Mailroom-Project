@@ -20,14 +20,16 @@
                 <h3 class="package-title">Package Logged!</h3>
 
                 <div class="package-details">
-                <div class="subtext-wrapper">
+                <div class="subtext-wrapper header-wrapper">
                     <div class="subtext">No.</div>
                     <div class="subtext">Date</div>
                 </div>
                 <div class="subtext-wrapper">
                     <div class="package-number"><%= packageDetails.packageNo %></div>
-                    <span class="date-display"><%= new Date(packageDetails.timestamp).getDate() %>/<%= new Date(packageDetails.timestamp).getMonth() + 1 %></span>
-                </div>
+                    <span class="date-display">
+                        <%= packageDetails.timestamp.split(' ')[0].replace(/-/g, '/').slice(0, 5) %>
+                      </span>
+                  </div>
                 </div>
 
                     <div class="info-box">

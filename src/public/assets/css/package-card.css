@@ -49,3 +49,7 @@
   .packages-wrapper #checkout-btn {
     margin-top: 30px;
   }
+
+  .bold {
+    font-weight: bold;
+  }

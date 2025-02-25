@@ -280,11 +280,18 @@ app.post('/checkout', (req, res) => {
 
   if (Array.isArray(selectedPackages) && selectedPackages.length > 0) {
     // Prepare the placeholders and values for SQL
-    const placeholders = selectedPackages.map(() => '(?, ?, ?)').join(',');
+    const conditions = selectedPackages.map(pkg => 
+      `(packageNo = ? AND AshokaId = ? AND timestamp = ?)`
+    ).join(' OR ');
+    
+    const query = `
+      UPDATE Packages 
+      SET status = 'received' 
+      WHERE (${conditions}) 
+      AND status = 'pending';
+    `;
+    
     const values = selectedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp]);
-
-    // SQL query to update status to 'received' for matching package details where the status is 'pending'
-    const query = `UPDATE Packages SET status = 'received' WHERE (packageNo, AshokaId, timestamp) IN (${placeholders}) AND status = 'pending'`;
 
     db.query(query, values, (err, result) => {
       if (err) {
@@ -374,15 +381,30 @@ app.post('/insertpackage', (req, res) => {
     let packageNo = 1; // Default if no previous entry exists
 
     if (result.length > 0) {
-      const recentDate = new Date(result[0].timestamp).toISOString().split('T')[0];
-
+      // Extract the date part from the custom timestamp format (DD-MM-YYYY h:mm AM/PM)
+      const recentTimestamp = result[0].timestamp; // e.g., "17-02-2025 3:46 PM"
+      const recentDate = recentTimestamp.split(' ')[0]; // Extracts "17-02-2025"
+    
+      // Convert recentDate (DD-MM-YYYY) to YYYY-MM-DD for comparison
+      const [day, month, year] = recentDate.split('-');
+      const formattedRecentDate = `${year}-${month}-${day}`; // Converts to "2025-02-17"
+    
       // If the most recent package was inserted today, increment its package number
-      if (recentDate === today) {
+      if (formattedRecentDate === today) {
         packageNo = result[0].packageNo + 1;
       }
     }
 
-    const timestamp = new Date().toISOString();
+    // Format the timestamp as "DD-MM-YYYY h:mm A"
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const year = now.getFullYear();
+    const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+
+    const formattedTimestamp = `${day}-${month}-${year} ${hours}:${minutes} ${ampm}`;
 
     // Insert package into the database
     const insertQuery = `
@@ -390,7 +412,7 @@ app.post('/insertpackage', (req, res) => {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
-    db.query(insertQuery, [ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks], (err, result) => {
+    db.query(insertQuery, [ashokaID, trackingID, packageNo, shelfNo, formattedTimestamp, deliveryPartner, status, remarks], (err, result) => {
       if (err) {
         console.error('Error inserting package:', err);
         return res.status(500).json({ message: 'Failed to insert package' });
@@ -398,7 +420,7 @@ app.post('/insertpackage', (req, res) => {
         // Prepare the packageDetails object to pass to the view
         const packageDetails = {
           packageNo: packageNo,
-          timestamp: timestamp,
+          timestamp: formattedTimestamp,
           shelfNo: shelfNo,
           remarks: remarks
         };

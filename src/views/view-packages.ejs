@@ -24,6 +24,7 @@
       <% packages.forEach(package => { %>
         <%- include('partials/packageCard.ejs', { 
           packageNo: package.packageNo, 
+          datestamp: package.timestamp.split(' ')[0].replace(/-/g, '/').slice(0, 5),
           timestamp: package.timestamp, 
           deliveryPartner: package.deliveryPartner 
         }) %>
