@@ -140,7 +140,10 @@
                 <!-- <br /> -->
 
                 <div class="d-flex justify-content-end">
-                    <button id="student-next" class="btn btn-danger next-btn" onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelect').value, document.getElementById('remarksInput').value)">SUBMIT</button>
+                    <button id="submit-tracking-id" disabled class="btn btn-danger next-btn"
+                        onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelect').value, document.getElementById('remarksInput').value)">
+                        SUBMIT
+                    </button>
                 </div>
             </div>
         </div>
@@ -281,7 +284,8 @@
 
                 const trackingBox = document.getElementById("trackingIDLoginBox");
                 const trackingInput = document.getElementById("trackingIDInput");
-                trackingInput.focus()
+                trackingInput.focus();
+                checkFormValidity();
             }
 
             function clearStudent() {
@@ -445,6 +449,41 @@
                 });
             });
 
+        </script>
+        <script>
+            // Function to check form validity and enable/disable buttons
+            function checkFormValidity() {
+                // For the "Find User" form
+                const userInput = document.getElementById('userInput').value.trim();
+                const hiddenSelectedStudent = document.getElementById('hiddenSelectedStudent').value.trim();
+                const studentNextButton = document.getElementById('student-next');
+                studentNextButton.disabled = !(userInput && hiddenSelectedStudent);
+
+                // For the "Package Details" form (tracking ID)
+                const trackingIDInput = document.getElementById('trackingIDInput').value.trim();
+                const deliverySelect = document.getElementById('deliverySelect').value;
+                const submitButtonTrackingID = document.getElementById('submit-tracking-id'); // Correct ID
+                submitButtonTrackingID.disabled = !(trackingIDInput && deliverySelect);
+
+                // For the "Package Details" form (identified student)
+                const deliverySelectTrackingID = document.getElementById('deliverySelectTrackingID').value;
+                const submitButtonIdentifiedStudent = document.querySelector('#enterPackageDetails .next-btn');
+                submitButtonIdentifiedStudent.disabled = !deliverySelectTrackingID;
+            }
+        
+            // Add event listeners to form fields
+            document.addEventListener('DOMContentLoaded', function () {
+                // For the "Find User" form
+                document.getElementById('userInput').addEventListener('input', checkFormValidity);
+                document.getElementById('hiddenSelectedStudent').addEventListener('change', checkFormValidity);
+
+                // For the "Package Details" form (tracking ID)
+                document.getElementById('trackingIDInput').addEventListener('input', checkFormValidity);
+                document.getElementById('deliverySelect').addEventListener('change', checkFormValidity);
+
+                // For the "Package Details" form (identified student)
+                document.getElementById('deliverySelectTrackingID').addEventListener('change', checkFormValidity);
+            });
         </script>
         <!-- Before closing body tag -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
