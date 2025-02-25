@@ -282,12 +282,18 @@ app.get('/packages/:ashokaId', (req, res) => {
 
 // Checkout for packages with student details, NOT for tracking ID packages 
 app.post('/checkout', (req, res) => {
-  const selectedPackages = req.body.packages; // Array of objects {packageNumber, AshokaId, timestamp}
+  const selectedPackages = req.body.packages; // Array of objects {packageNo, AshokaId, timestamp}
 
   if (Array.isArray(selectedPackages) && selectedPackages.length > 0) {
+    // Clean up the timestamp values (remove trailing '>' if present)
+    const cleanedPackages = selectedPackages.map(pkg => ({
+      ...pkg,
+      timestamp: pkg.timestamp.endsWith('>') ? pkg.timestamp.slice(0, -1) : pkg.timestamp
+    }));
+
     // Prepare the placeholders and values for SQL
-    const conditions = selectedPackages.map(pkg => 
-      `(packageNo = ? AND AshokaId = ? AND timestamp = ?)`
+    const conditions = cleanedPackages.map(pkg => 
+      `(packageNo = ? AND ashokaID = ? AND timestamp = ?)`
     ).join(' OR ');
     
     const query = `
@@ -297,7 +303,7 @@ app.post('/checkout', (req, res) => {
       AND status = 'pending';
     `;
     
-    const values = selectedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp]);
+    const values = cleanedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp]);
 
     db.query(query, values, (err, result) => {
       if (err) {
@@ -306,8 +312,8 @@ app.post('/checkout', (req, res) => {
       }
 
       // Render the success-checkout page with the first package's Ashoka ID
-      const packageDetails = { ID: selectedPackages[0].AshokaId }; // Use the first package's Ashoka ID
-      console.log(selectedPackages);
+      const packageDetails = { ID: cleanedPackages[0].AshokaId }; // Use the first package's Ashoka ID
+      console.log(cleanedPackages);
       res.render('success-checkout', { packageDetails });
     });
   } else {
