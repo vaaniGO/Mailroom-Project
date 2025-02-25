@@ -267,12 +267,13 @@ app.get('/packages/:ashokaId', (req, res) => {
 
   // Right now, the pending filter is commented for testing purposes. Simply remove -- to make it active.
   db.query(
-    "SELECT packageNo, timestamp, deliveryPartner FROM Packages WHERE ashokaId = ? -- AND status = 'pending'",
+    "SELECT packageNo, timestamp, ashokaId, deliveryPartner FROM Packages WHERE ashokaId = ? -- AND status = 'pending'",
     [ashokaId],
     (err, results) => {
       if (err) {
         return res.status(500).send("Error fetching packages");
       }
+      console.log(results);
       res.render('view-packages.ejs', { student: studentData, packages: results });
     }
   );
@@ -306,6 +307,7 @@ app.post('/checkout', (req, res) => {
 
       // Render the success-checkout page with the first package's Ashoka ID
       const packageDetails = { ID: selectedPackages[0].AshokaId }; // Use the first package's Ashoka ID
+      console.log(selectedPackages);
       res.render('success-checkout', { packageDetails });
     });
   } else {

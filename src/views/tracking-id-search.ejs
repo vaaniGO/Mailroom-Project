@@ -59,7 +59,7 @@
                 if (text.includes("Tracking ID:")) {
                     packageDetails.trackingID = text.split(": ")[1];
                 } else if (text.includes("Timestamp:")) {
-                    packageDetails.timestamp = text.split(": ")[1];
+                    packageDetails.timestamp = text.split(' ')[0].replace(/-/g, '/').slice(0, 5);
                 }
                 else if (text.includes("Package No:")) {
                     packageDetails.packageNo = text.split(": ")[1];
@@ -128,7 +128,7 @@
                             resultContent.innerHTML = `
                                 <p><strong>Tracking ID:</strong> ${data.trackingID}</p>
                                 <p><strong>Status:</strong> ${data.status}</p>
-                                <p><strong>Timestamp:</strong> ${data.timetsamp}</p>
+                                <p><strong>Timestamp:</strong> ${data.timestamp}</p>
                                 <p><strong>Delivery Partner:</strong> ${data.deliveryPartner}</p>
                             `;
                         }

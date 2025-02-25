@@ -26,7 +26,8 @@
           packageNo: package.packageNo, 
           datestamp: package.timestamp.split(' ')[0].replace(/-/g, '/').slice(0, 5),
           timestamp: package.timestamp, 
-          deliveryPartner: package.deliveryPartner 
+          deliveryPartner: package.deliveryPartner,
+          ashokaID: package.ashokaId
         }) %>
       <% }) %>
       <button type="submit" id="checkout-btn" onclick="checkout(event);">Checkout</button>
@@ -47,12 +48,12 @@
 
   const selectedPackages = [];
   const checkboxes = document.querySelectorAll('.package-checkbox:checked');
-  
+
   checkboxes.forEach(checkbox => {
     const packageData = {
-      packageNo: checkbox.dataset.packageNo,
-      AshokaId: checkbox.dataset.ashokaId,
-      timestamp: checkbox.dataset.timestamp
+      packageNo: checkbox.dataset.packageNo, // Access data-package-no
+      AshokaId: checkbox.dataset.ashokaId,  // Access data-ashoka-id
+      timestamp: checkbox.dataset.timestamp // Access data-timestamp
     };
     selectedPackages.push(packageData);
   });
@@ -62,29 +63,29 @@
     return;
   }
 
+  console.log(selectedPackages);
+
   fetch('/checkout', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ packages: selectedPackages }),
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ packages: selectedPackages }),
   })
-  .then(response => {
-    if (response.ok) {
-        // If the response is HTML, render it in the browser
-        return response.text(); // Get the HTML content
-    } else {
+    .then(response => {
+      if (response.ok) {
+        return response.text();
+      } else {
         throw new Error("Network response was not ok");
-    }
+      }
     })
     .then(html => {
-    // Replace the current document with the new HTML
-    document.open();
-    document.write(html);
-    document.close();
+      document.open();
+      document.write(html);
+      document.close();
     })
     .catch(error => {
-    console.error("Error during checkout:", error);
+      console.error("Error during checkout:", error);
     });
 }
   </script>
