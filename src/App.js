@@ -264,13 +264,18 @@ const db = mysql.createConnection({
 app.get('/packages/:ashokaId', (req, res) => {
   const ashokaId = req.params.ashokaId;
   const studentData = students.find(student => student.AshokaId == ashokaId);
-  db.query("SELECT packageNo, timestamp, deliveryPartner FROM Packages WHERE ashokaId = ?", [ashokaId], (err, results) => {
-    if (err) {
-      return res.status(500).send("Error fetching packages");
+
+  // Right now, the pending filter is commented for testing purposes. Simply remove -- to make it active.
+  db.query(
+    "SELECT packageNo, timestamp, deliveryPartner FROM Packages WHERE ashokaId = ? -- AND status = 'pending'",
+    [ashokaId],
+    (err, results) => {
+      if (err) {
+        return res.status(500).send("Error fetching packages");
+      }
+      res.render('view-packages.ejs', { student: studentData, packages: results });
     }
-    console.log(studentData);
-    res.render('view-packages.ejs', { student: studentData, packages: results });
-  });
+  );
 });
 
 
