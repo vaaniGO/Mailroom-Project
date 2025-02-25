@@ -35,6 +35,19 @@
 
     <script>
 
+            document.addEventListener('DOMContentLoaded', () => {
+                const inputField = document.querySelector('.form-control');
+                const nextButton = document.querySelector('.next-btn');
+        
+                // Disable the button initially
+                nextButton.disabled = true;
+        
+                inputField.addEventListener('input', () => {
+                    nextButton.disabled = inputField.value.trim() === '';
+                });
+        
+            });
+            
         document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("trackingID").focus();
             });

@@ -29,21 +29,30 @@
                 <div class="d-flex justify-content-between">
 
                 <button class="btn btn-danger search-by-id-btn next-btn">FIND BY TRACKING ID</button>
-                <button class="btn btn-danger next-btn">NEXT</button>
+                <button class="btn btn-danger next-btn next-btn-next">NEXT</button>
                     
                 </div>
             </div>
         </div>
 
-<script>
-
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelector('.search-by-id-btn').addEventListener('click', () => {
-            window.location.href = '/tracking-id-search';
-        });
-    });
-
-</script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const inputField = document.querySelector('.form-control');
+                const nextButton = document.querySelector('.next-btn-next');
+        
+                // Disable the button initially
+                nextButton.disabled = true;
+        
+                inputField.addEventListener('input', () => {
+                    nextButton.disabled = inputField.value.trim() === '';
+                });
+        
+                document.querySelector('.search-by-id-btn').addEventListener('click', () => {
+                    window.location.href = '/tracking-id-search';
+                });
+            });
+        </script>
+        
 
 </body>
 </html>
