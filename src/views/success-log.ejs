@@ -27,13 +27,14 @@
                 <div class="subtext-wrapper">
                     <div class="package-number"><%= packageDetails.packageNo %></div>
                     <span class="date-display">
-                        <%= packageDetails.timestamp.split(' ')[0].replace(/-/g, '/').slice(0, 5) %>
-                      </span>
+                        <%= new Date(packageDetails.timestamp).getDate().toString().padStart(2, '0') %>/<%= (new Date(packageDetails.timestamp).getMonth() + 1).toString() %>
+                    </span>
+                    
                   </div>
                 </div>
 
                     <div class="info-box">
-                        Shelf No. = <span class="shelf-number"><%= packageDetails.shelfNo %></span>
+                        SHELF: <span class="shelf-number"><%= packageDetails.shelfNo %></span>
                     </div>
                     
 

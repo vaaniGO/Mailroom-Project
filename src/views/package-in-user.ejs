@@ -58,96 +58,7 @@
             </div>
         </div>
 
-        <!-- Login for entering tracking ID details : includes package details entering-->
-        <div class="login-container tracking-id-login">
-            <div class="login-box" id="trackingIDLoginBox" style="display: none;">
-                <h3 class="mb-4">Package Details</h3>
-                <div class="input-group mb-3 dropdown">
-                    <input type="text" id="trackingIDInput" class="form-control" placeholder="Enter Tracking ID"
-                        style="border-radius: 7px;">
-                </div>
-                <div class="input-group">                
-                    <select id="deliverySelect" name="deliveryService" style="
-                        width: 100%;
-                        font-size: 17px;
-                        padding: 6px;
-                        border-radius: 8px;
-                        background-color: #f8f9fa;
-                        cursor: pointer;
-                    ">
-                        <option value="" disabled selected>Select Delivery service</option>
-                        <option value="Amazon">Amazon</option>
-                        <option value="Anjani">Anjani</option>
-                        <option value="AR Logistics">AR Logistics</option>
-                        <option value="Blue Dart">Blue Dart</option>
-                        <option value="By Hand">By Hand</option>
-                        <option value="Delhivery">Delhivery</option>
-                        <option value="DHL">DHL</option>
-                        <option value="DTDC">DTDC</option>
-                        <option value="Ecom Xpress">Ecom Xpress</option>
-                        <option value="Ekart">Ekart</option>
-                        <option value="FedEx">FedEx</option>
-                        <option value="Flipkart">Flipkart</option>
-                        <option value="Gati">Gati</option>
-                        <option value="Mark">Mark</option>
-                        <option value="Max">Max</option>
-                        <option value="Meesho">Meesho</option>
-                        <option value="Myntra">Myntra</option>
-                        <option value="Professional">Professional</option>
-                        <option value="Safexpress">Safexpress</option>
-                        <option value="Shadowfax">Shadowfax</option>
-                        <option value="Sharmaruti">Sharmaruti</option>
-                        <option value="Sky King">Sky King</option>
-                        <option value="Solex Logistics">Solex Logistics</option>
-                        <option value="Speed Post">Speed Post</option>
-                        <option value="Teena">Teena</option>
-                        <option value="Tirupati">Tirupati</option>
-                        <option value="Trackon">Trackon</option>
-                        <option value="UPS">UPS</option>
-                        <option value="XpressBees">XpressBees</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <br />
-                <div class="input-group mb-3">                
-                    <input type="text" class="form-control" list="remarksInput" placeholder="Remarks"
-                        style="border-radius: 7px;" autocomplete="off">
-                    <datalist id="remarksInput">
-                        <option value="Post">
-                        <option value="Ground">
-                        <option value="OTP">
-                    </datalist>
-                </div>
-                
-                <!-- <div class="remarksInput mt-3">
-                    <div class="remarksInput-input">
-                    <input type="checkbox" id="postPackageInput" class="form-check-input" placeholder="Post"
-                                style="border-radius: 7px;" autocomplete="off">
-                    <label for="postPackageInput" class="form-check-label">Post</label>
-                    </div>
-                    <div class="remarksInput-input">
-                    <input type="checkbox" id="groundPackageInput" class="form-check-input" placeholder="Ground"
-                        style="border-radius: 7px;" autocomplete="off">
-                        <label for="groundPackageInput" class="form-check-label">Ground</label>
-                    </div>
-                    <div class="remarksInput-input">
-                    <input type="checkbox" id="otpPendingInput" class="form-check-input"" placeholder="OTP Pending"
-                                style="border-radius: 7px;" autocomplete="off">
-                                <label for="otpPendingInput" class="form-check-label">OTP Pending</label>
-                    </div>
-                </div> -->
-
-                <!-- <br /> -->
-
-                <div class="d-flex justify-content-end">
-                    <button id="submit-tracking-id" disabled class="btn btn-danger next-btn"
-                        onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelect').value, document.getElementById('remarksInput').value)">
-                        SUBMIT
-                    </button>
-                </div>
-            </div>
-        </div>
-
+       
         <!-- Login for entering package details after entering identified student -->
         <div class="login-container">
             <div class="login-box" id="enterPackageDetails" style="display: none;">
@@ -162,7 +73,7 @@
                     background-color: #f8f9fa;
                     cursor: pointer;
                 ">
-                    <option value="" disabled selected>Select Delivery service</option>
+                    <option value="" selected disabled>Select Delivery service</option>
                     <option value="Amazon">Amazon</option>
                     <option value="Anjani">Anjani</option>
                     <option value="AR Logistics">AR Logistics</option>
@@ -205,8 +116,8 @@
 
             <hr size="50" style="height:20px;color:white" >
             <div class="input-group mb-3">                
-                    <input type="text" class="form-control" list="remarksOptions" placeholder="Remarks"
-                        style="border-radius: 7px;" autocomplete="off" id="remarksInput">
+                    <input id="remarksInputIdentified" type="text" class="form-control" list="remarksOptions" placeholder="Remarks"
+                        style="border-radius: 7px;" name="remarks" autocomplete="off">
                     <datalist id="remarksOptions">
                         <option value="Post">
                         <option value="Ground">
@@ -218,7 +129,7 @@
                     true, 
                     document.getElementById('hiddenSelectedStudent').value.split(',')[2], 
                     document.getElementById('deliverySelectTrackingID').value,
-                    document.getElementById('remarksInput').value
+                    document.getElementById('remarksInputIdentified').value
                 )">
                 SUBMIT
             </button>
@@ -230,26 +141,13 @@
                 
 
         </div>
-        </div>
+    </div>
         <br />
 
         <script>
             // Get the current date in a readable format (DD-MM-YYYY)
-            const currentDate = new Date();
             let packageNo = 1;
-            const formattedDate = currentDate.getDate().toString().padStart(2, '0') + "-" +
-                (currentDate.getMonth() + 1).toString().padStart(2, '0') + "-" +
-                currentDate.getFullYear();
-            document.getElementById("date").innerText = formattedDate;
-
-            const formattedTime = currentDate.getHours().toString().padStart(2, '0') + ":" +
-                currentDate.getMinutes().toString().padStart(2, '0');
-            document.getElementById("time").innerText = formattedTime;
-
-            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            document.getElementById("day").innerText = days[currentDate.getDay()];
-
-            
+           
             // Use the enter button to trigger select dropdown option and submit it and do next
             document.addEventListener("DOMContentLoaded", function () {
                 const inputField = document.getElementById("userInput"); // Input field where user types
@@ -278,14 +176,15 @@
             });
 
             function useTrackingID() {
-                document.getElementById('trackingIDInput').focus();
-                document.getElementById('loginBox').style = "display: none;"
-                document.getElementById('trackingIDLoginBox').style = "display: block;"
+                // document.getElementById('trackingIDInput').focus();
+                // document.getElementById('loginBox').style = "display: none;"
+                // document.getElementById('trackingIDLoginBox').style = "display: block;"
 
-                const trackingBox = document.getElementById("trackingIDLoginBox");
-                const trackingInput = document.getElementById("trackingIDInput");
-                trackingInput.focus();
-                checkFormValidity();
+                // const trackingBox = document.getElementById("trackingIDLoginBox");
+                // const trackingInput = document.getElementById("trackingIDInput");
+                // trackingInput.focus();
+                // checkFormValidity();
+                window.location.href = '/package-in/tracking-id';
             }
 
             function clearStudent() {
@@ -459,11 +358,11 @@
                 const studentNextButton = document.getElementById('student-next');
                 studentNextButton.disabled = !(userInput && hiddenSelectedStudent);
 
-                // For the "Package Details" form (tracking ID)
-                const trackingIDInput = document.getElementById('trackingIDInput').value.trim();
-                const deliverySelect = document.getElementById('deliverySelect').value;
-                const submitButtonTrackingID = document.getElementById('submit-tracking-id'); // Correct ID
-                submitButtonTrackingID.disabled = !(trackingIDInput && deliverySelect);
+                // // For the "Package Details" form (tracking ID)
+                // const trackingIDInput = document.getElementById('trackingIDInput').value.trim();
+                // const deliverySelect = document.getElementById('deliverySelect').value;
+                // const submitButtonTrackingID = document.getElementById('submit-tracking-id'); // Correct ID
+                // submitButtonTrackingID.disabled = !(trackingIDInput && deliverySelect);
 
                 // For the "Package Details" form (identified student)
                 const deliverySelectTrackingID = document.getElementById('deliverySelectTrackingID').value;
@@ -478,8 +377,8 @@
                 document.getElementById('hiddenSelectedStudent').addEventListener('change', checkFormValidity);
 
                 // For the "Package Details" form (tracking ID)
-                document.getElementById('trackingIDInput').addEventListener('input', checkFormValidity);
-                document.getElementById('deliverySelect').addEventListener('change', checkFormValidity);
+                // document.getElementById('trackingIDInput').addEventListener('input', checkFormValidity);
+                // document.getElementById('deliverySelect').addEventListener('change', checkFormValidity);
 
                 // For the "Package Details" form (identified student)
                 document.getElementById('deliverySelectTrackingID').addEventListener('change', checkFormValidity);

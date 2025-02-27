@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashoka University Mailroom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/global-styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <%-include("partials/navbar.ejs")-%>
+        <!-- Input takes place in 2 forms: first we identify a student then enter the associated package details. This happens in two steps (the login-container) divs
+        for both are below. However, in case of tracking ID (no user found) these 2 things happen together and there is only 1 div-->
+
+        <!-- Login for entering student details-->
+        <div class="login-container">
+            <div class="login-box" id="loginBox">
+                <h3 class="mb-4">Find Friend</h3>
+
+                <p>Name, Email ID or Ashoka ID</p>
+                <div class="input-group mb-3 dropdown" style="position: relative;">
+                    <input name="student" type="text" id="userInput" class="form-control" placeholder="Enter details"
+                        autofocus autocomplete="off">
+                    <span onclick="clearStudent()"
+                        style="color:#C4122F; border-top-right-radius: 8px; border-bottom-right-radius: 8px;"
+                        class="input-group-text" id="basic-addon2">Clear</span>
+
+
+
+                    <!-- Hidden input to store selected student -->
+                    <input name="hiddenSelectedStudent" type="hidden" id="hiddenSelectedStudent" class="form-control"
+                        autocomplete="off">
+
+
+                    <!-- Dropdown results -->
+                    <ul id="searchResults" class="dropdown-menu" ></ul>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button id="student-next" disabled class="btn btn-danger next-btn"
+                        onclick="window.location.href = `/package-out/friend/${document.getElementById('hiddenSelectedStudent').value}/<%=qrString%>`">
+                        NEXT
+                    </button>
+
+                    
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <br />
+
+        <script>
+            // Get the current date in a readable format (DD-MM-YYYY)
+            const currentDate = new Date();
+            let packageNo = 1;
+            
+            // Use the enter button to trigger select dropdown option and submit it and do next
+            document.addEventListener("DOMContentLoaded", function () {
+                const inputField = document.getElementById("userInput"); // Input field where user types
+                const dropdown = document.getElementById("searchResults"); // The dropdown menu
+                const nextButton = document.getElementById("student-next"); // The next button
+            });
+
+            function clearStudent() {
+                document.getElementById('userInput').value = "";
+                document.getElementById('hiddenSelectedStudent').value = "";
+                document.getElementById("student-next").disabled = true;
+            }
+
+            function showStudentDetails() {
+                document.getElementById('DetailBox').style = "display: block;"
+            }
+
+            function enterPackageDetails(studentName, studentEmail, studentID) {
+                document.getElementById('studentNameDisplay').value = studentName;
+                document.getElementById('studentEmailDisplay').value = studentEmail;
+                document.getElementById('studentIDDisplay').value = studentID;
+                document.getElementById('packageAssociatedDetails').style.display = "block";
+                document.getElementById('loginBox').style = "display: none;"
+                document.getElementById('packageAssociatedDetails').style = "display: block;"
+                document.getElementById('enterPackageDetails').style = "display: block;"
+                
+            }
+           
+            function goBackToEnterPackage() {
+                document.getElementById('loginBox').style = "display: block;"
+                document.getElementById('enterPackageDetails').style = "display: none;"
+            }
+
+            function selectService(service) {
+                document.getElementById("deliveryInput").value = service;
+                // Hide dropdown after selection
+                const dropdownMenu = document.getElementById('serviceDropdown');
+                const bsDropdown = bootstrap.Dropdown.getInstance(document.getElementById('deliveryDropdown'));
+                if (bsDropdown) {
+                    bsDropdown.hide();
+                }
+            }
+
+            // Move `selectStudent` Outside to Make It Globally Accessible
+            function selectStudent(name, email, id) {
+                document.getElementById("userInput").value = `${name} (${id})`;
+                document.getElementById("hiddenSelectedStudent").value = `${id}`;
+                document.getElementById("student-next").disabled = false;
+                document.getElementById("searchResults").classList.remove("show");
+            }
+
+            async function insertPackageData(identified, ID, deliveryPartner, remarks) {
+                // Determine ashokaID or trackingID
+                const ashokaID = identified ? ID : null;
+                const trackingID = !identified ? ID : null;
+                console.log('Remarks:', remarks);
+
+                fetch('/insertpackage', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ ashokaID, trackingID, deliveryPartner, remarks})
+                })
+                .then(response => {
+                if (response.ok) {
+                    // If the response is HTML, render it in the browser
+                    return response.text(); // Get the HTML content
+                } else {
+                    throw new Error("Network response was not ok");
+                }
+                })
+                .then(html => {
+                // Replace the current document with the new HTML
+                document.open();
+                document.write(html);
+                document.close();
+                })
+                .catch(error => {
+                console.error("Error during checkout:", error);
+                });
+                
+            }
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const searchInput = document.getElementById("userInput");
+                const resultsDropdown = document.getElementById("searchResults");
+                let debounceTimer;
+                let cachedResults = []; // Cache to prevent unnecessary API calls
+
+                function fetchResults(query) {
+                    clearTimeout(debounceTimer);
+                    debounceTimer = setTimeout(async () => {
+                        try {
+                            const response = await fetch(`http://127.0.0.1:3000/search2?q=${encodeURIComponent(query)}`);
+                            const data = await response.json();
+                            cachedResults = data; // Store results in cache
+                            displayResults(cachedResults);
+                        } catch (error) {
+                            console.error("Error fetching search results:", error);
+                        }
+                    }, 500);
+                }
+
+                function displayResults(results) {
+                    results = results.data;
+                    if (results.length > 0) {
+                        // Filter out objects that are missing required fields
+                        const validResults = results.filter(result =>
+                            result.UserName && result.AshokaEmailId && result.AshokaId
+                        );
+                        // console.log(validResults);
+                        if (validResults.length > 0) {
+                            resultsDropdown.innerHTML = validResults.map(result => `
+            <li class="dropdown-item" onclick="selectStudent('${result.UserName.toUpperCase()}', '${result.AshokaEmailId}', '${result.AshokaId}')">
+                <strong>${result.UserName.toUpperCase()}</strong>
+                <span style="float:right;">ID: ${result.AshokaId}</span> <br>
+                <small>${result.AshokaEmailId}</small>
+            </li>
+        `).join("");
+
+                            resultsDropdown.classList.add("show");
+                        } else {
+                            // If no valid results, hide the dropdown
+                            resultsDropdown.innerHTML = '<li class="dropdown-item text-muted">No valid results found</li>';
+                            resultsDropdown.classList.remove("show");
+                        }
+                    } else {
+                        resultsDropdown.innerHTML = `<li class="dropdown-item disabled">No results found</li>`;
+                        resultsDropdown.classList.add("show");
+                    }
+                }
+
+                searchInput.addEventListener("input", function () {
+                    this.value = this.value.toUpperCase();
+                    const query = searchInput.value.trim();
+
+                    if (query.length < 1) {
+                        resultsDropdown.innerHTML = "";
+                        resultsDropdown.classList.remove("show");
+                        cachedResults = [];
+                        return;
+                    }
+
+                    fetchResults(query);
+                });
+
+                searchInput.addEventListener("click", function () {
+                    const query = searchInput.value.trim();
+                    if (query.length > 0) {
+                        if (cachedResults.length > 0) {
+                            displayResults(cachedResults); // Use cached results if available
+                        } else {
+                            fetchResults(query); // Fetch if no cached data
+                        }
+                    }
+                });
+
+                document.addEventListener("click", function (event) {
+                    if (!searchInput.contains(event.target) && !resultsDropdown.contains(event.target)) {
+                        resultsDropdown.classList.remove("show");
+                    }
+                });
+            });
+
+        </script>
+        <script>
+            // Function to check form validity and enable/disable buttons
+            function checkFormValidity() {
+                // For the "Find User" form
+                const userInput = document.getElementById('userInput').value.trim();
+                const hiddenSelectedStudent = document.getElementById('hiddenSelectedStudent').value.trim();
+                const studentNextButton = document.getElementById('student-next');
+                studentNextButton.disabled = !(userInput && hiddenSelectedStudent);
+            }
+        
+            // Add event listeners to form fields
+            document.addEventListener('DOMContentLoaded', function () {
+                // For the "Find User" form
+                document.getElementById('userInput').addEventListener('input', checkFormValidity);
+                document.getElementById('hiddenSelectedStudent').addEventListener('change', checkFormValidity);
+
+            });
+        </script>
+        <!-- Before closing body tag -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

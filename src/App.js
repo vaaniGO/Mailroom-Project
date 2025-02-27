@@ -1,5 +1,4 @@
 import express from 'express';
-import { MeiliSearch } from 'meilisearch';
 import fs from 'fs';
 import fetch from 'node-fetch';
 import cors from 'cors';
@@ -9,6 +8,7 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import Fuse from 'fuse.js';
 import mysql from 'mysql2';
+import moment from 'moment-timezone';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -24,154 +24,15 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use(cors()); // Allow all origins (or configure properly)
-const meiliClient = new MeiliSearch({
-  host: "http://127.0.0.1:7700",
-  apiKey: "7b5c0e77b50c92c388e25ef2ce4fd0d2bbb80053",
-});
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Health check route
-app.get("/health", async (req, res) => {
-  try {
-    const health = await meiliClient.health();
-    res.json(health);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
 
 app.set('view engine', 'ejs');
 
 // Set the views directory (optional, defaults to 'views/')
 app.set('views', path.join(__dirname, 'views'));
-
-// Function to upload data to MeiliSearch
-async function uploadData() {
-  try {
-    // Read JSON file
-    let data = JSON.parse(fs.readFileSync("data/students/ug22-26.json", "utf-8"));
-
-    // Filter out documents with invalid or missing AshokaId
-    data = data.filter(doc => doc.AshokaId && /^[a-zA-Z0-9_-]+$/.test(doc.AshokaId));
-
-    if (data.length === 0) {
-        console.error("No valid documents to upload.");
-        return;
-    }
-
-    console.log("Uploading", data.length, "valid records...");
-
-    const index = meiliClient.index("ug21-24");
-
-    await index.addDocuments(data, { primaryKey: "AshokaId" });
-
-    console.log("Upload Successful");
-  } catch (error) {
-    console.error("Error uploading data:", error);
-  }
-}
-  // Run the upload function
-//uploadData();
-
-// Function to configure Index in MeiliSearch
-async function configureIndex() {
-  const index = meiliClient.index("ug21-24");
-  await index.updateFilterableAttributes(["AshokaId"]);
-  await index.updateSearchableAttributes(["UserName", "AshokaEmailId", "AshokaId"]);
-  await index.updateRankingRules([
-      "typo",
-      "words",
-      "proximity",
-      "attribute",
-      "sort",
-      "exactness",
-      "AshokaId:desc",
-      "AshokaEmailId:desc",
-      "UserName:desc"
-  ]);
-
-  console.log("Index configured successfully!");
-}
-
-async function searchData(query) {
-  const index = meiliClient.index("ug21-24");
-
-  const searchResults = await index.search(query, {
-      filter: [
-          "AshokaId IS NOT NULL", // Ensures filtering is effective
-      ],
-  });
-
-  console.log(searchResults);
-}
-
-// Run configuration once before searching
-// configureIndex().then(() => {
-// searchData("Maan");
-// });
-
-// Levenschtein distance function : Previous
-app.get('/search', async (req, res) => {
-  try {
-    // Extract query parameters
-    const studentName = req.query.q;
-    const ashokaID = req.query.q;
-    const emailID = req.query.q;
-
-    // Setting Variables
-    const variables = `
-      SET @student_name = '${studentName}';
-      SET @ashoka_id = '${ashokaID}';
-      SET @email_id = '${emailID}';
-      SET @NameSimilarityScoreThreshold = 30;
-      SET @IDSimilarityScoreThreshold = 30;
-      SET @EmailSimilarityScoreThreshold = 30;
-      SET @NameSimilarityScoreThresholdIndividual = 30;
-      SET @IDSimilarityScoreThresholdIndividual = 30;
-      SET @EmailSimilarityScoreThresholdIndividual = 30;
-    `;
-
-    // Main Search Query
-    const searchQuery = `
-      SELECT student_name, email_id, ashoka_id,
-        (100 - (100 * Levenshtein(student_name, @student_name) / CHAR_LENGTH(@student_name))) AS NameSimilarityScore,
-        (100 - (100 * Levenshtein(ashoka_id, @ashoka_id) / CHAR_LENGTH(@ashoka_id))) AS AshokaIDSimilarityScore,
-        (100 - (100 * Levenshtein(email_id, @email_id) / CHAR_LENGTH(@email_id))) AS EmailIDSimilarityScore
-      FROM students
-      WHERE (
-          (100 - (100 * Levenshtein(student_name, @student_name) / CHAR_LENGTH(@student_name))) >= @NameSimilarityScoreThreshold
-          AND (100 - (100 * Levenshtein(ashoka_id, @ashoka_id) / CHAR_LENGTH(@ashoka_id))) >= @IDSimilarityScoreThreshold
-          AND (100 - (100 * Levenshtein(email_id, @email_id) / CHAR_LENGTH(@email_id))) >= @EmailSimilarityScoreThreshold
-      )
-      OR (100 - (100 * Levenshtein(student_name, @student_name) / CHAR_LENGTH(@student_name))) >= @NameSimilarityScoreThresholdIndividual
-      OR (100 - (100 * Levenshtein(ashoka_id, @ashoka_id) / CHAR_LENGTH(@ashoka_id))) >= @IDSimilarityScoreThresholdIndividual
-      OR (100 - (100 * Levenshtein(email_id, @email_id) / CHAR_LENGTH(@email_id))) >= @EmailSimilarityScoreThresholdIndividual
-      ORDER BY NameSimilarityScore DESC, AshokaIDSimilarityScore DESC, EmailIDSimilarityScore DESC;
-    `;
-
-    console.log(variables)
-    // Set variables
-    await db.promise().query(variables);
-
-    // Execute search query
-    const [results] = await db.promise().query(searchQuery);
-    console.log(results);
-    console.log('Query Parameters:', studentName, ashokaID, emailID);
-    res.status(200).json({
-      success: true,
-      data: results
-    });
-  } catch (err) {
-    console.error('Search Error:', err);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Server Error', 
-      error: err.message, 
-      stack: err.stack
-    });
-  }
-});
 
 // Populating the students array with data from JSON files
 fs.readdirSync(DIRECTORY).forEach(file => {
@@ -199,7 +60,7 @@ const fuse = new Fuse(students, {
 app.get('/search2', async (req, res) => {
   try {
     const query = req.query.q;
-    
+
     if (!query) {
       return res.status(400).json({
         success: false,
@@ -215,9 +76,9 @@ app.get('/search2', async (req, res) => {
         AshokaEmailId: result.item.AshokaEmailId,
         score: result.score
       }));
-    
-      // console.log('Query:', query);
-      // console.log('Search Results:', searchResults);
+
+    // console.log('Query:', query);
+    // console.log('Search Results:', searchResults);
 
     res.status(200).json({
       success: true,
@@ -235,14 +96,19 @@ app.get('/search2', async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  res.render('student-login');
-  // res.render("home");
-  // res.sendFile('home.html', { root: path.join(__dirname, 'views') });
+  res.redirect('/package-out');
 });
 
-app.get("/guard", async (req, res) => {
-  res.render('package-log');
+app.get("/package-out", async (req, res) => {
+  res.render('package-out-scan-qr');
+});
 
+app.get("/package-in/user", async (req, res) => {
+  res.render('package-in-user');
+});
+
+app.get("/package-in/tracking-id", async (req, res) => {
+  res.render('package-in-tracking-id');
 });
 
 
@@ -260,50 +126,110 @@ const db = mysql.createConnection({
 });
 
 
-// Route to display packages
-app.get('/packages/:ashokaId', (req, res) => {
-  const ashokaId = req.params.ashokaId;
-  const studentData = students.find(student => student.AshokaId == ashokaId);
 
-  // Right now, the pending filter is commented for testing purposes. Simply remove -- to make it active.
-  db.query(
-    "SELECT packageNo, timestamp, ashokaId, deliveryPartner FROM Packages WHERE ashokaId = ? -- AND status = 'pending'",
-    [ashokaId],
-    (err, results) => {
-      if (err) {
-        return res.status(500).send("Error fetching packages");
+function processQr(qrString){
+  return {isValid:true,ashokaId:qrString};
+}
+
+
+// Route to display packages
+app.get('/package-out/user/:qrString', (req, res) => {
+  // assume we call the AMS API here to get ashokaId from 
+  // const ashokaId = request("ams.ashoka.edu.in", qrString)
+  // const qrValid = request("ams.ashoka.edu.in", qrString)
+  if (processQr(req.params.qrString).isValid) {
+    const ashokaId = processQr(req.params.qrString).ashokaId;
+    const studentData = students.find(student => student.AshokaId == ashokaId);
+    // Right now, the pending filter is commented for testing purposes. Simply remove -- to make it active.
+    db.query(
+      "SELECT packageNo, timestamp, ashokaId, deliveryPartner, status, remarks, collectedBy, collectedAt FROM Packages WHERE ashokaId = ? -- AND status = 'pending'",
+      [ashokaId],
+      (err, results) => {
+        if (err) {
+          return res.status(500).send("Error fetching packages");
+        }
+        // console.log(results);
+        if (results.length > 0) {
+          var personCollecting = processQr(req.params.qrString).ashokaId;
+          res.render('view-packages.ejs', { student: studentData, packages: results, friend:false, personCollecting:personCollecting});
+        } else {
+          res.render("error", { msg: "No Packages in Database" });
+        }
       }
-      console.log(results);
-      res.render('view-packages.ejs', { student: studentData, packages: results });
-    }
-  );
+    );
+  } else {
+    res.render("error", { msg: "Invalid QR Code" });
+  }
+});
+
+// url naked/signature/history proof basically
+
+// Route to display packages of others on your QR code
+app.get('/package-out/friend/:id/:qrString', (req, res) => {
+  // assume we call the AMS API here to get ashokaId from 
+  // const ashokaId = request("ams.ashoka.edu.in", qrString)
+  // const qrValid = request("ams.ashoka.edu.in", qrString)
+  var personCollecting = processQr(req.params.qrString).ashokaId;
+  if (processQr(req.params.qrString).isValid) {
+    const ashokaId = req.params.id;
+    const studentData = students.find(student => student.AshokaId == ashokaId);
+    // Right now, the pending filter is commented for testing purposes. Simply remove -- to make it active.
+    db.query(
+      "SELECT packageNo, timestamp, ashokaId, deliveryPartner, status, remarks, collectedBy, collectedAt  FROM Packages WHERE ashokaId = ? -- AND status = 'pending'",
+      [ashokaId],
+      (err, results) => {
+        if (err) {
+          return res.status(500).send("Error fetching packages");
+        }
+        // console.log(results);
+        if (results.length > 0) {
+          res.render('view-packages.ejs', { student: studentData, packages: results, friend:true, personCollecting:personCollecting});
+        } else {
+          res.render("error", { msg: "No Packages in Database" });
+        }
+      }
+    );
+  } else {
+    res.render("error", { msg: "Invalid QR Code" });
+  }
 });
 
 
-// Checkout for packages with student details, NOT for tracking ID packages 
+app.get('/package-out/friend/:qrString', (req, res) => {
+  // assume we call the AMS API here to get ashokaId from 
+  // const ashokaId = request("ams.ashoka.edu.in", qrString)
+  if (processQr(req.params.qrString).isValid) {
+    res.render('package-out-friend', { qrString: req.params.qrString });
+  } else {
+    res.render("error", { msg: "Invalid QR Code" });
+  }
+});
+
+// Checkout for packages with student details, NOT for tracking ID packages
 app.post('/checkout', (req, res) => {
   const selectedPackages = req.body.packages; // Array of objects {packageNo, AshokaId, timestamp}
+  const personCollecting = req.body.personCollecting; // Person collecting the package
+  
+  // Get current timestamp in IST (Indian Standard Time)
+  const collectedAt = moment().tz('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss'); // Format as 'YYYY-MM-DD HH:mm:ss'
+
+  // console.log("SELECTED", selectedPackages);
 
   if (Array.isArray(selectedPackages) && selectedPackages.length > 0) {
-    // Clean up the timestamp values (remove trailing '>' if present)
-    const cleanedPackages = selectedPackages.map(pkg => ({
-      ...pkg,
-      timestamp: pkg.timestamp.endsWith('>') ? pkg.timestamp.slice(0, -1) : pkg.timestamp
-    }));
-
     // Prepare the placeholders and values for SQL
-    const conditions = cleanedPackages.map(pkg => 
+    const conditions = selectedPackages.map(pkg =>
       `(packageNo = ? AND ashokaID = ? AND timestamp = ?)`
     ).join(' OR ');
-    
+
     const query = `
       UPDATE Packages 
-      SET status = 'received' 
+      SET status = 'received', collectedBy = ?, collectedAt = ?
       WHERE (${conditions}) 
       AND status = 'pending';
     `;
-    
-    const values = cleanedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp]);
+
+    // Flatten the values array
+    const values = [personCollecting, collectedAt, ...selectedPackages.flatMap(pkg => [pkg.packageNo, pkg.AshokaId, pkg.timestamp])];
 
     db.query(query, values, (err, result) => {
       if (err) {
@@ -312,8 +238,8 @@ app.post('/checkout', (req, res) => {
       }
 
       // Render the success-checkout page with the first package's Ashoka ID
-      const packageDetails = { ID: cleanedPackages[0].AshokaId }; // Use the first package's Ashoka ID
-      console.log(cleanedPackages);
+      const packageDetails = { ID: selectedPackages[0].AshokaId }; // Use the first package's Ashoka ID
+      // console.log(selectedPackages);
       res.render('success-checkout', { packageDetails });
     });
   } else {
@@ -322,9 +248,9 @@ app.post('/checkout', (req, res) => {
 });
 
 
-//Checkout for tracking ID packages - error handling required for when tracking ID is null - however that should never be the case because this is only called when a tracking ID match is found
+// Checkout for tracking ID packages - error handling included
 app.post('/checkout-trackingID', (req, res) => {
-  const { packages } = req.body; // Destructure the `packages` array from the request body
+  const { packages, personCollecting } = req.body; // Destructure `packages` array and `personCollecting`
 
   if (!packages || packages.length === 0) {
     return res.status(400).send("No packages provided");
@@ -337,33 +263,30 @@ app.post('/checkout-trackingID', (req, res) => {
     return res.status(400).send("TrackingID is missing");
   }
 
-  // SQL query to update the status to 'received' where the trackingID matches
-  const query = `UPDATE Packages SET status = 'received' WHERE trackingID = ?;`;
+  // Get current timestamp in IST (Indian Standard Time)
+  const collectedAt = moment().tz('Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss'); // Format as 'YYYY-MM-DD HH:mm:ss'
 
-  db.query(query, [trackingID], (err, result) => {
+  // SQL query to update the status, collectedBy, and collectedAt where the trackingID matches
+  const query = `UPDATE Packages SET status = 'received', collectedBy = ?, collectedAt = ? WHERE trackingID = ?;`;
+
+  db.query(query, [personCollecting, collectedAt, trackingID], (err, result) => {
     if (err) {
       console.error("Error during checkout:", err);
       return res.status(500).send("Error during checkout");
     } else {
-
       // Check if any rows were affected
       if (result.affectedRows > 0) {
-        // Render the success page directly
-        const packageDetails = { ID: trackingID }; // Pass as an object
-        res.render('success-checkout', {
-          packageDetails
-        });
+        // Render the success page with tracking ID
+        res.render('success-checkout', { packageDetails: { ID: trackingID } });
       } else {
         res.status(404).json({ message: "No matching package found" });
       }
     }
   });
 });
-
-
 // POST endpoint to insert a package
 app.post('/insertpackage', (req, res) => {
-  const { ashokaID, trackingID, deliveryPartner, remarks } = req.body;
+  const { ashokaID, trackingID, deliveryPartner, remarks, shelf } = req.body;
   const status = 'pending';
   let studentData, studentName, shelfNo;
 
@@ -374,55 +297,41 @@ app.post('/insertpackage', (req, res) => {
     shelfNo = studentName ? studentName.charAt(0).toUpperCase() : "X"; // Default shelf
   } else {
     studentName = '';
-    shelfNo = 'Unidentified';
+    shelfNo = shelf;
   }
 
   // Get today's date in YYYY-MM-DD format
-  const today = new Date().toISOString().split('T')[0];
+  const today = moment().format('YYYY-MM-DD');
 
-  // Query to get the most recent entry
-  const recentQuery = `
-      SELECT packageNo, timestamp FROM Packages ORDER BY timestamp DESC LIMIT 1
+  // Query to get the count of today's packages
+  const countQuery = `
+    SELECT COUNT(*) AS count FROM Packages
+    WHERE DATE(timestamp) = ?;
   `;
 
-  db.query(recentQuery, (err, result) => {
+  db.query(countQuery, [today], (err, result) => {
     if (err) {
-      console.error('Error fetching recent package:', err);
+      console.error('Error fetching package count:', err);
       return res.status(500).json({ message: 'Database error' });
     }
 
-    let packageNo = 1; // Default if no previous entry exists
+    let packageNo = 1; // Default package number
 
     if (result.length > 0) {
-      // Extract the date part from the custom timestamp format (DD-MM-YYYY h:mm AM/PM)
-      const recentTimestamp = result[0].timestamp; // e.g., "17-02-2025 3:46 PM"
-      const recentDate = recentTimestamp.split(' ')[0]; // Extracts "17-02-2025"
-    
-      // Convert recentDate (DD-MM-YYYY) to YYYY-MM-DD for comparison
-      const [day, month, year] = recentDate.split('-');
-      const formattedRecentDate = `${year}-${month}-${day}`; // Converts to "2025-02-17"
-    
-      // If the most recent package was inserted today, increment its package number
-      if (formattedRecentDate === today) {
-        packageNo = result[0].packageNo + 1;
-      }
+      const count = result[0].count; // Get the count of today's packages
+      packageNo = count + 1; // The next package number will be count + 1
     }
 
-    // Format the timestamp as "DD-MM-YYYY h:mm A"
-    const now = new Date();
-    const day = String(now.getDate()).padStart(2, '0');
-    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-    const year = now.getFullYear();
-    const hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+    // Get current timestamp in IST (Indian Standard Time)
+    const now = moment().tz('Asia/Kolkata'); // Adjust to IST time zone
 
-    const formattedTimestamp = `${day}-${month}-${year} ${hours}:${minutes} ${ampm}`;
+    // Format the timestamp as "YYYY-MM-DD HH:mm:ss"
+    const formattedTimestamp = now.format('YYYY-MM-DD HH:mm:ss');
 
     // Insert package into the database
     const insertQuery = `
-        INSERT INTO Packages (ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO Packages (ashokaID, trackingID, packageNo, shelfNo, timestamp, deliveryPartner, status, remarks)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     db.query(insertQuery, [ashokaID, trackingID, packageNo, shelfNo, formattedTimestamp, deliveryPartner, status, remarks], (err, result) => {
@@ -438,6 +347,8 @@ app.post('/insertpackage', (req, res) => {
           remarks: remarks
         };
 
+        // console.log("TIME", packageDetails);
+
         // Render the success-log view with the packageDetails object
         res.render('success-log', { packageDetails: packageDetails });
       }
@@ -449,7 +360,7 @@ app.post('/insertpackage', (req, res) => {
 app.get('/success-checkout', (req, res) => {
   // Get the query parameters
   const studentName = req.query.studentName || '';
-  
+
   // Render the EJS page with the required variables
   res.render('success-checkout', {
     studentName
@@ -464,7 +375,7 @@ app.get('/success-log', (req, res) => {
     timestamp: req.query.timestamp,
     remarks: req.query.remarks
   };
-  console.log(packageDetails);
+  // console.log(packageDetails);
   res.render('success-log', { packageDetails });
 });
 
@@ -473,29 +384,38 @@ app.get('/success-log', (req, res) => {
 app.get('/track', (req, res) => {
   const trackingID = req.query.trackingID;
   if (!trackingID) {
-      return res.status(400).json({ error: 'Tracking ID is required' });
+    return res.status(400).json({ error: 'Tracking ID is required' });
   }
 
   const query = 'SELECT * FROM packages WHERE trackingID = ?';
   db.query(query, [trackingID], (err, results) => {
-      if (err) {
-          return res.status(500).json({ error: 'Database query failed' });
-      }
+    if (err) {
+      return res.status(500).json({ error: 'Database query failed' });
+    }
 
-      if (results.length === 0) {
-          return res.status(404).json({ message: 'No package found with this tracking ID' });
-      }
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'No package found with this tracking ID' });
+    }
 
-      res.json(results[0]); // Return the first matching result
+    res.json(results[0]); // Return the first matching result
   });
 });
 
 
-app.get('/tracking-id-search', (req, res) => {
-  res.render('tracking-id-search');
-})
+app.get('/package-out/tracking-id/:qrString', (req, res) => {
+  var personCollecting = processQr(req.params.qrString).ashokaId;
+  if (processQr(req.params.qrString).isValid) {
+    res.render('search-by-tracking-id',{personCollecting:personCollecting});
+  } else {
+    res.render("error", { msg: "Invalid QR Code" });
+  }
+});
+
+app.get('*', (req, res) => {
+  res.render("error", { msg: "404 Not Found" });
+});
 
 
-app.listen(port || 3000, function(){
-  console.log("listening on port ",port || 3000)
+app.listen(port || 3000, function () {
+  console.log("listening on port ", port || 3000)
 });

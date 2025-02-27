@@ -17,40 +17,29 @@
         <!-- Login Box -->
         <div class="login-container">
             <div class="login-box">
-                <h3>Scan QR Code</h3>
-    
-                <div class="input-group mb-3">
-                    <input autofocus type="text" class="form-control" placeholder="User">
-                    <span class="input-group-text">🔍</span>
-                </div>
-    
+                <h3>Choose Checkout Option</h3>
                 <!-- <input type="password" class="form-control mb-3" placeholder="Password"> -->
     
                 <div class="d-flex justify-content-between">
 
-                <button class="btn btn-danger search-by-id-btn next-btn">FIND BY TRACKING ID</button>
-                <button class="btn btn-danger next-btn next-btn-next">NEXT</button>
+                <button id="find-by-tracking-id-btn" class="btn btn-danger search-by-id-btn next-btn">TRACKING ID</button>
+                <button id="find-for-friend" class="btn btn-danger search-by-id-btn next-btn">FRIEND</button>
+                <button id="get-my-packages-btn" class="btn btn-danger next-btn next-btn-next">MY PACKAGES</button>
                     
                 </div>
             </div>
         </div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const inputField = document.querySelector('.form-control');
-                const nextButton = document.querySelector('.next-btn-next');
-        
-                // Disable the button initially
-                nextButton.disabled = true;
-        
-                inputField.addEventListener('input', () => {
-                    nextButton.disabled = inputField.value.trim() === '';
+          document.getElementById('get-my-packages-btn').addEventListener('click', () => {
+                    window.location.href = '/package-out/user/<%=userQr%>';
                 });
-        
-                document.querySelector('.search-by-id-btn').addEventListener('click', () => {
-                    window.location.href = '/tracking-id-search';
+          document.getElementById('find-for-friend').addEventListener('click', () => {
+                    window.location.href = '/package-out/friend/<%=userQr%>';
                 });
-            });
+            document.getElementById('find-by-tracking-id-btn').addEventListener('click', () => {
+                    window.location.href = '/package-out/tracking-id/<%=userQr%>';
+                });
         </script>
         
 

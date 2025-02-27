@@ -1,8 +1,10 @@
+<% if(status=='pending'){%>
 <div class="package-card">
   <div class="flex justify-between items-center">
     <div class="bold">NO.: <%= packageNo %></div>
     <div class="bold"><%= datestamp %></div>
     <div><%= timestamp %></div>
+    <div><%= status %></div>
     <div><%= deliveryPartner %></div>
     
     <!-- Checkbox with dynamic data attributes -->
@@ -12,7 +14,22 @@
            data-datestamp="<%= datestamp %>"
            data-timestamp="<%= timestamp %>>"
            data-deliveryPartner="<%= deliveryPartner %>"
+           data-status="<%= status %>"
            data-ashoka-id="<%= ashokaID %>"
       >
   </div>
 </div>
+<%}%>
+
+
+<%if(status=='received'){%>
+  <div style="background:rgb(197, 240, 197)" class="package-card">
+    <div class="flex justify-between items-center">
+      <div class="bold">NO.: <%= packageNo %></div>
+      <div class="bold"><%= datestamp %></div>
+      <div><%= timestamp %></div>
+      <div><%= status %></div>
+      <div><%= deliveryPartner %></div>
+    </div>
+  </div>
+<%}%>

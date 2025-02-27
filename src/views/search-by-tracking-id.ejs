@@ -97,7 +97,7 @@
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ packages: selectedPackages }),
+                body: JSON.stringify({ packages: selectedPackages, personCollecting:"<%=personCollecting%>" }),
                 })
                 .then(response => {
                 if (response.ok) {
@@ -142,11 +142,19 @@
                                 <p><strong>Tracking ID:</strong> ${data.trackingID}</p>
                                 <p><strong>Status:</strong> ${data.status}</p>
                                 <p><strong>Timestamp:</strong> ${data.timestamp}</p>
+                                <p><strong>CollectedAt:</strong> ${data.collectedAt}</p>
+                                <p><strong>CollectedBy:</strong> ${data.collectedBy}</p>
                                 <p><strong>Delivery Partner:</strong> ${data.deliveryPartner}</p>
                             `;
                         }
+                        if(data.status=='received'){
+                                document.getElementById("checkout-btn").disabled = true;
+                                // document.getElementById("checkout-btn").style.color = "grey";
+                            }else{
+                                document.getElementById('checkout-btn').style = "display: block";
+
+                            }
                         // display the checkout button only if the tracking ID is valid
-                        document.getElementById('checkout-btn').style = "display: block";
                     })
                     .catch(error => {
                         console.error('Error fetching package:', error);

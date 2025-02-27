@@ -10,37 +10,107 @@
         <link href="/assets/css/view-packages.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     </head>
+
+<!-- Simple JavaScript for Accordion Behavior -->
+<script>
+  document.querySelector('.accordion-toggle').addEventListener('click', function() {
+    const content = document.querySelector('.accordion-content');
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  });
+</script>
+
+<!-- Basic CSS for Accordion Styling -->
+<style>
+  .student-details-container {
+    display: flex;
+    justify-content: space-between; /* Pushes elements to both ends */
+    align-items: center; /* Align items vertically */
+    padding: 10px;
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column; /* Stacks username & Ashoka ID */
+    color:white;
+}
+
+</style>
 <body>
     <%-include("partials/navbar.ejs")-%>
   <div class="container">
     <form id="checkout-form" method="POST" action="/checkout">
         <div class="packages-wrapper">
-            <div class="student-details">
-                <h1>Your Packages</h1>
+          <% 
+          const pendingPackages = packages.filter(pkg => pkg.status === 'pending');
+          const receivedPackages = packages.filter(pkg => pkg.status !== 'pending');%>
+          <div class="student-details-container">
+            <div class="student-info">
                 <p><%= student.UserName %></p>
                 <p><%= student.AshokaId %></p>
             </div>
-            <button id="select-all">Select All</button>
-      <% packages.forEach(package => { %>
-        <%- include('partials/packageCard.ejs', { 
-          packageNo: package.packageNo, 
-          datestamp: package.timestamp.split(' ')[0].replace(/-/g, '/').slice(0, 5),
-          timestamp: package.timestamp, 
-          deliveryPartner: package.deliveryPartner,
-          ashokaID: package.ashokaId
-        }) %>
-      <% }) %>
+            <span style="float:right;color:white;font-size: 24px;"><%= pendingPackages.length%> Pending Package(s)</span>
+            <%if(pendingPackages.length>0){%>
+              <button type="button" id="select-all">Select All</button>
+            <%}%>
+        </div>
+
+        <br />
+
+          <div style="max-height:30vh;overflow-y: auto;scroll-behavior: smooth;">
+          <% pendingPackages.forEach(package => { %>
+            <div class="package-card">
+              <div class="flex justify-between items-center">
+                <div style="background:rgb(255, 253, 183);height:100%" class="bold">NO.: <%= package.packageNo %></div>
+                <div><%= package.timestamp %></div>
+                <div><%= package.deliveryPartner %></div>
+                <div><%= package.remarks %></div>
+                <div><%= package.collectedBy %></div>
+                <div><%= package.collectedAt %></div>
+                
+                <!-- Checkbox with dynamic data attributes -->
+                <input type="checkbox" class="package-checkbox"
+                       value="<%= package.packageNo %>"
+                       data-package-no="<%= package.packageNo %>"
+                       data-datestamp="<%= package.datestamp %>"
+                       data-timestamp="<%= package.timestamp %>"
+                       data-deliveryPartner="<%= package.deliveryPartner %>"
+                       data-status="<%= package.status %>"
+                       data-ashoka-id="<%= package.ashokaId %>"
+                  >
+              </div>
+            </div>
+            <% }) %>
+          <%if(receivedPackages.length>0){%>
+          <hr style="height:6px;background-color:white;"/>
+            <% receivedPackages.forEach(package => { %>
+            <div class="package-card">
+              <div class="flex justify-between items-center">
+                <div style="background:rgb(210, 249, 210);height:100%" class="bold">NO.: <%= package.packageNo %></div>
+                <div><%= package.timestamp %></div>
+                <div><%= package.deliveryPartner %></div>
+                <div></div>
+                <div><%= package.collectedBy %></div>
+                <div><%= package.collectedAt %></div>
+              </div>
+            </div>
+            <% }) %>
+          <%}%>
+            
+          </div>
+          <%if(pendingPackages.length>0){%>
       <button type="submit" id="checkout-btn" onclick="checkout(event);">Checkout</button>
+      <%}%>
     </div>
     </form>
   </div>
 
   <script>
-    document.getElementById('select-all').addEventListener('click', function() {
-      document.querySelectorAll('.package-checkbox').forEach(checkbox => {
-        checkbox.checked = true;
-      });
-    });
+  document.getElementById('select-all').addEventListener('click', function() {
+  document.querySelectorAll('.package-checkbox').forEach(checkbox => {
+    checkbox.checked = !checkbox.checked; // Toggles the checked state
+  });
+});
+
   
 
     function checkout(event) {
@@ -70,7 +140,7 @@
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ packages: selectedPackages }),
+    body: JSON.stringify({ packages: selectedPackages, friend:"<%=friend%>", personCollecting:"<%=personCollecting%>"}),
   })
     .then(response => {
       if (response.ok) {
