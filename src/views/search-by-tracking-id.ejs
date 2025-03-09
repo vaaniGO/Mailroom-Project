@@ -64,20 +64,23 @@
             }
 
             // Extract package details from the result section
-            const packageDetails = {};
-            const resultParagraphs = resultContent.querySelectorAll("p");
-            console.log(resultParagraphs);
-            resultParagraphs.forEach((p) => {
-                const text = p.innerText;
-                if (text.includes("Tracking ID:")) {
-                    packageDetails.trackingID = text.split(": ")[1];
-                } else if (text.includes("Timestamp:")) {
-                    packageDetails.timestamp = text.split(' ')[0].replace(/-/g, '/').slice(0, 5);
-                }
-                else if (text.includes("Package No:")) {
-                    packageDetails.packageNo = text.split(": ")[1];
-                }
-            });
+            const packageDetails = {
+                trackingID:document.getElementById("hiddenTrackingId").value,
+                timestamp:document.getElementById("hiddenTimestamp").value
+            };
+            // const resultParagraphs = resultContent.querySelectorAll("p");
+            // console.log(resultParagraphs);
+            // resultParagraphs.forEach((p) => {
+            //     const text = p.innerText;
+            //     if (text.includes("Tracking ID:")) {
+            //         packageDetails.trackingID = text.split(": ")[1];
+            //     } else if (text.includes("Timestamp:")) {
+            //         packageDetails.timestamp = text.split(' ')[0].replace(/-/g, '/').slice(0, 5);
+            //     }
+            //     else if (text.includes("Package No:")) {
+            //         packageDetails.packageNo = text.split(": ")[1];
+            //     }
+            // });
             console.log(packageDetails);
 
             if (!packageDetails.trackingID || !packageDetails.timestamp) {
@@ -138,14 +141,42 @@
                         if (data.error || data.message) {
                             resultContent.innerHTML = `<div class='alert alert-danger'>${data.error || data.message}</div>`;
                         } else {
-                            resultContent.innerHTML = `
-                                <p><strong>Tracking ID:</strong> ${data.trackingID}</p>
-                                <p><strong>Status:</strong> ${data.status}</p>
-                                <p><strong>Timestamp:</strong> ${data.timestamp}</p>
-                                <p><strong>CollectedAt:</strong> ${data.collectedAt}</p>
-                                <p><strong>CollectedBy:</strong> ${data.collectedBy}</p>
-                                <p><strong>Delivery Partner:</strong> ${data.deliveryPartner}</p>
-                            `;
+                            const bgColor = data.status.toLowerCase() === "pending" ? "rgb(255, 253, 183)" : "rgb(210, 249, 210)";
+
+resultContent.innerHTML = `
+    <input id="hiddenTrackingId" type="hidden" value="${data.trackingID}" />
+    <input id="hiddenTimestamp" type="hidden" value="${data.timestamp}" />                            
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td><strong>Tracking ID:</strong></td>
+            <td>${data.trackingID}</td>
+            <td style="background: ${bgColor};"><strong>Status:</strong></td>
+            <td style="background: ${bgColor};">${data.status}</td>
+        </tr>
+        <tr>
+            <td><strong>Timestamp:</strong></td>
+            <td>${data.timestamp}</td>
+            <td><strong>Delivery Partner:</strong></td>
+            <td>${data.deliveryPartner || "N/A"}</td>
+        </tr>
+        <tr>
+            <td colspan="4"><hr></td>
+        </tr>
+        <tr>
+            <td><strong>Remarks:</strong></td>
+            <td>${data.remarks}</td>
+            <td><strong>Shelf/Name:</strong></td>
+            <td>${data.shelfNo}</td>
+        </tr>
+        <tr>
+            <td><strong>Collected At:</strong></td>
+            <td>${data.collectedAt || "N/A"}</td>
+            <td><strong>Collected By:</strong></td>
+            <td>${data.collectedBy || "N/A"}</td>
+        </tr>
+    </table>
+`;
+                            
                         }
                         if(data.status=='received'){
                                 document.getElementById("checkout-btn").disabled = true;

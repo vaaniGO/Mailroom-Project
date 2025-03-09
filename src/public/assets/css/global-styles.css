@@ -22,6 +22,14 @@ body {
     border-bottom: 3px solid white; 
 }
 
+.tracking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* Space between rows */
+}
+
+
+
 
 /* Top Bar */
 .top-bar {
