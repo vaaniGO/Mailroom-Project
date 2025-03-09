@@ -12,7 +12,7 @@
 
 <body>
 
-    <%-include("partials/navbar.ejs")-%>
+    <%-include("partials/navbar.ejs", { activePage: "package-out" })-%>
         <!-- Input takes place in 2 forms: first we identify a student then enter the associated package details. This happens in two steps (the login-container) divs
         for both are below. However, in case of tracking ID (no user found) these 2 things happen together and there is only 1 div-->
 

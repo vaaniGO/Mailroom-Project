@@ -24,7 +24,7 @@
       }
     </style>
 <body>
-    <%-include("partials/navbar.ejs")-%>
+  <%-include("partials/navbar.ejs", { activePage: "error" })-%>
   <div class="container">
     <div class="packages-wrapper">
         <h3><%=msg%></h3>

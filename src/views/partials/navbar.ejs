@@ -1,23 +1,17 @@
 <div class="container-fluid" style="padding: 0;">
-    <!-- Top Section: Logo & Date -->
     <div class="header-bar text-white d-flex justify-content-between align-items-center">
-        <!-- Left: Ashoka Logo -->
-        <!-- <img src="/assets/img/ashoka-logo.png" alt="Ashoka University Logo" height="80"> -->
         <h1 class="fw-bold m-0">ASHOKA UNIVERSITY MAILROOM</h1>
-        <!-- Right: Date & Time -->
         <div class="text-end">
-            <!-- <a style="text-decoration: none;color:black" class="" href="/"><h5 style="display:inline-block; margin-right:35px">Home</h5></a> -->
-            <a style="text-decoration: none;color:white" class="" href="/package-in/user"><h5 style="display:inline-block; margin-right:35px">Package In</h5></a>
-            <a style="text-decoration: none;color:white" class="" href="/package-out"><h5 style="display:inline-block; margin-right:35px">Package Out</h5></a>
+            <a href="/package-in/user" 
+               class="nav-link <%= activePage === 'package-in' ? 'active' : '' %>"
+               style="text-decoration: none; color: white;margin-right: 35px;">
+                <h5 style="display: inline-block;  <%= activePage === 'package-in' ? 'font-weight: bold; ' : '' %>">Package In</h5>
+            </a>
+            <a href="/package-out" 
+               class="nav-link <%= activePage === 'package-out' ? 'active' : '' %>"
+               style="text-decoration: none; color: white;margin-right: 35px;">
+                <h5 style="display: inline-block;  <%= activePage === 'package-out' ? 'font-weight: bold; ' : '' %>">Package Out</h5>
+            </a>
         </div>
     </div>
-
-    <!-- Red Banner -->
-    <!-- <div class="header-bar text-white text-center py-3 mt-3">
-        <h1 class="fw-bold m-0">ASHOKA UNIVERSITY MAILROOM</h1>
-        <div style="margin-top:10px;">
-            <span id="day" class="fs-7 fw-normal"></span>,
-            <span id="date" class="fs-7 fw-normal"></span>
-        </div>
-    </div> -->
 </div>

@@ -36,7 +36,7 @@
 
 </style>
 <body>
-    <%-include("partials/navbar.ejs")-%>
+  <%-include("partials/navbar.ejs", { activePage: "package-out" })-%>
   <div class="container">
     <form id="checkout-form" method="POST" action="/checkout">
         <div class="packages-wrapper">

@@ -10,6 +10,18 @@ body {
     margin-bottom: 40px;
     padding: 20px;
 }
+.nav-link {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.nav-link.active {
+    font-weight: bold;  /* Make text bold */
+    border-bottom: 3px solid white; 
+}
+
 
 /* Top Bar */
 .top-bar {
