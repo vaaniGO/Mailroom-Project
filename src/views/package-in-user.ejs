@@ -64,7 +64,9 @@
             <div class="login-box" id="enterPackageDetails" style="display: none;">
                 <div class="packageAssociatedDetails" id="packageAssociatedDetails" style="display: none;">
                     <h3 class="mb-4">Package Details</h3>
-            <div class="input-group">                
+            <div class="input-group">   
+                <input id="trackingIDByUser" type="text" class="form-control" placeholder="Tracking ID"
+                        style="border-radius: 7px;" name="trackingIDByUser" autocomplete="off"><br /><br />             
                 <select id="deliverySelectTrackingID" name="deliveryService" style="
                     width: 100%;
                     font-size: 17px;
@@ -124,7 +126,7 @@
                         <option value="OTP">
                     </datalist>
                 </div>
-            <button id="student-next" class="btn btn-danger next-btn" 
+            <button id="student-next-submit" class="btn btn-danger next-btn" 
                 onclick="insertPackageData(
                     true, 
                     document.getElementById('hiddenSelectedStudent').value.split(',')[2], 
@@ -236,13 +238,14 @@
             async function insertPackageData(identified, ID, deliveryPartner, remarks) {
                 // Determine ashokaID or trackingID
                 const ashokaID = identified ? ID : null;
+                const trackingIDByUser = document.getElementById("trackingIDByUser").value.trim();
                 const trackingID = !identified ? ID : null;
                 console.log('Remarks:', remarks);
 
                 fetch('/insertpackage', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ ashokaID, trackingID, deliveryPartner, remarks})
+                        body: JSON.stringify({ ashokaID, trackingID, deliveryPartner, remarks, trackingIDByUser})
                 })
                 .then(response => {
                 if (response.ok) {
@@ -356,13 +359,14 @@
                 const userInput = document.getElementById('userInput').value.trim();
                 const hiddenSelectedStudent = document.getElementById('hiddenSelectedStudent').value.trim();
                 const studentNextButton = document.getElementById('student-next');
-                studentNextButton.disabled = !(userInput && hiddenSelectedStudent);
+                const trackingIDByUserField = document.getElementById('trackingIDByUser').value.trim() == ''?null:document.getElementById('trackingIDByUser').value.trim();
+                studentNextButton.disabled = !(userInput && hiddenSelectedStudent && trackingIDByUserField);
 
                 // // For the "Package Details" form (tracking ID)
-                // const trackingIDInput = document.getElementById('trackingIDInput').value.trim();
+                const trackingIDInputByUser = document.getElementById('trackingIDInputByUser').value.trim();
                 // const deliverySelect = document.getElementById('deliverySelect').value;
-                // const submitButtonTrackingID = document.getElementById('submit-tracking-id'); // Correct ID
-                // submitButtonTrackingID.disabled = !(trackingIDInput && deliverySelect);
+                const submitButton = document.getElementById('student-next-submit'); // Correct ID
+                submitButton.disabled = !(trackingIDInputByUser && deliverySelect);
 
                 // For the "Package Details" form (identified student)
                 const deliverySelectTrackingID = document.getElementById('deliverySelectTrackingID').value;
@@ -375,6 +379,7 @@
                 // For the "Find User" form
                 document.getElementById('userInput').addEventListener('input', checkFormValidity);
                 document.getElementById('hiddenSelectedStudent').addEventListener('change', checkFormValidity);
+                document.getElementById('trackingIDByUser').addEventListener('change', checkFormValidity);
 
                 // For the "Package Details" form (tracking ID)
                 // document.getElementById('trackingIDInput').addEventListener('input', checkFormValidity);

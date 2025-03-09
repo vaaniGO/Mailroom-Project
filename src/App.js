@@ -185,7 +185,7 @@ app.get('/package-out/friend/:id/:qrString', (req, res) => {
         if (results.length > 0) {
           res.render('view-packages.ejs', { student: studentData, packages: results, friend:true, personCollecting:personCollecting});
         } else {
-          res.render("error", { msg: "No Packages in Database" });
+          res.render("error", { msg: "No Packages" });
         }
       }
     );
@@ -286,7 +286,7 @@ app.post('/checkout-trackingID', (req, res) => {
 });
 // POST endpoint to insert a package
 app.post('/insertpackage', (req, res) => {
-  const { ashokaID, trackingID, deliveryPartner, remarks, shelf } = req.body;
+  var { ashokaID, trackingID, deliveryPartner, remarks, shelf, trackingIDByUser } = req.body;
   const status = 'pending';
   let studentData, studentName, shelfNo;
 
@@ -299,7 +299,9 @@ app.post('/insertpackage', (req, res) => {
     studentName = '';
     shelfNo = shelf;
   }
-
+  // set trackingID = trackingIDByUser so we can enter tracking ID as well for
+  // packages that are of identified users
+  trackingID = trackingID == null? trackingIDByUser : trackingID;
   // Get today's date in YYYY-MM-DD format
   const today = moment().format('YYYY-MM-DD');
 
