@@ -153,7 +153,7 @@ app.get('/package-out/user/:qrString', (req, res) => {
           var personCollecting = processQr(req.params.qrString).ashokaId;
           res.render('view-packages.ejs', { student: studentData, packages: results, friend:false, personCollecting:personCollecting});
         } else {
-          res.render("error", { msg: "No Packages in Database" });
+          res.render("error", { msg: "No Packages" });
         }
       }
     );
