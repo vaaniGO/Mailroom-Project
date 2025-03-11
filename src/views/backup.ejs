@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backups Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/global-styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%-include("partials/navbar.ejs", { activePage: "backup" })-%>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Package Logs by Date</h2>
+        
+        <!-- Date Selection Form -->
+        <form method="POST" class="mb-5">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-4">
+                    <input type="date" 
+                           id="selectedDate" 
+                           name="selectedDate" 
+                           class="form-control"
+                           max="<%= new Date().toISOString().split('T')[0] %>"
+                           value="<%= selectedDate || new Date().toISOString().split('T')[0] %>"
+                           required>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-danger">Get Packages</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Results Section -->
+        <% if (typeof packages !== 'undefined') { %>
+            <div class="results-section">
+                <% if (packages.length > 0) { %>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Tracking ID</th>
+                                    <th>Ashoka ID</th>
+                                    <th>Student Name</th>
+                                    <th>Delivery Service</th>
+                                    <th>Remarks</th>
+                                    <th>Date Logged</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% packages.forEach(package => { %>
+                                    <tr>
+                                        <td><%= package.trackingID %></td>
+                                        <td><%= package.ashokaID || 'N/A' %></td>
+                                        <td><%= package.studentName %></td>
+                                        <td><%= package.deliveryPartner %></td>
+                                        <td><%= package.remarks || 'None' %></td>
+                                        <td><%= new Date(package.dateLogged).toLocaleString() %></td>
+                                        <td>
+                                            <span class="badge <%= package.status === 'collected' ? 'bg-success' : 'bg-warning' %>">
+                                                <%= package.status %>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                <% } else { %>
+                    <div class="alert alert-info" role="alert">
+                        No package records found for <%= selectedDate %>
+                    </div>
+                <% } %>
+            </div>
+        <% } %>
+
+        <!-- Client-side Future Date Check -->
+        <div id="futureDateMessage" class="alert alert-warning d-none" role="alert">
+            Selected date is in the future - no records available
+        </div>
+    </div>
+
+    <script>
+        // Client-side future date check
+        const dateInput = document.getElementById('selectedDate');
+        const futureMessage = document.getElementById('futureDateMessage');
+        
+        dateInput.addEventListener('change', () => {
+            const selectedDate = new Date(dateInput.value);
+            const today = new Date();
+            today.setHours(0,0,0,0);
+
+            if(selectedDate > today) {
+                futureMessage.classList.remove('d-none');
+                document.querySelector('.results-section')?.classList.add('d-none');
+            } else {
+                futureMessage.classList.add('d-none');
+                document.querySelector('.results-section')?.classList.remove('d-none');
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
