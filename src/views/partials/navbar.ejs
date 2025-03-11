@@ -2,6 +2,11 @@
     <div class="header-bar text-white d-flex justify-content-between align-items-center">
         <h1 class="fw-bold m-0">ASHOKA UNIVERSITY MAILROOM</h1>
         <div class="text-end">
+            <a href="/backup" 
+               class="nav-link <%= activePage === 'backup' ? 'active' : '' %>"
+               style="text-decoration: none; color: white;margin-right: 35px;">
+                <h5 style="display: inline-block;  <%= activePage === 'backup' ? 'font-weight: bold; ' : '' %>">Backup</h5>
+            </a>
             <a href="/package-in/user" 
                class="nav-link <%= activePage === 'package-in' ? 'active' : '' %>"
                style="text-decoration: none; color: white;margin-right: 35px;">
@@ -11,11 +16,6 @@
                class="nav-link <%= activePage === 'package-out' ? 'active' : '' %>"
                style="text-decoration: none; color: white;margin-right: 35px;">
                 <h5 style="display: inline-block;  <%= activePage === 'package-out' ? 'font-weight: bold; ' : '' %>">Package Out</h5>
-            </a>
-            <a href="/backup" 
-               class="nav-link <%= activePage === 'backup' ? 'active' : '' %>"
-               style="text-decoration: none; color: white;margin-right: 35px;">
-                <h5 style="display: inline-block;  <%= activePage === 'backup' ? 'font-weight: bold; ' : '' %>">Backup Logs</h5>
             </a>
         </div>
     </div>

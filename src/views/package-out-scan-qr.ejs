@@ -20,7 +20,7 @@
                 <h3>Scan QR Code</h3>
     
                 <div class="input-group mb-3">
-                    <input id="userQR" autofocus type="text" class="form-control" placeholder="User">
+                    <input autocomplete="off" id="userQR" autofocus type="text" class="form-control" placeholder="User">
                     <span onclick="clearStudent()"
                         style="color:#C4122F; border-top-right-radius: 8px; border-bottom-right-radius: 8px;"
                         class="input-group-text" id="basic-addon2">Clear</span>
@@ -55,13 +55,13 @@ function clearStudent() {
                 document.getElementById('get-my-packages-btn').disabled=true;
             }
             document.getElementById('get-my-packages-btn').addEventListener('click', () => {
-                      window.location.href = '/package-out/user/'+document.getElementById("userQR").value;
+                      window.location.href = '/package-out/user/'+encodeURIComponent(document.getElementById("userQR").value);
                   });
             document.getElementById('find-for-friend').addEventListener('click', () => {
-                      window.location.href = '/package-out/friend/'+document.getElementById("userQR").value;
+                      window.location.href = '/package-out/friend/'+encodeURIComponent(document.getElementById("userQR").value);
                   });
               document.getElementById('find-by-tracking-id-btn').addEventListener('click', () => {
-                      window.location.href = '/package-out/tracking-id/'+document.getElementById("userQR").value;
+                      window.location.href = '/package-out/tracking-id/'+encodeURIComponent(document.getElementById("userQR").value);
                   });
           </script>
 

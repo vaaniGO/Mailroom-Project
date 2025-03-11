@@ -10,14 +10,13 @@ import Fuse from 'fuse.js';
 import mysql from 'mysql2';
 import moment from 'moment-timezone';
 import dotenv from 'dotenv';
-import parser from 'json2csv';
 
-dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const DIRECTORY = path.join(__dirname, "../data/students/");
 const students = [];
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -118,7 +117,6 @@ app.get("/package-in/tracking-id", async (req, res) => {
 let authToken = null;
 let refreshToken = null;
 const BASE_URL = process.env.BASE_URL;
- 
  // Function to log in and obtain a new token
  async function login() {
      try {
@@ -181,6 +179,7 @@ const BASE_URL = process.env.BASE_URL;
 
 // Function to validate QR Code using API
 async function processQr(qrString) {
+  qrString = decodeURIComponent(qrString.trim())
   try {
       // Ensure we have a valid token
       if (!authToken) {
@@ -209,6 +208,7 @@ async function processQr(qrString) {
 
       // If QR validation fails
       if (data.ErrorCode !== 0) {
+        console.log(data.ErrorMessage);
           return { isValid: false, error: data.ErrorMessage };
       }
 
@@ -234,12 +234,14 @@ const db = mysql.createConnection({
 });
 
 // Route to display packages
-app.get('/package-out/user/:qrString', (req, res) => {
+app.get('/package-out/user/:qrString', async(req, res) => {
   // assume we call the AMS API here to get ashokaId from 
   // const ashokaId = request("ams.ashoka.edu.in", qrString)
   // const qrValid = request("ams.ashoka.edu.in", qrString)
-  if (processQr(req.params.qrString).isValid) {
-    const ashokaId = processQr(req.params.qrString).ashokaId;
+  var processedQr = await processQr(req.params.qrString);
+  if (processedQr.isValid) {
+    const ashokaId = processedQr.ashokaId;
+    // console.log("ASHOKA", ashokaId);
     const studentData = students.find(student => student.AshokaId == ashokaId);
     // Right now, the pending filter is commented for testing purposes. Simply remove -- to make it active.
     db.query(
@@ -251,7 +253,7 @@ app.get('/package-out/user/:qrString', (req, res) => {
         }
         // console.log(results);
         if (results.length > 0) {
-          var personCollecting = processQr(req.params.qrString).ashokaId;
+          var personCollecting = processedQr.ashokaId;
           res.render('view-packages.ejs', { student: studentData, packages: results, friend:false, personCollecting:personCollecting});
         } else {
           res.render("error", { msg: "No Packages" });
@@ -266,12 +268,14 @@ app.get('/package-out/user/:qrString', (req, res) => {
 // url naked/signature/history proof basically
 
 // Route to display packages of others on your QR code
-app.get('/package-out/friend/:id/:qrString', (req, res) => {
+app.get('/package-out/friend/:id/:qrString', async(req, res) => {
   // assume we call the AMS API here to get ashokaId from 
   // const ashokaId = request("ams.ashoka.edu.in", qrString)
   // const qrValid = request("ams.ashoka.edu.in", qrString)
-  var personCollecting = processQr(req.params.qrString).ashokaId;
-  if (processQr(req.params.qrString).isValid) {
+  var processedQr = await processQr(req.params.qrString);
+
+  var personCollecting = processedQr.ashokaId;
+  if (processedQr.isValid) {
     const ashokaId = req.params.id;
     const studentData = students.find(student => student.AshokaId == ashokaId);
     // Right now, the pending filter is commented for testing purposes. Simply remove -- to make it active.
@@ -295,10 +299,11 @@ app.get('/package-out/friend/:id/:qrString', (req, res) => {
   }
 });
 
-app.get('/package-out/friend/:qrString', (req, res) => {
+app.get('/package-out/friend/:qrString', async(req, res) => {
   // assume we call the AMS API here to get ashokaId from 
   // const ashokaId = request("ams.ashoka.edu.in", qrString)
-  if (processQr(req.params.qrString).isValid) {
+  var processedQr = await processQr(req.params.qrString);
+  if (processedQr.isValid) {
     res.render('package-out-friend', { qrString: req.params.qrString });
   } else {
     res.render("error", { msg: "Invalid QR Code" });
@@ -501,9 +506,10 @@ app.get('/track', (req, res) => {
   });
 });
 
-app.get('/package-out/tracking-id/:qrString', (req, res) => {
-  var personCollecting = processQr(req.params.qrString).ashokaId;
-  if (processQr(req.params.qrString).isValid) {
+app.get('/package-out/tracking-id/:qrString', async(req, res) => {
+  var processedQr = await processQr(req.params.qrString);
+  if (processedQr.isValid) {
+    var personCollecting = processedQr.ashokaId;
     res.render('search-by-tracking-id',{personCollecting:personCollecting});
   } else {
     res.render("error", { msg: "Invalid QR Code" });
@@ -517,7 +523,7 @@ app.get('/backup', (req, res) => {
 
 app.post('/backup', (req, res) => {
   let selectedDate = req.body.selectedDate;
-  console.log(req.body);
+  // console.log(req.body);
 
   // Ensure selectedDate is defined, if not, use the current date as default
   if (!selectedDate) {
