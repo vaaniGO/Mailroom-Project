@@ -115,10 +115,114 @@ app.get("/package-in/tracking-id", async (req, res) => {
   res.render('package-in-tracking-id');
 });
 
+let authToken = null;
+let refreshToken = null;
+const BASE_URL = process.env.BASE_URL;
+ 
+ // Function to log in and obtain a new token
+ async function login() {
+     try {
+         const response = await fetch(`${BASE_URL}api/TPIntegration/Login`, {
+             method: "POST",
+             headers: { "Content-Type": "application/json" },
+             body: JSON.stringify({
+                 "UserId": process.env.USER_ID,
+                 "Password": process.env.PASSWORD
+             })
+         });
+ 
+         const data = await response.json();
+         if (data.ErrorCode === 0) {
+             authToken = data.Token;
+             refreshToken = data.RefreshToken;
+             console.log("Login Successful. Token:", authToken);
+             return authToken;
+         } else {
+             throw new Error(`Login Failed: ${data.ErrorMessage}`);
+         }
+     } catch (error) {
+         console.error("Login Error:", error.message);
+         return null;
+     }
+ }
 
-// app.get("/login", async (req, res) => {
-//   res.sendFile('student-login.html', { root: path.join(__dirname, 'views') });
-// });
+ // Function to refresh the authentication token
+ async function refreshAuthToken() {
+  try {
+      if (!refreshToken) {
+          console.error("No Refresh Token available. Re-authenticating...");
+          return await login();
+      }
+
+      const response = await fetch(`${BASE_URL}api/User/RefreshToken`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+              "Token": authToken,
+              "RefreshToken": refreshToken
+          })
+      });
+
+      const data = await response.json();
+      if (data.ErrorCode === 0) {
+          authToken = data.Token;
+          refreshToken = data.RefreshToken;
+          console.log("Token Refreshed Successfully.");
+          return authToken;
+      } else {
+          console.warn("Refresh Token Expired. Re-authenticating...");
+          return await login();
+      }
+  } catch (error) {
+      console.error("Refresh Token Error:", error.message);
+      return null;
+  }
+}
+
+// Function to validate QR Code using API
+async function processQr(qrString) {
+  try {
+      // Ensure we have a valid token
+      if (!authToken) {
+          console.log("No Auth Token found. Attempting login...");
+          await login();
+      }
+
+      // Call ValidateQRCode API
+      const response = await fetch(`${BASE_URL}api/TPIntegration/ValidateQRCodeTP`, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${authToken}`
+          },
+          body: JSON.stringify({ "QRCodeValue": qrString })
+      });
+
+      const data = await response.json();
+
+      // If token is expired, refresh it and retry
+      if (data.ErrorCode !== 0 && data.ErrorMessage.includes("token")) {
+          console.warn("Token Expired. Refreshing...");
+          await refreshAuthToken();
+          return await processQr(qrString);
+      }
+
+      // If QR validation fails
+      if (data.ErrorCode !== 0) {
+          return { isValid: false, error: data.ErrorMessage };
+      }
+
+      console.log("QR Code Validated Successfully.");
+      console.log("Ashoka ID:", data.UserSysGenId);
+      return {
+          isValid: true,
+          ashokaId: data.UserSysGenId
+      };
+  } catch (error) {
+      console.error("QR Code Validation Error:", error.message);
+      return { isValid: false, error: error.message };
+  }
+}
 
 // Create a connection to the MySQL database using environment variables
 const db = mysql.createConnection({
@@ -128,10 +232,6 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME || 'packages',
   port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306
 });
-
-function processQr(qrString){
-  return {isValid:true,ashokaId:qrString};
-}
 
 // Route to display packages
 app.get('/package-out/user/:qrString', (req, res) => {
@@ -284,6 +384,7 @@ app.post('/checkout-trackingID', (req, res) => {
     }
   });
 });
+
 // POST endpoint to insert a package
 app.post('/insertpackage', (req, res) => {
   var { ashokaID, trackingID, deliveryPartner, remarks, shelf, trackingIDByUser } = req.body;
