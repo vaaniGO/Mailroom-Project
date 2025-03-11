@@ -14,25 +14,36 @@
     <%-include("partials/navbar.ejs", { activePage: "backup" })-%>
 
     <div class="container mt-5">
-        <h2 class="mb-4">Package Logs by Date</h2>
-        
-        <!-- Date Selection Form -->
-        <form method="POST" class="mb-5">
-            <div class="row g-3 align-items-center">
-                <div class="col-md-4">
-                    <input type="date" 
-                           id="selectedDate" 
-                           name="selectedDate" 
-                           class="form-control"
-                           max="<%= new Date().toISOString().split('T')[0] %>"
-                           value="<%= selectedDate || new Date().toISOString().split('T')[0] %>"
-                           required>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-danger">Get Packages</button>
-                </div>
+        <div class="login-container mb-3" >
+            <div class="login-box" style="height: 200px;">
+                <h3 class="mb-4">Package Logs by Date</h3>
+                <!-- Date Selection Form -->
+                <form method="POST" class="mb-5 text-center">
+                    <div class="row g-3 align-items-center justify-content-center">
+                        <div class="col-md-4">
+                            <input type="date" 
+                                   id="selectedDate" 
+                                   name="selectedDate" 
+                                   class="form-control"
+                                   max="<%= new Date().toISOString().split('T')[0] %>"
+                                   value="<%= selectedDate || new Date().toISOString().split('T')[0] %>"
+                                   required>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-danger" style="width: 100%;">
+                                Get
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
+        <button id="downloadCsvBtn" class="btn btn-success d-none ms-auto mb-3" disabled>
+            Download CSV
+        </button>
+
+        <!-- Hidden variable to check if data exists -->
+        <input type="hidden" id="hasData" value="<%= packages && packages.length > 0 %>">
 
         <!-- Results Section -->
         <% if (typeof packages !== 'undefined') { %>
@@ -42,9 +53,8 @@
                         <table class="table table-striped table-hover">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>Tracking ID</th>
                                     <th>Ashoka ID</th>
-                                    <th>Student Name</th>
+                                    <th>Tracking ID</th>
                                     <th>Delivery Service</th>
                                     <th>Remarks</th>
                                     <th>Date Logged</th>
@@ -54,12 +64,11 @@
                             <tbody>
                                 <% packages.forEach(package => { %>
                                     <tr>
-                                        <td><%= package.trackingID %></td>
                                         <td><%= package.ashokaID || 'N/A' %></td>
-                                        <td><%= package.studentName %></td>
+                                        <td><%= package.trackingID %></td>
                                         <td><%= package.deliveryPartner %></td>
                                         <td><%= package.remarks || 'None' %></td>
-                                        <td><%= new Date(package.dateLogged).toLocaleString() %></td>
+                                        <td><%= package.timestamp %></td>
                                         <td>
                                             <span class="badge <%= package.status === 'collected' ? 'bg-success' : 'bg-warning' %>">
                                                 <%= package.status %>
@@ -78,17 +87,15 @@
             </div>
         <% } %>
 
-        <!-- Client-side Future Date Check -->
-        <div id="futureDateMessage" class="alert alert-warning d-none" role="alert">
-            Selected date is in the future - no records available
-        </div>
     </div>
 
     <script>
         // Client-side future date check
         const dateInput = document.getElementById('selectedDate');
         const futureMessage = document.getElementById('futureDateMessage');
-        
+        const downloadBtn = document.getElementById('downloadCsvBtn');
+        const hasData = document.getElementById('hasData').value === 'true';
+
         dateInput.addEventListener('change', () => {
             const selectedDate = new Date(dateInput.value);
             const today = new Date();
@@ -97,10 +104,55 @@
             if(selectedDate > today) {
                 futureMessage.classList.remove('d-none');
                 document.querySelector('.results-section')?.classList.add('d-none');
+                downloadBtn.disabled = true;
             } else {
                 futureMessage.classList.add('d-none');
                 document.querySelector('.results-section')?.classList.remove('d-none');
+                // Enable download button if there are results
+                if (hasData) {
+                    downloadBtn.classList.remove('d-none');
+                    downloadBtn.disabled = false;
+                } else {
+                    downloadBtn.classList.add('d-none');
+                    downloadBtn.disabled = true;
+                }
             }
+        });
+
+        // Initial check on page load
+        if (hasData) {
+            downloadBtn.classList.remove('d-none');
+            downloadBtn.disabled = false;
+        }
+
+        // Generate CSV and trigger download
+        document.getElementById('downloadCsvBtn').addEventListener('click', () => {
+            const rows = document.querySelectorAll('table tbody tr');
+            const csvContent = [];
+
+            // Add headers
+            const headers = [];
+            document.querySelectorAll('table thead th').forEach(header => {
+                headers.push(header.innerText);
+            });
+            csvContent.push(headers.join(','));
+
+            // Add rows
+            rows.forEach(row => {
+                const rowData = [];
+                row.querySelectorAll('td').forEach(cell => {
+                    rowData.push(cell.innerText);
+                });
+                csvContent.push(rowData.join(','));
+            });
+
+            // Create CSV file
+            const csvString = csvContent.join('\n');
+            const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `packages_${dateInput.value}.csv`;
+            link.click();
         });
     </script>
 

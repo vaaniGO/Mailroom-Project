@@ -10,6 +10,7 @@ import Fuse from 'fuse.js';
 import mysql from 'mysql2';
 import moment from 'moment-timezone';
 import dotenv from 'dotenv';
+import parser from 'json2csv';
 
 dotenv.config();
 
@@ -128,12 +129,9 @@ const db = mysql.createConnection({
   port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306
 });
 
-
-
 function processQr(qrString){
   return {isValid:true,ashokaId:qrString};
 }
-
 
 // Route to display packages
 app.get('/package-out/user/:qrString', (req, res) => {
@@ -196,7 +194,6 @@ app.get('/package-out/friend/:id/:qrString', (req, res) => {
     res.render("error", { msg: "Invalid QR Code" });
   }
 });
-
 
 app.get('/package-out/friend/:qrString', (req, res) => {
   // assume we call the AMS API here to get ashokaId from 
@@ -361,7 +358,6 @@ app.post('/insertpackage', (req, res) => {
   });
 });
 
-
 app.get('/success-checkout', (req, res) => {
   // Get the query parameters
   const studentName = req.query.studentName || '';
@@ -371,7 +367,6 @@ app.get('/success-checkout', (req, res) => {
     studentName
   });
 });
-
 
 app.get('/success-log', (req, res) => {
   const packageDetails = {
@@ -383,7 +378,6 @@ app.get('/success-log', (req, res) => {
   // console.log(packageDetails);
   res.render('success-log', { packageDetails });
 });
-
 
 // API endpoint to search for a tracking ID
 app.get('/track', (req, res) => {
@@ -406,7 +400,6 @@ app.get('/track', (req, res) => {
   });
 });
 
-
 app.get('/package-out/tracking-id/:qrString', (req, res) => {
   var personCollecting = processQr(req.params.qrString).ashokaId;
   if (processQr(req.params.qrString).isValid) {
@@ -418,7 +411,7 @@ app.get('/package-out/tracking-id/:qrString', (req, res) => {
 
 app.get('/backup', (req, res) => {
   const selectedDate = req.query.selectedDate || new Date().toISOString().split('T')[0]; // Default to today's date
-  res.render('backup', { selectedDate });
+  res.render('backup', { selectedDate, packages: [] });
 });
 
 app.post('/backup', (req, res) => {
@@ -450,10 +443,10 @@ app.post('/backup', (req, res) => {
 });
 
 
+
 app.get('*', (req, res) => {
   res.render("error", { msg: "404 Not Found" });
 });
-
 
 app.listen(port || 3000, function () {
   console.log("listening on port ", port || 3000)
