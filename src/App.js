@@ -144,6 +144,7 @@ const BASE_URL = process.env.BASE_URL;
      }
  }
 
+//  login();
  // Function to refresh the authentication token
  async function refreshAuthToken() {
   try {
@@ -213,10 +214,10 @@ async function processQr(qrString) {
       }
 
       console.log("QR Code Validated Successfully.");
-      console.log("Ashoka ID:", data.UserSysGenId);
+      console.log("Ashoka ID:", data);
       return {
           isValid: true,
-          ashokaId: data.UserSysGenId
+          ashokaId: data.AshokaId
       };
   } catch (error) {
       console.error("QR Code Validation Error:", error.message);
@@ -232,6 +233,64 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME || 'packages',
   port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306
 });
+
+await refreshAuthToken();
+
+
+async function sendNotification(usersysgenid, notificationTitle, notificationBody){
+  try {
+    // Ensure we have a valid token
+    if (!authToken) {
+        console.log("No Auth Token found. Attempting login...");
+        await login();
+    }
+
+    const response = await fetch(`${BASE_URL}api/Notification/CreateNotification`, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${authToken}`
+      },
+      body: JSON.stringify(
+        {
+          "NotificationTypeId": 0,
+          "UserSysGenId": usersysgenid,
+          "NotificationTypeImageUrl":
+          "https://my.ashoka.edu.in/uploadfiles/AppIcons/MENU0000036.svg",
+          "NotificationTitle": notificationTitle,
+          "NotificationBody": notificationBody,
+          "NotificationImage": null,
+          "Severity": 0,
+          "NotificationPayLoadJsonData":null
+          }
+      )
+    });
+
+    const data = await response.json();
+
+    // If token is expired, refresh it and retry
+    if (data.ErrorCode !== 0 && data.ErrorMessage.includes("token")) {
+        console.warn("Token Expired. Refreshing...");
+        await refreshAuthToken();
+        return await sendNotification(usersysgenid, notificationTitle, notificationBody);
+    }
+
+     // If QR validation fails
+    if (data.ErrorCode !== 0) {
+      console.log(data.ErrorMessage);
+        return false;
+    }
+
+    console.log("Notified User Successfully.");
+    
+    return true;
+
+  } catch (error) {
+    console.error("Notification Error:", error.message);
+    return false;
+  }
+}
+
 
 // Route to display packages
 app.get('/package-out/user/:qrString', async(req, res) => {
