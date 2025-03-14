@@ -401,6 +401,15 @@ app.post('/checkout', (req, res) => {
         return res.status(500).send("Error during checkout");
       }
 
+      // Create an array of all package nos. from selected packages
+      const packageNos = selectedPackages.map(pkg => pkg.packageNo);
+      // Send notification to package owner of the packages that were checked out and who collected those    
+      const packageOwner = students.find(student => student.AshokaId == packageNos[0].AshokaId);
+      const packageCollector = students.find(student => student.AshokaId == personCollecting);
+      if (studentData) {
+        sendNotification(studentData.UserSysGenId, "Package Collected!", `Hey ${packageOwner.UserName}, Your packages ${packageNos.join(', ')} has been collected by ${packageCollector.UserName}.`);
+      }
+      
       // Render the success-checkout page with the first package's Ashoka ID
       const packageDetails = { ID: selectedPackages[0].AshokaId }; // Use the first package's Ashoka ID
       // console.log(selectedPackages);
@@ -513,6 +522,8 @@ app.post('/insertpackage', (req, res) => {
           shelfNo: shelfNo,
           remarks: remarks
         };
+        // Send notification to student
+        sendNotification(studentData.UserSysGenId, "Package Arrived!", `Hey ${studentData.UserName}, A package has arrived for you from ${deliveryPartner} at the mailroom. Package No: ${packageNo}`);
 
         // console.log("TIME", packageDetails);
 
