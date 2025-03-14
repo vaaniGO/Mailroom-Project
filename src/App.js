@@ -406,7 +406,7 @@ app.post('/checkout', (req, res) => {
       // Send notification to package owner of the packages that were checked out and who collected those    
       const packageOwner = students.find(student => student.AshokaId == packageNos[0].AshokaId);
       const packageCollector = students.find(student => student.AshokaId == personCollecting);
-      if (studentData) {
+      if (packageOwner && packageCollector) {
         sendNotification(studentData.UserSysGenId, "Package Collected!", `Hey ${packageOwner.UserName}, Your packages ${packageNos.join(', ')} has been collected by ${packageCollector.UserName}.`);
       }
       
