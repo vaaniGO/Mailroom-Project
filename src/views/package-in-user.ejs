@@ -67,14 +67,15 @@
             <div class="input-group">   
                 <input id="trackingIDByUser" type="text" class="form-control" placeholder="Tracking ID"
                         style="border-radius: 7px;" name="trackingIDByUser" autocomplete="off"><br /><br />             
-                <select id="deliverySelectTrackingID" name="deliveryService" style="
-                    width: 100%;
-                    font-size: 17px;
-                    padding: 6px;
-                    border-radius: 8px;
-                    background-color: #f8f9fa;
-                    cursor: pointer;
-                ">
+                        
+                    <select id="deliverySelectTrackingID" name="deliveryService" style="
+                        width: 100%;
+                        font-size: 17px;
+                        padding: 6px;
+                        border-radius: 8px;
+                        background-color: #f8f9fa;
+                        cursor: pointer;
+                      ">
                     <option value="" selected disabled>Select Delivery service</option>
                     <option value="Amazon">Amazon</option>
                     <option value="Anjani">Anjani</option>
@@ -280,7 +281,7 @@
                     clearTimeout(debounceTimer);
                     debounceTimer = setTimeout(async () => {
                         try {
-                            const response = await fetch(`http://127.0.0.1:3000/search2?q=${encodeURIComponent(query)}`);
+                            const response = await fetch(`/search2?q=${encodeURIComponent(query)}`);
                             const data = await response.json();
                             cachedResults = data; // Store results in cache
                             displayResults(cachedResults);
@@ -354,25 +355,24 @@
         </script>
         <script>
             // Function to check form validity and enable/disable buttons
+            // Function to check form validity and enable/disable buttons
             function checkFormValidity() {
-                // For the "Find User" form
-                const userInput = document.getElementById('userInput').value.trim();
-                const hiddenSelectedStudent = document.getElementById('hiddenSelectedStudent').value.trim();
-                const studentNextButton = document.getElementById('student-next');
-                const trackingIDByUserField = document.getElementById('trackingIDByUser').value.trim() == ''?null:document.getElementById('trackingIDByUser').value.trim();
-                studentNextButton.disabled = !(userInput && hiddenSelectedStudent && trackingIDByUserField);
-
-                // // For the "Package Details" form (tracking ID)
-                const trackingIDInputByUser = document.getElementById('trackingIDInputByUser').value.trim();
-                // const deliverySelect = document.getElementById('deliverySelect').value;
-                const submitButton = document.getElementById('student-next-submit'); // Correct ID
-                submitButton.disabled = !(trackingIDInputByUser && deliverySelect);
-
-                // For the "Package Details" form (identified student)
+                // Get the delivery service dropdown value
                 const deliverySelectTrackingID = document.getElementById('deliverySelectTrackingID').value;
-                const submitButtonIdentifiedStudent = document.querySelector('#enterPackageDetails .next-btn');
-                submitButtonIdentifiedStudent.disabled = !deliverySelectTrackingID;
+
+                // Enable/disable the submit button based on whether the delivery service is selected
+                const submitButton = document.getElementById('student-next-submit');
+                submitButton.disabled = !deliverySelectTrackingID;
             }
+
+            // Add event listeners to form fields
+            document.addEventListener('DOMContentLoaded', function () {
+                // For the delivery service dropdown
+                document.getElementById('deliverySelectTrackingID').addEventListener('change', checkFormValidity);
+
+                // Initialize the form validation on page load
+                checkFormValidity();
+            });
         
             // Add event listeners to form fields
             document.addEventListener('DOMContentLoaded', function () {

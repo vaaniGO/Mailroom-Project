@@ -10,37 +10,156 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    .table-dark th {
+        background-color: #0d3862 !important;
+    }
+
+    .bg-success {
+        color: white !important; /* Force text color to black */
+        font-weight: normal !important; /* Remove bold styling */
+        padding: 6px !important;
+    }
+
+    .bg-warning {
+        color: black !important; /* Force text color to black */
+        font-weight: normal !important; /* Remove bold styling */
+        padding: 6px !important;
+    }
+    
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backups Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/global-styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    .table-dark th {
+        background-color: #0d3862 !important;
+    }
+
+    .bg-success {
+        color: white !important; /* Force text color to black */
+        font-weight: normal !important; /* Remove bold styling */
+        padding: 6px !important;
+    }
+
+    .bg-warning {
+        color: black !important; /* Force text color to black */
+        font-weight: normal !important; /* Remove bold styling */
+        padding: 6px !important;
+    }
+
+    .btn-primary, .btn-outline-secondary {
+        background-color: #17599b !important;
+        color: white !important;
+        border: solid #17599b 1px !important;
+    }
+
+    .btn-primary:hover, .btn-outline-secondary:hover {
+        background-color: #0d3862 !important;
+    }
+    
+</style>
+
+<% function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+    const suffix = (day === 1 || day === 21 || day === 31) ? 'st' : 
+                   (day === 2 || day === 22) ? 'nd' : 
+                   (day === 3 || day === 23) ? 'rd' : 'th';
+    return `${day}${suffix} ${month} ${year}`;
+  } %>
+
 <body>
     <%-include("partials/navbar.ejs", { activePage: "backup" })-%>
 
     <div class="container mt-5">
-        <div class="login-container mb-3" >
-            <div class="login-box" style="height: 200px;">
-                <h3 class="mb-4">All Packages by Date</h3>
+        <div class="login-container mb-3">
+            <div class="login-box" style="height: 250px;">
+                <h3 class="mb-4">Get All Packages Data</h3>
+
+                <!-- Mode Selection Buttons -->
+                <div class="text-center mb-3">
+                    <button type="button" id="selectDateBtn" class="btn btn-primary me-2" >Select Date</button>
+                    <button type="button" id="selectRangeBtn" class="btn btn-primary">Select Range</button>
+                </div>
+
                 <!-- Date Selection Form -->
-                <form method="POST" class="mb-5 text-center">
-                    <div class="row g-3 align-items-center justify-content-center">
-                        <div class="col-md-4">
-                            <input type="date" 
-                                   id="selectedDate" 
-                                   name="selectedDate" 
-                                   class="form-control"
-                                   max="<%= new Date().toISOString().split('T')[0] %>"
-                                   value="<%= selectedDate || new Date().toISOString().split('T')[0] %>"
-                                   required>
+                <form method="POST" class="mb-5 text-center" id="dateForm">
+                    <input type="hidden" name="searchMode" id="searchMode" value="<%= dateMode %>">
+                    
+                    <!-- Single Date Input -->
+                    <div id="singleDateSection" class="<%= dateMode === 'range' || dateMode === 'initial' ? 'd-none' : '' %>">
+                        <div class="row g-3 align-items-center justify-content-center">
+                            <div class="col-md-4">
+                                <input type="date" 
+                                       id="selectedDate" 
+                                       name="selectedDate" 
+                                       class="form-control"
+                                       max="<%= new Date().toISOString().split('T')[0] %>"
+                                       value="<%= selectedDate || new Date().toISOString().split('T')[0] %>"
+                                       >
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-danger" style="width: 100%;">
+                                    Get
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <button type="submit" class="btn btn-danger" style="width: 100%;">
-                                Get
-                            </button>
+                        <!-- Shortcut Buttons for Single Date -->
+                        <div class="mt-3">
+                            <button type="button" class="btn btn-outline-secondary btn-sm me-2" id="todayBtn">Today</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="yesterdayBtn">Yesterday</button>
                         </div>
                     </div>
+
+                    <!-- Date Range Input -->
+                    <div id="dateRangeSection" class="<%= dateMode === 'single' || dateMode === 'initial' ? 'd-none' : '' %>">
+                        <div class="row g-3 align-items-center justify-content-center">
+                            <div class="col-md-4">
+                                <input type="date" 
+                                       id="startDate" 
+                                       name="startDate" 
+                                       class="form-control"
+                                       max="<%= new Date().toISOString().split('T')[0] %>"
+                                       value="<%= startDate %>">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="date" 
+                                       id="endDate" 
+                                       name="endDate" 
+                                       class="form-control"
+                                       max="<%= new Date().toISOString().split('T')[0] %>"
+                                       value="<%= endDate %>">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-danger" style="width: 100%;">
+                                    Get
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Shortcut Buttons for Date Range -->
+                        <div class="mt-3">
+                            <button type="button" class="btn btn-outline-secondary btn-sm me-2" id="lastWeekBtn">Last Week</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="lastMonthBtn">Last Month</button>
+                        </div>
+                    </div>
+
+                    
                 </form>
             </div>
         </div>
-        <button id="downloadCsvBtn" class="btn btn-success d-none ms-auto mb-3" disabled>
-            Download CSV
-        </button>
 
         <!-- Hidden variable to check if data exists -->
         <input type="hidden" id="hasData" value="<%= packages && packages.length > 0 %>">
@@ -48,13 +167,26 @@
         <!-- Results Section -->
         <% if (typeof packages !== 'undefined') { %>
             <div class="results-section">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="mb-0 fw-bold">
+                      <% if (dateMode === 'range' && startDate && endDate) { %>
+                        Packages between <%= formatDate(startDate) %> and <%= formatDate(endDate) %>
+                      <% } else if (dateMode === 'single' && selectedDate) { %>
+                        Packages for <%= formatDate(selectedDate) %>
+                      <% } %>
+                    </h3>
+                    <!-- Download Button -->
+                    <button id="downloadCsvBtn" class="btn btn-success d-none" disabled>
+                      Download
+                    </button>
+                </div>
+
                 <% if (packages.length > 0) { %>
                     <div class="table-responsive">
-
                         <table class="table table-striped table-hover">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>P. No</th>
+                                    <th>No.</th>
                                     <th>Ashoka ID</th>
                                     <th>Tracking ID</th>
                                     <th>Delivery Service</th>
@@ -73,26 +205,27 @@
                                         <td><%= package.deliveryPartner %></td>
                                         <td>
                                             <%= (function(ts) {
-                                              let hours = parseInt(ts.substring(11, 13)); // Extract hours
-                                              let minutes = ts.substring(14, 16); // Extract minutes
-                                              let ampm = hours >= 12 ? 'PM' : 'AM'; // Determine AM or PM
-                                              hours = hours % 12 || 12; // Convert 0 or 12 to 12-hour format
-                                              return hours + ":" + minutes + " " + ampm;
+                                                if (!ts) return 'N/A';
+                                                let hours = parseInt(ts.substring(11, 13)); 
+                                                let minutes = ts.substring(14, 16);
+                                                let ampm = hours >= 12 ? 'PM' : 'AM';
+                                                hours = hours % 12 || 12;
+                                                return hours + ":" + minutes + " " + ampm;
                                             })(package.timestamp) %>
-                                          </td>
-                                        <%if(package.collectedAt){%>
-                                            <td>
+                                        </td>
+                                        <td>
+                                            <% if(package.collectedAt) { %>
                                                 <%= (function(ts) {
-                                                    let hours = parseInt(ts.substring(11, 13)); // Extract hours
-                                                    let minutes = ts.substring(14, 16); // Extract minutes
-                                                    let ampm = hours >= 12 ? 'PM' : 'AM'; // Determine AM or PM
-                                                    hours = hours % 12 || 12; // Convert 0 or 12 to 12-hour format
+                                                    let hours = parseInt(ts.substring(11, 13)); 
+                                                    let minutes = ts.substring(14, 16);
+                                                    let ampm = hours >= 12 ? 'PM' : 'AM';
+                                                    hours = hours % 12 || 12;
                                                     return hours + ":" + minutes + " " + ampm;
-                                                  })(package.collectedAt) %>    
-                                            </td>                                        
-                                        <%}else{%>
-                                            <td></td>
-                                        <%}%>
+                                                })(package.collectedAt) %>    
+                                            <% } else { %>
+                                                N/A
+                                            <% } %>
+                                        </td>
                                         <td>
                                             <span class="badge <%= package.status === 'received' ? 'bg-success' : 'bg-warning' %>">
                                                 <%= package.status %>
@@ -104,45 +237,46 @@
                             </tbody>
                         </table>
                     </div>
-                <% } else { %>
-                    <div class="alert alert-info" role="alert">
-                        No package records found for <%= selectedDate %>
+                <% } else if (dateMode != 'initial') { %>
+                    <div class="alert alert-primary" role="alert">
+                    <% if (dateMode === 'range' && startDate && endDate) { %>
+                        No package records found between <%= startDate %> and <%= endDate %>
+                      <% } else { %>
+                        No package records found for <%= selectedDate || new Date().toISOString().split('T')[0] %>
+                      <% } %>
                     </div>
                 <% } %>
+            
             </div>
         <% } %>
-
+        <!-- Error Message Section -->
+        <div id="errorMessageSection" class="alert alert-primary mt5 d-none" role="alert">
+            Please select a valid date range.
+        </div>
     </div>
 
     <script>
-        // Client-side future date check
-        const dateInput = document.getElementById('selectedDate');
-        const futureMessage = document.getElementById('futureDateMessage');
+        // DOM elements
+        const dateForm = document.getElementById('dateForm');
         const downloadBtn = document.getElementById('downloadCsvBtn');
         const hasData = document.getElementById('hasData').value === 'true';
+        const selectDateBtn = document.getElementById('selectDateBtn');
+        const selectRangeBtn = document.getElementById('selectRangeBtn');
+        const singleDateSection = document.getElementById('singleDateSection');
+        const dateRangeSection = document.getElementById('dateRangeSection');
+        const selectedDateInput = document.getElementById('selectedDate');
+        const startDateInput = document.getElementById('startDate');
+        const endDateInput = document.getElementById('endDate');
+        const todayBtn = document.getElementById('todayBtn');
+        const yesterdayBtn = document.getElementById('yesterdayBtn');
+        const lastWeekBtn = document.getElementById('lastWeekBtn');
+        const lastMonthBtn = document.getElementById('lastMonthBtn');
+        const searchModeInput = document.getElementById('searchMode');
+        const errorMessageSection = document.getElementById('errorMessageSection');
+        var dateMode = "<%= dateMode %>"; 
 
-        dateInput.addEventListener('change', () => {
-            const selectedDate = new Date(dateInput.value);
-            const today = new Date();
-            today.setHours(0,0,0,0);
 
-            if(selectedDate > today) {
-                futureMessage.classList.remove('d-none');
-                document.querySelector('.results-section')?.classList.add('d-none');
-                downloadBtn.disabled = true;
-            } else {
-                futureMessage.classList.add('d-none');
-                document.querySelector('.results-section')?.classList.remove('d-none');
-                // Enable download button if there are results
-                if (hasData) {
-                    downloadBtn.classList.remove('d-none');
-                    downloadBtn.disabled = false;
-                } else {
-                    downloadBtn.classList.add('d-none');
-                    downloadBtn.disabled = true;
-                }
-            }
-        });
+        //console.log(dateMode);
 
         // Initial check on page load
         if (hasData) {
@@ -150,15 +284,135 @@
             downloadBtn.disabled = false;
         }
 
+        // Helper function to format date as YYYY-MM-DD
+        const formatDate = (date) => date.toISOString().split('T')[0];
+
+        // Validate date range function
+        const validateDateRange = () => {
+        const resultsSection = document.querySelector('.results-section');
+        errorMessageSection.classList.add('d-none');
+        
+        if (searchModeInput.value === 'range') {
+            if (!startDateInput.value || !endDateInput.value) {
+                errorMessageSection.classList.remove('d-none');
+                if (resultsSection) resultsSection.classList.add('d-none');
+                downloadBtn.classList.add('d-none');
+                downloadBtn.disabled = false;
+                return false;
+            }
+            
+            const startDate = new Date(startDateInput.value);
+            const endDate = new Date(endDateInput.value);
+            
+            if (startDate > endDate) {
+                errorMessageSection.classList.remove('d-none');
+                if (resultsSection) resultsSection.classList.add('d-none');
+                downloadBtn.classList.add('d-none');
+                downloadBtn.disabled = false;
+                return false;
+            }
+        } else if (searchModeInput.value === 'single') {
+            if (!selectedDateInput.value) {
+                errorMessageSection.classList.remove('d-none');
+                if (resultsSection) resultsSection.classList.add('d-none');
+                downloadBtn.classList.add('d-none');
+                downloadBtn.disabled = false;
+                return false;
+            }
+        }
+        
+        return true;
+    };
+
+        // Show Single Date Section
+        selectDateBtn.addEventListener('click', () => {
+            singleDateSection.classList.remove('d-none');
+            dateRangeSection.classList.add('d-none');
+            searchModeInput.value = 'single';
+            selectedDateInput.value = formatDate(new Date());
+            
+            // Set required attributes correctly
+            selectedDateInput.setAttribute('required', 'required');
+            startDateInput.removeAttribute('required');
+            endDateInput.removeAttribute('required');
+            
+            // Clear range inputs
+            startDateInput.value = '';
+            endDateInput.value = '';
+        });
+
+        // Show Date Range Section
+        selectRangeBtn.addEventListener('click', () => {
+            dateRangeSection.classList.remove('d-none');
+            singleDateSection.classList.add('d-none');
+            searchModeInput.value = 'range';
+            console.log(searchModeInput.value);
+            
+            // Set default range (last 7 days)
+            const today = new Date();
+            const lastWeek = new Date();
+            lastWeek.setDate(today.getDate() - 7);
+            
+            startDateInput.value = formatDate(lastWeek);
+            endDateInput.value = formatDate(today);
+            
+            // Set required attributes correctly
+            selectedDateInput.removeAttribute('required');
+            startDateInput.setAttribute('required', 'required');
+            endDateInput.setAttribute('required', 'required');
+            
+            // Clear single date
+            selectedDateInput.value = '';
+        });
+
+        // Shortcut: Today
+        todayBtn.addEventListener('click', () => {
+            selectedDateInput.value = formatDate(new Date());
+        });
+
+        // Shortcut: Yesterday
+        yesterdayBtn.addEventListener('click', () => {
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            selectedDateInput.value = formatDate(yesterday);
+        });
+
+        // Shortcut: Last Week
+        lastWeekBtn.addEventListener('click', () => {
+            const today = new Date();
+            const lastWeek = new Date(today);
+            lastWeek.setDate(today.getDate() - 7);
+            
+            startDateInput.value = formatDate(lastWeek);
+            endDateInput.value = formatDate(today);
+        });
+
+        // Shortcut: Last Month
+        lastMonthBtn.addEventListener('click', () => {
+            const today = new Date();
+            const lastMonth = new Date(today);
+            lastMonth.setMonth(today.getMonth() - 1);
+            
+            startDateInput.value = formatDate(lastMonth);
+            endDateInput.value = formatDate(today);
+        });
+
+        // Form submission validation
+        dateForm.addEventListener('submit', (event) => {
+            if (!validateDateRange()) {
+                event.preventDefault();
+            }
+        });
+
         // Generate CSV and trigger download
-        document.getElementById('downloadCsvBtn').addEventListener('click', () => {
+        downloadBtn.addEventListener('click', () => {
             const rows = document.querySelectorAll('table tbody tr');
             const csvContent = [];
 
             // Add headers
             const headers = [];
             document.querySelectorAll('table thead th').forEach(header => {
-                headers.push(header.innerText);
+                headers.push(`"${header.innerText}"`);
             });
             csvContent.push(headers.join(','));
 
@@ -166,7 +420,8 @@
             rows.forEach(row => {
                 const rowData = [];
                 row.querySelectorAll('td').forEach(cell => {
-                    rowData.push(cell.innerText);
+                    // Escape quotes and wrap text in quotes to handle commas in data
+                    rowData.push(`"${cell.innerText.replace(/"/g, '""')}"`);
                 });
                 csvContent.push(rowData.join(','));
             });
@@ -176,7 +431,14 @@
             const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = `packages_${dateInput.value}.csv`;
+            
+            // Set filename based on search mode
+            const isRangeMode = searchModeInput.value === 'range';
+            const filename = isRangeMode 
+                ? `packages_${startDateInput.value}_to_${endDateInput.value}.csv`
+                : `packages_${selectedDateInput.value}.csv`;
+                
+            link.download = filename; 
             link.click();
         });
     </script>

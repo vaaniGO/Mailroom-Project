@@ -123,3 +123,15 @@ body {
 .remarksInput input {
     width: 20px;
 }
+
+    /* Remove default arrow */
+#deliverySelectTrackingID {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the arrow */
+    background-size: 30px; /* Adjust arrow size */
+    padding-right: 30px; /* Add space for the arrow */
+}

@@ -27,14 +27,14 @@
                         style="border-radius: 7px;">
                 </div>
                 <div class="input-group">                
-                    <select id="deliverySelect" name="deliveryService" style="
+                    <select id="deliverySelectTrackingID" name="deliveryService" style="
                         width: 100%;
                         font-size: 17px;
                         padding: 6px;
                         border-radius: 8px;
                         background-color: #f8f9fa;
                         cursor: pointer;
-                    ">
+                      ">
                         <option value="" disabled selected>Select Delivery service</option>
                         <option value="Amazon">Amazon</option>
                         <option value="Anjani">Anjani</option>
@@ -91,7 +91,7 @@
                         BACK
                     </button>
                     <button id="submit-tracking-id" disabled class="btn btn-danger next-btn"
-                        onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelect').value, document.getElementById('remarksInputUnidentified').value, document.getElementById('shelf').value)">
+                        onclick="insertPackageData(false, document.getElementById('trackingIDInput').value.trim(), document.getElementById('deliverySelectTrackingID').value, document.getElementById('remarksInputUnidentified').value || '', document.getElementById('shelf').value || '')">
                         SUBMIT
                     </button>
                 </div>
@@ -140,28 +140,24 @@
 
         </script>
         <script>
-            // Function to check form validity and enable/disable buttons
+            // Function to check form validity and enable/disable the SUBMIT button
             function checkFormValidity() {
-                // For the "Package Details" form (tracking ID)
-                const trackingIDInput = document.getElementById('trackingIDInput').value.trim();
-                const deliverySelect = document.getElementById('deliverySelect').value;
-                const submitButtonTrackingID = document.getElementById('submit-tracking-id'); // Correct ID
-                submitButtonTrackingID.disabled = !(trackingIDInput && deliverySelect);
+            const trackingIDInput = document.getElementById('trackingIDInput').value.trim();
+            const deliverySelectTrackingID = document.getElementById('deliverySelectTrackingID').value;
+            const submitButtonTrackingID = document.getElementById('submit-tracking-id');
 
-                // For the "Package Details" form (identified student)
-                const deliverySelectTrackingID = document.getElementById('deliverySelectTrackingID').value;
-                const submitButtonIdentifiedStudent = document.querySelector('#enterPackageDetails .next-btn');
-                submitButtonIdentifiedStudent.disabled = !deliverySelectTrackingID;
+            // Enable the SUBMIT button only if both required fields are filled
+            submitButtonTrackingID.disabled = !(trackingIDInput && deliverySelectTrackingID);
             }
-        
-            // Add event listeners to form fields
-            document.addEventListener('DOMContentLoaded', function () {
-                // For the "Package Details" form (tracking ID)
-                document.getElementById('trackingIDInput').addEventListener('input', checkFormValidity);
-                document.getElementById('deliverySelect').addEventListener('change', checkFormValidity);
 
-                // For the "Package Details" form (identified student)
-                document.getElementById('deliverySelectTrackingID').addEventListener('change', checkFormValidity);
+            // Add event listeners to the required fields
+            document.addEventListener('DOMContentLoaded', function () {
+            // Attach event listeners to the tracking ID input and delivery service dropdown
+            document.getElementById('trackingIDInput').addEventListener('input', checkFormValidity);
+            document.getElementById('deliverySelectTrackingID').addEventListener('change', checkFormValidity);
+
+            // Initialize the form validation on page load
+            checkFormValidity();
             });
         </script>
         <!-- Before closing body tag -->

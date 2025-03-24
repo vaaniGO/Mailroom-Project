@@ -154,7 +154,7 @@
                     clearTimeout(debounceTimer);
                     debounceTimer = setTimeout(async () => {
                         try {
-                            const response = await fetch(`http://127.0.0.1:3000/search2?q=${encodeURIComponent(query)}`);
+                            const response = await fetch(`/search2?q=${encodeURIComponent(query)}`);
                             const data = await response.json();
                             cachedResults = data; // Store results in cache
                             displayResults(cachedResults);
